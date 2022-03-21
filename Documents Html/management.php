@@ -14,7 +14,7 @@ include("header.html");
 <body>
     <div id="Nav_2">
         <nav>
-            <a href="offer.html" id="1" class="Nav_2">Offer</a>
+            <a href="offer.php" id="1" class="Nav_2">Offer</a>
             <a href="company.html" id="2" class="Nav_2">Company</a>
             <a href="student.html" id="3" class="Nav_2">Student</a>
             <a href="delegate.html" id="4" class="Nav_2">Delegate</a>

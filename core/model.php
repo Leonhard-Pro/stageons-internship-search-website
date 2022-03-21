@@ -4,7 +4,7 @@ class Model {
     public $table;
     public $id;
 
-    private $dsn = 'mysql:dbname=prosit7;host=127.0.0.1;port=3306;charset=utf8';
+    private $dsn = 'mysql:dbname=stageons;host=127.0.0.1;port=3306;charset=utf8';
     private $user = 'root';
     private $password = '';
     private $pdo;

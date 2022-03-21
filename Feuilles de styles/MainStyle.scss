@@ -129,6 +129,20 @@ a:hover {
     background-color: red;
 }
 
+//Responsiveness
+@media (max-width: 1200px){
+    #Icon_offers,
+    #Icon_companies,
+    #Icon_management,
+    #Icon_Advancement,
+    #Icon_contacts,
+    #Icon_cloche{
+        width: 30px;
+        height: 30px;
+        
+    }
+}
+
 
 //Companies, Offers (lists)
 #Filtre_1 {
@@ -216,7 +230,8 @@ a:hover {
 }
 
 
-//Management 
+//Management
+
 #Nav_2 {
     height: 1%;
     width: 100%;
@@ -224,71 +239,33 @@ a:hover {
     background-size: cover;
     position: absolute;
     top: 25%;
-    background-color: $colourForms;
-}
-a#Offer {
-    font-family: $fontFamily;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    width: 50%;
-    line-height: 25%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 3%;
-    margin: 0.5%;
-    transition: 0.5s;
-    display: inline;
-}
-a#Nav_2 {
-    font-family: $fontFamily;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    width: 50%;
-    line-height: 25%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 3%;
-    margin: 0.5%;
-    transition: 0.5s;
-    display: inline;
-}
+    left: 7%;
 
-
-
-
-//Responsiveness
-@media (max-width: 1200px){
-    #Icon_offers,
-    #Icon_companies,
-    #Icon_management,
-    #Icon_Advancement,
-    #Icon_contacts,
-    #Icon_cloche{
-        width: 30px;
-        height: 30px;
+    a {
         
+        font-family: $fontFamily;
+        font-weight: bold;
+        font-size: 110%;
+        background-color: white;
+        color: black;
+        border: 1px solid;
+        border-color: black;
+        text-align: center;
+        text-decoration: none;
+        //width: 20%;
+        //line-height: 15%;
+        //padding: 1%;
+        padding-left: 7%;
+        padding-right: 7%;
+        margin: -0.2%;
+        border-radius: 0px;
+        transition: 0.5s;
+        display: inline;
+    }
+    a:hover {
+        background-color: $colourForms;
+        color: white;
     }
 }
 
-// management
-/*
-a#Nav_3 {
-    font-family: $fontFamily;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    width: 50%;
-    line-height: 25%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 3%;
-    margin: 0.5%;
-    transition: 0.5s;
-    display: inline;
-}
-/*
-a#Nav_3:hover {
-    background-color: $colourForms;
-}*/
+

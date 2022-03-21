@@ -14,11 +14,11 @@ include("header.html");
 <body>
     <div id="Nav_2">
         <nav>
-            <a href="offer.html" id="Nav_2">Offer</a>
-            <a href="company.html" id="Nav_2">Company</a>
-            <a href="student.html" id="Nav_2">Student</a>
-            <a href="delegate.html" id="Nav_2">Delegate</a>
-            <a href="class_pilot.html" id="Nav_2">Class Pilot</a>
+            <a href="offer.html" id="1" class="Nav_2">Offer</a>
+            <a href="company.html" id="2" class="Nav_2">Company</a>
+            <a href="student.html" id="3" class="Nav_2">Student</a>
+            <a href="delegate.html" id="4" class="Nav_2">Delegate</a>
+            <a href="class_pilot.html" id="5" class="Nav_2">Class Pilot</a>
         </nav>
 
         <br><br>

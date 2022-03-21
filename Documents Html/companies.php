@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Stageons ~ companies</title>
     <link rel="stylesheet" href="../Feuilles de styles/MainStyle.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src=filter.js async></script>
 </head>
 
 <?php
@@ -18,7 +20,8 @@ include("header.html");
         <div id="bouton">
             <input type="button" id="Search" value="Search">
         </div>
-        <div id=Icon_filtre></div>
+        <div id=Icon_filtre onclick="Show_all()"></div>
+        <div id=Icon_barre onclick="Show_all()"></div>
     </div>
     <div id="Filtre_2">
         <input type="text" id="Domain_Activity" placeholder="Domain Activity :">

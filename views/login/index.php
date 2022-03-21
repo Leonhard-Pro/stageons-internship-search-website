@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST["cookies"])){
+	setcookie('Cookies', true, time()+ (60*60*24*365.25), '/', false, true);
+	header("Location:login");
+	exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +14,7 @@
     <meta charset="UTF-8">
     <title>Stageons ~ login</title>
     <link rel="stylesheet" href="views/css/style.css">
+    <link rel="stylesheet" href="views/css/cookies_banner.css">
 </head>
 
 <body>
@@ -38,6 +48,29 @@
             </div>
 
         </div>
+
+        <?php if (!isset($_COOKIE['Cookies']) || $_COOKIE['Cookies'] == false): ?>
+            <div class="blurry_background-cookies">
+
+            </div>
+            <div class="cookie-handband">
+            <div class="cookie-informations">
+                <div class="cookie-tag-management">
+                <img src="views/resources/logo_cesi_with_text.svg" alt="Logo Cesi" id="logo_cesi-cookies">
+                <div class="cookie-title">CE SITE UTILISE LES COOKIES</div>
+                <div class="cookies-warning">
+                    Nous utilisons des cookies pour personnaliser le contenu et les publicités, pour fournir des fonctionnalités de médias sociaux et pour analyser notre trafic. Nous partageons également des informations sur votre utilisation de notre site avec nos partenaires de médias sociaux, de publicité et d'analyse qui peuvent les combiner avec d'autres informations que vous leur avez fournies ou qu'ils ont collectées à partir de votre utilisation de leurs services. Vous consentez à nos cookies si vous continuez à utiliser notre site web.
+                </div>
+                </div>
+
+                <div class="cookie-choose">
+                    <form action="" method="POST">
+                        <button class="button-cookies" type="submit" name="cookies">Accepter</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        <?php endif; ?>
     </form>
 </body>
 

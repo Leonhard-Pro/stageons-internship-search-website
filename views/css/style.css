@@ -105,11 +105,9 @@ body {
   text-decoration: underline;
 }
 
-#Error {
+#text_login h3 {
   color: red;
-  font-size: 50px;
-  font-weight: 350;
-  margin: -50%;
+  margin-top: -10%;
 }
 
 #hidden_logo_cesi {
@@ -167,3 +165,4 @@ input[type="submit"] {
     font-size: 35px;
   }
 }
+/*# sourceMappingURL=style.css.map */

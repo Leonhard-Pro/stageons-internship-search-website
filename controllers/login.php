@@ -32,6 +32,12 @@ class Login extends Controller {
                     );
                     break;
 
+                case -3:
+                    $ph['login'] = array(
+                        'error' => 'Can not access to informations from data base',
+                    );
+                    break;
+
                 default:
                     echo "<script>console.log('result: " . json_encode($user) . "');</script>";
                     header("Location:offers");

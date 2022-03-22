@@ -1,3 +1,7 @@
+<?php 
+require("models/SessionStart.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,6 @@
     <script src="views/js/jquery-3.6.0.min.js"></script>
     <script src="views/js/filter.js" async></script>
 </head>
-
 
 <body>
 <?php

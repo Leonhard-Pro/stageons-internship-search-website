@@ -218,10 +218,11 @@ a:hover {
     flex-direction: column;
 }
 .tab_list{
+    font-family: $fontFamily;
     background-color: $colourBackground;
     width: 90%;
     height: 90px;
-    margin: 10px;
+    margin: 20px;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;

@@ -7,6 +7,7 @@ class Controller {
     function __construct() {
         if(isset($_POST)) {
             $this-> data = $_POST;
+            echo "<script>console.log('DEBUG POST: " . json_encode($this->data) . "');</script>";
         }
         if(isset($this->models)) {
             foreach($this->models as $m) {

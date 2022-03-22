@@ -27,8 +27,10 @@
                 <img src="views/resources/logo_cesi_with_text_black.png" alt="Logo Cesi" id="hidden_logo_cesi">
                 <h1>LOGIN</h1>
 
-                <input type="email" id="email_id" placeholder="Email address"><br><br>
-                <input type="password" id="password" placeholder="Password"><br><br>
+                <h3 class="Error"><?php echo $login['error']; ?></h3>
+
+                <input name="email" type="email" id="email_id" placeholder="Email address"><br><br>
+                <input name="pwrd" type="password" id="password" placeholder="Password"><br><br>
 
                 <input type="checkbox" id="keep_signed_in">
                 <label>Keep me signed in ?</label>

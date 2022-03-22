@@ -71,7 +71,7 @@ body {
   right: 5%;
 }
 
-#Icon_cloche {
+#Icon_bell {
   height: 50px;
   width: 50px;
   background-image: url("../resources/icon_cloche.png");
@@ -314,6 +314,7 @@ body#Offer_1 {
   background-size: cover;
   position: absolute;
   top: 24%;
+  border-radius: 10% 10% 10% 10%;
 }
 
 #My_account h3 {

@@ -1,5 +1,11 @@
 <?php
-if (isset($_POST["cookies"])){
+
+if(!isset($_COOKIE['Cookies'])) 
+{
+    setcookie('Cookies', false, time()+ (60*60*24*365.25), '/', false, true);
+}
+
+if (isset($_POST["accept-cookies"])){
 	setcookie('Cookies', true, time()+ (60*60*24*365.25), '/', false, true);
 	header("Location:login");
 	exit;
@@ -65,7 +71,7 @@ if (isset($_POST["cookies"])){
 
                 <div class="cookie-choose">
                     <form action="" method="POST">
-                        <button class="button-cookies" type="submit" name="cookies">Accepter</button>
+                        <button class="button-cookies" type="submit" name="accept-cookies" value="true">Accepter</button>
                     </form>
                 </div>
             </div>

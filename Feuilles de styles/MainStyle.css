@@ -124,8 +124,8 @@ a {
   padding-right: 3%;
   margin: 0.5%;
   border-radius: 40px 40px 40px 40px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
   display: inline;
 }
 
@@ -209,7 +209,8 @@ a:hover {
   right: -70%;
 }
 
-#What, #Where {
+#What,
+#Where {
   height: 300%;
 }
 
@@ -262,8 +263,8 @@ a:hover {
   padding-right: 7%;
   margin: -0.2%;
   border-radius: 0px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
   display: inline;
 }
 
@@ -274,5 +275,54 @@ a:hover {
 
 body#Offer_1 {
   top: 100%;
+}
+
+#My_account {
+  font-family: Calibri, Arial;
+  font-size: 100%;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 30%;
+  height: 1%;
+  float: center;
+  background-size: cover;
+  position: absolute;
+  top: 24%;
+}
+
+#My_account h3 {
+  font-size: 250%;
+  text-decoration: underline;
+}
+
+#My_account .input {
+  height: 300%;
+  width: 75%;
+  margin-left: 10%;
+}
+
+#My_account .button {
+  font-family: Calibri, Arial;
+  color: white;
+  font-size: 150%;
+  background-color: red;
+  text-align: center;
+  text-decoration: none;
+  width: 50%;
+  line-height: 150%;
+  padding: 1%;
+  padding-left: 5%;
+  padding-right: 3%;
+  margin: 5%;
+  margin-left: 23%;
+  border-radius: 40px 40px 40px 40px;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+  display: inline;
+}
+
+#My_account .button:hover {
+  background-color: #be1515;
 }
 /*# sourceMappingURL=MainStyle.css.map */

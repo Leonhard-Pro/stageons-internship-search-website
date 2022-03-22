@@ -160,24 +160,4 @@ input[type="submit"] {
     font-size: 35px;
   }
 }
-
-/*
-a#Nav_3 {
-    font-family: $fontFamily;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    width: 50%;
-    line-height: 25%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 3%;
-    margin: 0.5%;
-    transition: 0.5s;
-    display: inline;
-}
-/*
-a#Nav_3:hover {
-    background-color: $colourForms;
-}*/
 /*# sourceMappingURL=style.css.map */

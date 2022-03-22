@@ -8,7 +8,6 @@ $fontFamily: Calibri, Arial;
 $urlFond: "../Ressources graphiques/CESI_Corporate_Ecole_Ingenieurs-test.jpg";
 $urlLogo: "../Ressources graphiques/logo_cesi_with_text.svg";
 
-
 //General
 body {
     height: 100% auto;
@@ -18,7 +17,6 @@ body {
     background-color: $colourBackground;
     margin-top: 20px;
 }
-
 
 //Headers
 #Icon_offers {
@@ -122,7 +120,7 @@ a {
     padding-right: 3%;
     margin: 0.5%;
     border-radius: 40px 40px 40px 40px;
-    transition: 0.5s;
+    transition: 0.75s;
     display: inline;
 }
 a:hover {
@@ -130,19 +128,17 @@ a:hover {
 }
 
 //Responsiveness
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
     #Icon_offers,
     #Icon_companies,
     #Icon_management,
     #Icon_Advancement,
     #Icon_contacts,
-    #Icon_cloche{
+    #Icon_cloche {
         width: 30px;
         height: 30px;
-        
     }
 }
-
 
 //Companies, Offers (lists)
 #Filtre_1 {
@@ -203,7 +199,8 @@ a:hover {
     right: -70%;
 }
 
-#What, #Where {
+#What,
+#Where {
     height: 300%;
 }
 #Skills,
@@ -219,16 +216,15 @@ a:hover {
 #Evaluation_of_trainees {
     height: 200%;
 }
-.list{
+.list {
     background-color: $colourList;
     box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 100px;
     width: 40%;
-    position:absolute;
+    position: absolute;
     left: 10vh;
     top: 50vh;
 }
-
 
 //Management
 
@@ -242,7 +238,6 @@ a:hover {
     left: 7%;
 
     a {
-        
         font-family: $fontFamily;
         font-weight: bold;
         font-size: 100%;
@@ -259,7 +254,7 @@ a:hover {
         padding-right: 7%;
         margin: -0.2%;
         border-radius: 0px;
-        transition: 0.5s;
+        transition: 0.75s;
         display: inline;
     }
     a:hover {
@@ -274,4 +269,52 @@ body#Offer_1 {
     top: 100%;
 }
 
+// myaccount
 
+#My_account {
+    font-family: $fontFamily;
+    font-size: 100%;
+    background-color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 30%;
+    height: 1%;
+    float: center;
+    background-size: cover;
+    position: absolute;
+    top: 24%;
+
+    h3 {
+        font-size: 250%;
+        text-decoration: underline;
+    }
+
+    .input {
+        height: 300%;
+        width: 75%;
+        margin-left: 10%;
+    }
+
+    .button {
+        font-family: $fontFamily;
+        color: $colourTitles;
+        font-size: 150%;
+        background-color: red;
+        text-align: center;
+        text-decoration: none;
+        width: 50%;
+        line-height: 150%;
+        padding: 1%;
+        padding-left: 5%;
+        padding-right: 3%;
+        margin: 5%;
+        margin-left: 23%;
+        border-radius: 40px 40px 40px 40px;
+        transition: 0.75s;
+        display: inline;
+    }
+
+    .button:hover {
+        background-color: rgb(190, 21, 21);
+    }
+}

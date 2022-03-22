@@ -16,21 +16,26 @@ class Login extends Controller {
         );*/
         //$d['login'] = $this->UserLogin->getUserById();
         //$this->set($d);
-        if(isset($this->data['email'])) {
-            $id_user = $this->UserLogin->loginExist($this->data['email']);
+        if(isset($this->data['email']) && isset($this->data['pwrd'])) {
+            $user = $this->UserLogin->getInfos($this->data['email'], $this->data['pwrd']);
 
-            if($id_user !== -1 && isset($this->data['pwrd'])) {
-                $user = $this->UserLogin->getInfos($this->data['email'], $this->data['pwrd']);
-                if($user === -2) {
+            switch ($user) {             
+                case -1:
+                    $ph['login'] = array(
+                        'error' => 'Wrong User Login!',
+                    );
+                    break;
+                
+                case -2:
                     $ph['login'] = array(
                         'error' => 'Wrong Password!',
                     );
-                }
-                echo "<script>console.log('result: " . json_encode($user) . "');</script>";
-            } else {
-                $ph['login'] = array(
-                    'error' => 'Wrong User Login!',
-                );
+                    break;
+
+                default:
+                    echo "<script>console.log('result: " . json_encode($user) . "');</script>";
+                    header("Location:offers");
+                    break;
             }
             $this->set($ph);
         }

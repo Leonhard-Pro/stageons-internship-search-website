@@ -4,7 +4,11 @@ class Login extends Controller {
     var $models = array('UserLogin');
 
     function index() {
-        //$d = array();
+        $ph = array();
+        $ph['login'] = array(
+            'error' => '',
+        );
+        $this->set($ph);
         ///////////////$this->loadModel('UserLogin');
         /*$d['login'] = array(
             'titre' => 'Veuillez entrer votre login',
@@ -18,12 +22,17 @@ class Login extends Controller {
             if($id_user !== -1 && isset($this->data['pwrd'])) {
                 $user = $this->UserLogin->getInfos($this->data['email'], $this->data['pwrd']);
                 if($user === -2) {
-                    echo "<script>console.log('Wrong Password');</script>";
+                    $ph['login'] = array(
+                        'error' => 'Wrong Password!',
+                    );
                 }
                 echo "<script>console.log('result: " . json_encode($user) . "');</script>";
             } else {
-                echo "<script>console.log('Wrong User Login');</script>";
+                $ph['login'] = array(
+                    'error' => 'Wrong User Login!',
+                );
             }
+            $this->set($ph);
         }
 
         

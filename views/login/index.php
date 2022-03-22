@@ -29,8 +29,8 @@
 
                 <h3 class="Error"><?php echo $login['error']; ?></h3>
 
-                <input name="email" type="email" id="email_id" placeholder="Email address"><br><br>
-                <input name="pwrd" type="password" id="password" placeholder="Password"><br><br>
+                <input name="email" type="email" id="email_id" placeholder="Email address" required><br><br>
+                <input name="pwrd" type="password" id="password" placeholder="Password" required><br><br>
 
                 <input type="checkbox" id="keep_signed_in">
                 <label>Keep me signed in ?</label>

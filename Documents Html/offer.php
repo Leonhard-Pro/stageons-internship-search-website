@@ -14,16 +14,19 @@ include("management.php");
 
 <body>
 
-    <input type="text" id="Name" value="Name :">
-    <input type="text" id="Date" value="Date :">
-    <input type="text" id="Location" value="Location :">
-    <input type="button" id="Search" value="Search">
+    <div id="Offer_1">
+        <input type="text" id="Name" value="Name :">
+        <input type="text" id="Date" value="Date :">
+        <input type="text" id="Location" value="Location :">
+        <input type="button" id="Search" value="Search">
 
-    <br><br>
+        <br><br>
 
-    <input type="button" id="Create_new_offer" value="Create new offer">
+        <input type="button" id="Create_new_offer" value="Create new offer">
 
-    <div id="offer">
+    </div>
+
+    <div id="Offer_2">
         <!--afficher les offer-->
     </div>
 

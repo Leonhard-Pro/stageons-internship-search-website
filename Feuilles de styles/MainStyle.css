@@ -271,4 +271,8 @@ a:hover {
   background-color: #2d7dbc;
   color: white;
 }
+
+body#Offer_1 {
+  top: 100%;
+}
 /*# sourceMappingURL=MainStyle.css.map */

@@ -12,6 +12,17 @@ class Login extends Controller {
         );*/
         //$d['login'] = $this->UserLogin->getUserById();
         //$this->set($d);
+        echo "<script>console.log('Debug Objects: " . print_r($this->data) . "' );</script>";
+        if(!isset($_COOKIE['Cookies'])) {
+            setcookie('Cookies', false, time()+ (60*60*24*365.25), '/', false, false);
+        }
+
+        if (isset($_POST["accept-cookies"])){
+	        setcookie('Cookies', true, time()+ (60*60*24*365.25), '/', false, false);
+	        header("Location:login");
+	        exit;
+        }
+
         $this->render('index');
     }
 }

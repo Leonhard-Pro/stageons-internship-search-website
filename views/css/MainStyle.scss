@@ -22,7 +22,7 @@ body {
 #Icon_offers {
     height: 40px;
     width: 40px;
-    background-image: url("../views/resources/icon_offers.png");
+    background-image: url("../resources/icon_offers.png");
     background-size: cover;
     position: absolute;
     pointer-events: none;
@@ -33,7 +33,7 @@ body {
 #Icon_companies {
     height: 40px;
     width: 40px;
-    background-image: url("../views/resources/icon_companies.png");
+    background-image: url("../resources/icon_companies.png");
     background-size: cover;
     position: absolute;
     pointer-events: none;
@@ -44,7 +44,7 @@ body {
 #Icon_management {
     height: 40px;
     width: 40px;
-    background-image: url("../views/resources/icon_management.png");
+    background-image: url("../resources/icon_management.png");
     background-size: cover;
     position: absolute;
     pointer-events: none;
@@ -55,7 +55,7 @@ body {
 #Icon_Advancement {
     height: 40px;
     width: 40px;
-    background-image: url("../views/resources/icon_advancement.png");
+    background-image: url("../resources/icon_advancement.png");
     background-size: cover;
     position: absolute;
     pointer-events: none;
@@ -66,7 +66,7 @@ body {
 #Icon_contacts {
     height: 42px;
     width: 42px;
-    background-image: url("../views/resources/icon_contacts.png");
+    background-image: url("../resources/icon_contacts.png");
     background-size: cover;
     position: absolute;
     top: 2.5%;
@@ -75,7 +75,7 @@ body {
 #Icon_bell {
     height: 50px;
     width: 50px;
-    background-image: url("../views/resources/icon_cloche.png");
+    background-image: url("../resources/icon_cloche.png");
     background-size: cover;
     position: absolute;
     top: 2%;
@@ -102,7 +102,7 @@ header {
 #logo_cesi_2 {
     height: 80px;
     width: 318.4px;
-    background-image: url("../views/resources/logo_cesi_with_text.png");
+    background-image: url("../resources/logo_cesi_with_text.png");
     background-size: cover;
     position: absolute;
     top: 10px;
@@ -127,18 +127,6 @@ a:hover {
     background-color: red;
 }
 
-//Responsiveness
-@media (max-width: 1200px) {
-    #Icon_offers,
-    #Icon_companies,
-    #Icon_management,
-    #Icon_Advancement,
-    #Icon_contacts,
-    #Icon_cloche {
-        width: 30px;
-        height: 30px;
-    }
-}
 
 //Companies, Offers (lists)
 #Filtre_1 {
@@ -182,7 +170,7 @@ a:hover {
 #Icon_filtre {
     height: 40px;
     width: 40px;
-    background-image: url("../views/resources/icon_filtre.png");
+    background-image: url("../resources/icon_filtre.png");
     background-size: cover;
     position: absolute;
     top: 0%;
@@ -192,13 +180,12 @@ a:hover {
 #Icon_barre {
     height: 40px;
     width: 40px;
-    background-image: url("../views/resources/icon_barre.png");
+    background-image: url("../resources/icon_barre.png");
     background-size: cover;
     position: absolute;
     top: 0%;
     right: -70%;
 }
-
 #What,
 #Where {
     height: 300%;
@@ -219,11 +206,32 @@ a:hover {
 .list {
     background-color: $colourList;
     box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 100px;
-    width: 40%;
+    height: auto;
+    width: 70%;
     position: absolute;
-    left: 10vh;
-    top: 50vh;
+    left: 15%;
+    top: 40vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.tab_list{
+    font-family: $fontFamily;
+    background-color: $colourBackground;
+    width: 90%;
+    height: 90px;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tab_list img{
+    height: 100%;
+    padding-right: 20px;
 }
 
 //Management
@@ -374,5 +382,20 @@ h4 {
 
     .button:hover {
         background-color: rgb(190, 21, 21);
+    }
+}
+
+
+
+//Responsiveness
+@media (max-width: 1200px) {
+    #Icon_offers,
+    #Icon_companies,
+    #Icon_management,
+    #Icon_Advancement,
+    #Icon_contacts,
+    #Icon_cloche {
+        width: 30px;
+        height: 30px;
     }
 }

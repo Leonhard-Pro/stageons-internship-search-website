@@ -111,8 +111,11 @@ body {
 }
 
 #hidden_logo_cesi {
-  height: 25%;
-  width: 60%;
+  width: 55vw;
+  height: 8.5vh;
+  max-width: 312px;
+  min-width: 225px;
+  min-height: 60px;
   display: none;
 }
 

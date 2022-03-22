@@ -135,6 +135,10 @@ input[type="submit"] {
   color: white;
 }
 
+input:hover[type="submit"] {
+  background-color: #00416d;
+}
+
 @media (max-width: 689px) {
   #login_left {
     display: none;

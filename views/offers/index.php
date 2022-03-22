@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Stageons ~ offers</title>
-    <link rel="stylesheet" href="../Feuilles de styles/MainStyle.css">
+    <link rel="stylesheet" href="views/css/MainStyle.css">
     <script src="jquery-3.6.0.min.js"></script>
     <script src=filter.js async></script>
 </head>
 
 <?php
-include("header.html");
+include("Documents Html/header.html");
 ?>
 
 <body>
@@ -38,6 +38,26 @@ include("header.html");
     </div>
 
     <div class="list">
+        <div class="tab_list">
+            <img src="views/resources/icon_google.png" alt="icon" class="icon_tab_list">
+            <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse.</p>
+        </div>
+        <div class="tab_list">
+            <img src="views/resources/icon_google.png" alt="icon" class="icon_tab_list">
+            <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse.</p>
+        </div>
+        <div class="tab_list">
+            <img src="views/resources/icon_google.png" alt="icon" class="icon_tab_list">
+            <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse.</p>
+        </div>
+        <div class="tab_list">
+            <img src="views/resources/icon_google.png" alt="icon" class="icon_tab_list">
+            <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse.</p>
+        </div>
+        <div class="tab_list">
+            <img src="views/resources/icon_google.png" alt="icon" class="icon_tab_list">
+            <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse.</p>
+        </div>
         <!--affichage des offres-->
     </div>
 

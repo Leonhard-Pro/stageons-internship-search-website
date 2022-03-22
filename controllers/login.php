@@ -1,7 +1,7 @@
 <?php
 class Login extends Controller {
 
-    //var $models = array('UserLogin');
+    var $models = array('UserLogin');
 
     function index() {
         //$d = array();
@@ -12,7 +12,22 @@ class Login extends Controller {
         );*/
         //$d['login'] = $this->UserLogin->getUserById();
         //$this->set($d);
-        echo "<script>console.log('Debug Objects: " . print_r($this->data) . "' );</script>";
+        if(isset($this->data['email'])) {
+            $id_user = $this->UserLogin->loginExist($this->data['email']);
+
+            if($id_user !== -1 && isset($this->data['pwrd'])) {
+                $user = $this->UserLogin->getInfos($this->data['email'], $this->data['pwrd']);
+                if($user === -2) {
+                    echo "<script>console.log('Wrong Password');</script>";
+                }
+                echo "<script>console.log('result: " . json_encode($user) . "');</script>";
+            } else {
+                echo "<script>console.log('Wrong User Login');</script>";
+            }
+        }
+
+        
+        
         if(!isset($_COOKIE['Cookies'])) {
             setcookie('Cookies', false, time()+ (60*60*24*365.25), '/', false, false);
         }

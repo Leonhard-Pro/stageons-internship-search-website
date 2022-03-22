@@ -1,0 +1,99 @@
+$colorBackground: #00416d;
+$colorFont: rgb(209, 209, 209);
+
+
+$colorButtonBackground: #2CE080;
+$colorButtonBackgroundHover: #20aa61;
+$colorButtonFont: #000;
+$colorButtonFontHover:#fff;
+
+
+.blurry_background-cookies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+}
+
+.cookie-handband {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 75%;
+    border-radius: 1vw 1vw 0 0;
+    background-color: $colorBackground;
+    padding: 0 4vw;
+
+}
+  
+.cookie-informations { 
+    max-width: 660px; 
+    margin: 0 auto;
+    padding: 32px 0;
+    
+}
+  
+.cookie-tag-management { 
+    margin-bottom: 16px;
+}
+  
+#logo_cesi-cookies {
+    width: 40vw;
+    height: 10vh;
+    max-width: 312px; 
+    min-width: 225px;
+    min-height: 90px;
+}
+
+.cookie-title {
+    margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: $colorFont;
+    text-align: center;
+}
+  
+.cookies-warning {
+    font-weight: normal;
+    color: $colorFont;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+}
+
+.cookie-choose {
+    text-align: center;
+}
+
+  
+.button-cookies {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 164px;
+    padding: 11px 13px;
+    
+    background-color: $colorButtonBackground;
+     
+    color: $colorButtonFont;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    border-radius: 40px;
+
+    transition: 0.75s;
+}
+
+.button-cookies:hover {
+    background-color: $colorButtonBackgroundHover;
+    color: $colorButtonFontHover;
+}

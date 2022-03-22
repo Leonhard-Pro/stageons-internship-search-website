@@ -106,7 +106,7 @@ body {
 }
 
 #Error {
-  color: #00416d;
+  background-color: red;
   color: red;
   font-size: 50px;
   font-weight: 350;

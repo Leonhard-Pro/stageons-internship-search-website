@@ -87,6 +87,13 @@ body {
     text-decoration: underline;
 }
 
+#text_login h3 {
+    //font-size: 50px;
+    //font-weight: 350;
+    color: red;
+    margin-top: -10%;
+}
+
 #hidden_logo_cesi{
     height: 25%;
     width: 60%;
@@ -138,24 +145,3 @@ input[type="submit"] {
         font-size: 35px;
     }
 }
-
-// management
-/*
-a#Nav_3 {
-    font-family: $fontFamily;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    width: 50%;
-    line-height: 25%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 3%;
-    margin: 0.5%;
-    transition: 0.5s;
-    display: inline;
-}
-/*
-a#Nav_3:hover {
-    background-color: $colourForms;
-}*/

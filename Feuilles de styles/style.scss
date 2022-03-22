@@ -78,6 +78,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 #text_login h1 {
@@ -85,6 +86,14 @@ body {
     font-weight: 350;
     color: $colourFont;
     text-decoration: underline;
+}
+
+#Error {
+    color: $colourFont;
+    color: red;
+    font-size: 50px;
+    font-weight: 350;
+    margin: -50%;
 }
 
 #hidden_logo_cesi{
@@ -128,6 +137,8 @@ input[type="submit"] {
         display:inline;
     }
 }
+
+
 
 @media (max-height: 418.8px) {
     #logo_cesi {

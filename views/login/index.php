@@ -27,6 +27,8 @@
                 <img src="views/resources/logo_cesi_with_text_black.png" alt="Logo Cesi" id="hidden_logo_cesi">
                 <h1>LOGIN</h1>
 
+                <h3 class="Error">test</h3>
+
                 <input name="email" type="email" id="email_id" placeholder="Email address"><br><br>
                 <input name="pwrd" type="password" id="password" placeholder="Password"><br><br>
 

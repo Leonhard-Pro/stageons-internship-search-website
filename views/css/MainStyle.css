@@ -16,7 +16,7 @@ body {
 #Icon_offers {
   height: 40px;
   width: 40px;
-  background-image: url("../views/resources/icon_offers.png");
+  background-image: url("../resources/icon_offers.png");
   background-size: cover;
   position: absolute;
   pointer-events: none;
@@ -28,7 +28,7 @@ body {
 #Icon_companies {
   height: 40px;
   width: 40px;
-  background-image: url("../views/resources/icon_companies.png");
+  background-image: url("../resources/icon_companies.png");
   background-size: cover;
   position: absolute;
   pointer-events: none;
@@ -40,7 +40,7 @@ body {
 #Icon_management {
   height: 40px;
   width: 40px;
-  background-image: url("../views/resources/icon_management.png");
+  background-image: url("../resources/icon_management.png");
   background-size: cover;
   position: absolute;
   pointer-events: none;
@@ -52,7 +52,7 @@ body {
 #Icon_Advancement {
   height: 40px;
   width: 40px;
-  background-image: url("../views/resources/icon_advancement.png");
+  background-image: url("../resources/icon_advancement.png");
   background-size: cover;
   position: absolute;
   pointer-events: none;
@@ -64,17 +64,17 @@ body {
 #Icon_contacts {
   height: 42px;
   width: 42px;
-  background-image: url("../views/resources/icon_contacts.png");
+  background-image: url("../resources/icon_contacts.png");
   background-size: cover;
   position: absolute;
   top: 2.5%;
   right: 5%;
 }
 
-#Icon_cloche {
+#Icon_bell {
   height: 50px;
   width: 50px;
-  background-image: url("../views/resources/icon_cloche.png");
+  background-image: url("../resources/icon_cloche.png");
   background-size: cover;
   position: absolute;
   top: 2%;
@@ -105,7 +105,7 @@ header {
 #logo_cesi_2 {
   height: 80px;
   width: 318.4px;
-  background-image: url("../views/resources/logo_cesi_with_text.png");
+  background-image: url("../resources/logo_cesi_with_text.png");
   background-size: cover;
   position: absolute;
   top: 10px;
@@ -124,25 +124,13 @@ a {
   padding-right: 3%;
   margin: 0.5%;
   border-radius: 40px 40px 40px 40px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
   display: inline;
 }
 
 a:hover {
   background-color: red;
-}
-
-@media (max-width: 1200px) {
-  #Icon_offers,
-  #Icon_companies,
-  #Icon_management,
-  #Icon_Advancement,
-  #Icon_contacts,
-  #Icon_cloche {
-    width: 30px;
-    height: 30px;
-  }
 }
 
 #Filtre_1 {
@@ -192,7 +180,7 @@ a:hover {
 #Icon_filtre {
   height: 40px;
   width: 40px;
-  background-image: url("../views/resources/icon_filtre.png");
+  background-image: url("../resources/icon_filtre.png");
   background-size: cover;
   position: absolute;
   top: 0%;
@@ -202,14 +190,15 @@ a:hover {
 #Icon_barre {
   height: 40px;
   width: 40px;
-  background-image: url("../views/resources/icon_barre.png");
+  background-image: url("../resources/icon_barre.png");
   background-size: cover;
   position: absolute;
   top: 0%;
   right: -70%;
 }
 
-#What, #Where {
+#What,
+#Where {
   height: 300%;
 }
 
@@ -231,11 +220,49 @@ a:hover {
   background-color: #f9f9fd;
   -webkit-box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 100px;
-  width: 40%;
+  height: auto;
+  width: 70%;
   position: absolute;
-  left: 10vh;
-  top: 50vh;
+  left: 15%;
+  top: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tab_list {
+  font-family: Calibri, Arial;
+  background-color: #edf2fc;
+  width: 90%;
+  height: 90px;
+  margin: 20px;
+  padding: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tab_list img {
+  height: 100%;
+  padding-right: 20px;
 }
 
 #Nav_2 {
@@ -262,8 +289,8 @@ a:hover {
   padding-right: 7%;
   margin: -0.2%;
   border-radius: 0px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
   display: inline;
 }
 
@@ -272,7 +299,126 @@ a:hover {
   color: white;
 }
 
-body#Offer_1 {
-  top: 100%;
+#Offer_1 {
+  height: 4%;
+  width: 100%;
+  float: center;
+  background-size: cover;
+  position: absolute;
+  top: 35%;
+  left: 15%;
+}
+
+#Offer_1 .input {
+  width: 15%;
+  margin-left: 0.5%;
+  display: inline;
+}
+
+#Offer_1 #Name,
+#Offer_1 #Date,
+#Offer_1 #Location {
+  height: 90%;
+}
+
+#Offer_1 #Search {
+  height: 100%;
+  width: 10%;
+}
+
+#Offer_1 #Create_new_offer {
+  background-color: white;
+  width: 40%;
+  height: 100%;
+  padding-top: 10%;
+  text-align: center;
+  float: center;
+  background-size: cover;
+  position: absolute;
+  left: 10%;
+}
+
+#Icon_cross {
+  height: 150px;
+  width: 150px;
+  background-image: url("../views/resources/icon_cross.png");
+  background-size: cover;
+  position: absolute;
+  pointer-events: none;
+  top: 42%;
+  left: 41.5%;
+}
+
+h4 {
+  font-family: Calibri, Arial;
+  font-size: 150%;
+  color: green;
+  background-size: cover;
+  position: absolute;
+  pointer-events: none;
+  top: 55%;
+  left: 41%;
+}
+
+#My_account {
+  font-family: Calibri, Arial;
+  font-size: 100%;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 30%;
+  height: 1%;
+  float: center;
+  background-size: cover;
+  position: absolute;
+  top: 24%;
+  border-radius: 10% 10% 10% 10%;
+}
+
+#My_account h3 {
+  font-size: 250%;
+  text-decoration: underline;
+}
+
+#My_account .input {
+  height: 300%;
+  width: 75%;
+  margin-left: 10%;
+}
+
+#My_account .button {
+  font-family: Calibri, Arial;
+  color: white;
+  font-size: 150%;
+  background-color: red;
+  text-align: center;
+  text-decoration: none;
+  width: 50%;
+  line-height: 150%;
+  padding: 1%;
+  padding-left: 5%;
+  padding-right: 3%;
+  margin: 5%;
+  margin-left: 23%;
+  border-radius: 40px 40px 40px 40px;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+  display: inline;
+}
+
+#My_account .button:hover {
+  background-color: #be1515;
+}
+
+@media (max-width: 1200px) {
+  #Icon_offers,
+  #Icon_companies,
+  #Icon_management,
+  #Icon_Advancement,
+  #Icon_contacts,
+  #Icon_cloche {
+    width: 30px;
+    height: 30px;
+  }
 }
 /*# sourceMappingURL=MainStyle.css.map */

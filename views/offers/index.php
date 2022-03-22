@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Stageons ~ offers</title>
-    <link rel="stylesheet" href="../Feuilles de styles/MainStyle.css">
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src=filter.js async></script>
+    <link rel="stylesheet" href="views/css/MainStyle.css">
+    <script src="views/js/jquery-3.6.0.min.js"></script>
+    <script src="views/js/filter.js" async></script>
 </head>
 
 <?php
-include("header.html");
+include("Documents Html/header.html");
 ?>
 
 <body>
@@ -38,7 +38,18 @@ include("header.html");
     </div>
 
     <div class="list">
-        <!--affichage des offres-->
+        <?php
+        for ($i=0; $i<10; $i++)
+        {
+            echo("<div class=\"tab_list\">");
+            echo("<img src=\"views/resources/icon_google.png\" alt=\"icon\" class=\"icon_tab_list\">");
+            echo("<div>");
+            echo("<h3>Title of the offer</h3>");
+            echo("<p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse. We continue, as we want to test responsiveness and any kind of automatic modification.</p>");
+            echo("</div>");
+            echo("</div>");
+        }
+        ?>
     </div>
 
     <div id="offres_more">

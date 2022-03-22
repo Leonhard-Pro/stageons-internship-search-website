@@ -1,3 +1,8 @@
-document.getElementById("myButton").onclick = function () {
-    location.href = "www.yoursite.com";
+
+function Contacts(){
+    location.href = "myaccount.php";
+};
+
+function Bell(){
+    location.href = "notifications.html";
 };

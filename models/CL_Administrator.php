@@ -23,32 +23,32 @@ class Administrator{
     //Public
 
     //Protected
-    protected function getUserType()
+    public function getUserType()
     {
         return $this->_User_Type;
     }
 
-    protected function getId_User()
+    public function getId_User()
     {
         return $this->_Id_User;
     }
 
-    protected function getId_Administrator()
+    public function getId_Administrator()
     {
         return $this->_Id_Administrator;
     }
 
-    protected function getLogin()
+    public function getLogin()
     {
         return $this->_Login;
     }
 
-    protected function getPassword_Login()
+    public function getPassword_Login()
     {
         return $this->_Password_Login;
     }
 
-    protected function getAuthorization()
+    public function getAuthorization()
     {
         return $this->_Authorizations;
     }

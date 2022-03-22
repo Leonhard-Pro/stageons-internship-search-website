@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Stageons ~ companies</title>
-    <link rel="stylesheet" href="../Feuilles de styles/MainStyle.css">
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src=filter.js async></script>
+    <link rel="stylesheet" href="views/css/MainStyle.css">
+    <script src="views/js/jquery-3.6.0.min.js"></script>
+    <script src="views/js/filter.js" async></script>
 </head>
 
-<?php
-include("header.html");
-?>
-
 <body>
+    <?php
+        include("Documents Html/header.html");
+    ?>
     <div id="Filtre_1">
         <input type="text" id="What" placeholder="What :">
         <input type="text" id="Where" placeholder="Where :">

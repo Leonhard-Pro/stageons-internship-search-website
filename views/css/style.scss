@@ -88,8 +88,6 @@ body {
 }
 
 #text_login h3 {
-    //font-size: 50px;
-    //font-weight: 350;
     color: red;
     margin-top: -10%;
 }
@@ -117,6 +115,10 @@ input[type="submit"] {
     width: 150px;
     height: 35px;
     color: white;
+}
+
+input:hover[type="submit"] {
+    background-color: #00416d;
 }
 
 @media (max-width: 689px){

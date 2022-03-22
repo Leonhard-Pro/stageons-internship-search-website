@@ -32,7 +32,9 @@ class UserLogin extends Model {
             'conditions' => "Login = '$login' AND Password_Login = '$pwrd'",
             'order' => 'Id_User ASC'
         ));
-        if($user == false) return -2;
+        if($user == false) {
+            return -2;
+        }
 
         return $user;
     }

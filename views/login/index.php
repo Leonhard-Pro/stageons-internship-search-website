@@ -29,8 +29,8 @@
 
                 <h3 class="Error"><?php echo $login['error']; ?></h3>
 
-                <input name="email" type="email" id="email_id" placeholder="Email address"><br><br>
-                <input name="pwrd" type="password" id="password" placeholder="Password"><br><br>
+                <input name="email" type="email" id="email_id" placeholder="Email address" required><br><br>
+                <input name="pwrd" type="password" id="password" placeholder="Password" required><br><br>
 
                 <input type="checkbox" id="keep_signed_in">
                 <label>Keep me signed in ?</label>
@@ -41,7 +41,7 @@
             </div>
 
         </div>
-
+</form>
         <?php if (!isset($_COOKIE['Cookies']) || $_COOKIE['Cookies'] == false): ?>
             <div class="blurry_background-cookies">
 
@@ -50,21 +50,21 @@
             <div class="cookie-informations">
                 <div class="cookie-tag-management">
                 <img src="views/resources/logo_cesi_with_text.svg" alt="Logo Cesi" id="logo_cesi-cookies">
-                <div class="cookie-title">CE SITE UTILISE LES COOKIES</div>
+                <div class="cookie-title">THIS SITE USES COOKIES</div>
                 <div class="cookies-warning">
-                    Nous utilisons des cookies pour personnaliser le contenu et les publicités, pour fournir des fonctionnalités de médias sociaux et pour analyser notre trafic. Nous partageons également des informations sur votre utilisation de notre site avec nos partenaires de médias sociaux, de publicité et d'analyse qui peuvent les combiner avec d'autres informations que vous leur avez fournies ou qu'ils ont collectées à partir de votre utilisation de leurs services. Vous consentez à nos cookies si vous continuez à utiliser notre site web.
+                We use cookies to personalize content and advertisements, to provide social media features and to analyze our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you have provided to them or that they have collected from your use of their services. You consent to our cookies if you continue to use our website.
                 </div>
                 </div>
 
                 <div class="cookie-choose">
                     <form action="" method="POST">
-                        <button class="button-cookies" type="submit" name="accept-cookies" value="true">Accepter</button>
+                        <button class="button-cookies" type="submit" name="accept-cookies" value="">Accept</button>
                     </form>
                 </div>
             </div>
             </div>
         <?php endif; ?>
-    </form>
+    
 </body>
 
 </html>

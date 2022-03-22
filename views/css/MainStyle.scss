@@ -19,50 +19,66 @@ body {
 }
 
 //Headers
-#Icon_offers {
+#Link_offers{
     height: 40px;
-    width: 40px;
-    background-image: url("../resources/icon_offers.png");
-    background-size: cover;
+    width: 100px;
     position: absolute;
-    pointer-events: none;
-    top: 13%;
+    top: 12%;
     left: 2%;
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
-#Icon_companies {
+    #Link_offers img{
+        height: 100%;
+        padding-left: 5px;
+        padding-right: 20px;
+    }    
+#Link_companies {
     height: 40px;
-    width: 40px;
-    background-image: url("../resources/icon_companies.png");
-    background-size: cover;
+    width: 150px;
     position: absolute;
-    pointer-events: none;
-    top: 12.5%;
-    left: 13%;
-    display: inline;
+    top: 12%;
+    left: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
-#Icon_management {
+    #Link_companies img{
+        height: 100%;
+        padding-left: 5px;
+        padding-right: 20px;
+    }    
+#Link_management {
     height: 40px;
-    width: 40px;
-    background-image: url("../resources/icon_management.png");
-    background-size: cover;
+    width: 150px;
     position: absolute;
-    pointer-events: none;
-    top: 13%;
-    left: 26%;
-    display: inline;
+    top: 12%;
+    left: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
-#Icon_Advancement {
+    #Link_management img{
+        height: 100%;
+        padding-left: 5px;
+        padding-right: 20px;
+    } 
+#Link_Advancement {
     height: 40px;
-    width: 40px;
-    background-image: url("../resources/icon_advancement.png");
-    background-size: cover;
+    width: 150px;
     position: absolute;
-    pointer-events: none;
-    top: 13%;
-    left: 40%;
-    display: inline;
+    top: 12%;
+    left: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
+    #Link_Advancement img{
+        height: 100%;
+        padding-left: 5px;
+        padding-right: 20px;
+    } 
 #Icon_contacts {
     height: 42px;
     width: 42px;
@@ -108,20 +124,18 @@ header {
     top: 10px;
     left: 10px;
 }
-a {
+a{
     font-family: $fontFamily;
     color: $colourTitles;
-    text-align: center;
+    display: block;
     text-decoration: none;
-    width: 15%;
-    line-height: 15%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 3%;
-    margin: 0.5%;
     border-radius: 40px 40px 40px 40px;
     transition: 0.75s;
-    display: inline;
+    line-height: 15%;
+    padding: 0.2%;
+    padding-left: 0.5%;
+    padding-right: 1.3%;
+    margin: 0.05%;
 }
 a:hover {
     background-color: red;

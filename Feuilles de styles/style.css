@@ -105,6 +105,14 @@ body {
   text-decoration: underline;
 }
 
+#Error {
+  color: #00416d;
+  color: red;
+  font-size: 50px;
+  font-weight: 350;
+  margin: -50%;
+}
+
 #hidden_logo_cesi {
   height: 25%;
   width: 60%;

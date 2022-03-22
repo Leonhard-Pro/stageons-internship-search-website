@@ -2,11 +2,11 @@
 
 if(!isset($_COOKIE['Cookies'])) 
 {
-    setcookie('Cookies', false, time()+ (60*60*24*365.25), '/', false, true);
+    setcookie('Cookies', false, time()+ (60*60*24*365.25), '/', false, false);
 }
 
 if (isset($_POST["accept-cookies"])){
-	setcookie('Cookies', true, time()+ (60*60*24*365.25), '/', false, true);
+	setcookie('Cookies', true, time()+ (60*60*24*365.25), '/', false, false);
 	header("Location:login");
 	exit;
 }

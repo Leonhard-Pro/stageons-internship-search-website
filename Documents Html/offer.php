@@ -8,23 +8,25 @@
 </head>
 
 <?php
-include("header.html");
 include("management.php");
 ?>
 
 <body>
 
     <div id="Offer_1">
-        <input type="text" id="Name" value="Name :">
-        <input type="text" id="Date" value="Date :">
-        <input type="text" id="Location" value="Location :">
-        <input type="button" id="Search" value="Search">
+        <input type="text" id="Name" class="input" placeholder="Name :">
+        <input type="text" id="Date" class="input" placeholder="Date :">
+        <input type="text" id="Location" class="input" placeholder="Location :">
+        <input type="button" id="Search" class="input" value="Search">
 
         <br><br>
 
         <input type="button" id="Create_new_offer" value="Create new offer">
 
     </div>
+
+    <div id="Icon_cross"></div>
+    <h4>Create new offer</h4>
 
     <div id="Offer_2">
         <!--afficher les offer-->

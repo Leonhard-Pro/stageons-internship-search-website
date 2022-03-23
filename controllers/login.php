@@ -44,8 +44,8 @@ class Login extends Controller {
 
                 default:
                     $debug = (array) $user;
+                    header("Location:offers");
                     echo "<script>console.log(JSON.parse(JSON.stringify(" . json_encode($debug) . ")));</script>";
-                    //header("Location:offers");
                     break;
             }
             $this->set($ph);

@@ -322,56 +322,6 @@ a:hover {
   top: 100%;
 }
 
-#My_account {
-  font-family: Calibri, Arial;
-  font-size: 100%;
-  background-color: white;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-bottom: 30%;
-  height: 1%;
-  float: center;
-  background-size: cover;
-  position: absolute;
-  top: 24%;
-  border-radius: 10% 10% 10% 10%;
-}
-
-#My_account h3 {
-  font-size: 250%;
-  text-decoration: underline;
-}
-
-#My_account .input {
-  height: 300%;
-  width: 75%;
-  margin-left: 10%;
-}
-
-#My_account .button {
-  font-family: Calibri, Arial;
-  color: white;
-  font-size: 150%;
-  background-color: red;
-  text-align: center;
-  text-decoration: none;
-  width: 50%;
-  line-height: 150%;
-  padding: 1%;
-  padding-left: 5%;
-  padding-right: 3%;
-  margin: 5%;
-  margin-left: 23%;
-  border-radius: 40px 40px 40px 40px;
-  -webkit-transition: 0.75s;
-  transition: 0.75s;
-  display: inline;
-}
-
-#My_account .button:hover {
-  background-color: #be1515;
-}
-
 @media (max-width: 780px) {
   #Icon_contacts,
   #Icon_bell {

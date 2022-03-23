@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Stageons ~ Advancement</title>
-    <link rel="stylesheet" href="../Feuilles de styles/MainStyle.css">
+    <link rel="stylesheet" href="views/css/MainStyle">
 </head>
 
 <header>

@@ -2,15 +2,14 @@ body {
   height: auto;
   background-color: #edf2fc;
   margin: 0px;
-  margin-top: 20px;
 }
 
 #Link_offers {
   height: 40px;
-  width: 100px;
+  width: 120px;
   position: absolute;
   top: 150px;
-  left: 2%;
+  left: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +32,7 @@ body {
   width: 150px;
   position: absolute;
   top: 150px;
-  left: 12%;
+  left: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,10 +52,10 @@ body {
 
 #Link_management {
   height: 40px;
-  width: 150px;
+  width: 160px;
   position: absolute;
   top: 150px;
-  left: 22%;
+  left: 390px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,10 +75,10 @@ body {
 
 #Link_Advancement {
   height: 40px;
-  width: 150px;
+  width: 160px;
   position: absolute;
   top: 150px;
-  left: 32%;
+  left: 590px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,14 +96,27 @@ body {
   padding-right: 20px;
 }
 
+#top_left_icons {
+  position: relative;
+  right: -1720px;
+  top: -120px;
+  width: 110px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 #Icon_contacts {
-  height: 42px;
-  width: 42px;
+  height: 50px;
+  width: 50px;
   background-image: url("../resources/icon_contacts.png");
   background-size: cover;
-  position: absolute;
-  top: 2.5%;
-  right: 5%;
+  margin-right: 15px;
 }
 
 #Icon_bell {
@@ -112,15 +124,6 @@ body {
   width: 50px;
   background-image: url("../resources/icon_cloche.png");
   background-size: cover;
-  position: absolute;
-  top: 2%;
-  right: 1%;
-}
-
-#container {
-  top: 50%;
-  background-position-x: 0%;
-  background-position-y: 50%;
 }
 
 h1 {
@@ -135,7 +138,7 @@ header {
   width: 100%;
   height: 180px;
   padding: 1% 1% 2%;
-  margin: -2%;
+  margin: 0%;
 }
 
 #logo_cesi_2 {
@@ -151,15 +154,12 @@ header {
 a {
   font-family: Calibri, Arial;
   color: white;
-  display: block;
   text-decoration: none;
   border-radius: 40px 40px 40px 40px;
   -webkit-transition: 0.75s;
   transition: 0.75s;
   line-height: 15%;
   padding: 0.2%;
-  padding-left: 0.5%;
-  padding-right: 1.3%;
   margin: 0.05%;
 }
 
@@ -195,29 +195,13 @@ a:hover {
   left: 35%;
 }
 
-#bouton {
-  position: relative;
-  bottom: 115%;
-  left: 16vw;
-  width: 150px;
-}
-
-#Search {
-  font-family: Calibri, Arial;
-  background-color: #2d7dbc;
-  color: white;
-  line-height: 200%;
-  width: 100%;
-  border-radius: 40px 40px 40px 40px;
-}
-
 #Icon_filtre {
   height: 40px;
   width: 40px;
   background-image: url("../resources/icon_filtre.png");
   background-size: cover;
   position: relative;
-  bottom: 62px;
+  bottom: 39px;
   left: 470px;
 }
 
@@ -234,6 +218,15 @@ a:hover {
 #What,
 #Where {
   height: 100%;
+}
+
+#Search {
+  font-family: Calibri, Arial;
+  background-color: #2d7dbc;
+  color: white;
+  line-height: 200%;
+  width: 150px;
+  border-radius: 40px 40px 40px 40px;
 }
 
 #Skills,
@@ -273,7 +266,7 @@ a:hover {
 
 .tab_list {
   font-family: Calibri, Arial;
-  background-color: #edf2fc;
+  background-color: #f9f9fd;
   width: 90%;
   height: 90px;
   margin: 20px;
@@ -289,11 +282,6 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.tab_list img {
-  height: 100%;
-  padding-right: 20px;
 }
 
 #Nav_2 {
@@ -384,13 +372,9 @@ a:hover {
   background-color: #be1515;
 }
 
-@media (max-width: 1200px) {
-  #Icon_offers,
-  #Icon_companies,
-  #Icon_management,
-  #Icon_Advancement,
+@media (max-width: 780px) {
   #Icon_contacts,
-  #Icon_cloche {
+  #Icon_bell {
     width: 30px;
     height: 30px;
   }

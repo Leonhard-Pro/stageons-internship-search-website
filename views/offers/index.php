@@ -11,6 +11,7 @@ require("models/SessionStart.php");
     <link rel="stylesheet" href="views/css/MainStyle.css">
     <script src="views/js/jquery-3.6.0.min.js"></script>
     <script src="views/js/filter.js" async></script>
+    <script src="views/js/header.js" async></script>
 </head>
 
 <body>
@@ -21,9 +22,7 @@ include("Documents Html/header.html");
         <div id="Filtre_1" class="Filtre">
             <input type="text" id="What" placeholder="What :">
             <input type="text" id="Where" placeholder="Where :">
-            <div id="bouton">
-                <input type="button" id="Search" value="Search">
-            </div>
+            <input type="button" id="Search" value="Search">
             <div id=Icon_filtre onclick="Show_all()"></div>
             <div id=Icon_barre onclick="Show_all()"></div>
         </div>

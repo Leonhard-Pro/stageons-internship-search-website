@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Stageons ~ Advancement</title>
-    <link rel="stylesheet" href="views/css/MainStyle">
+    <link rel="stylesheet" href="views/css/MainStyle.css">
 </head>
 
 
 
 <body>
     <?php
-        include("views/layout/header.html");
+        include("views/layout/header.php");
     ?>
     <input type="text" id="Surname" value="Surname :">
     <input type="text" id="First_name" value="First name :">

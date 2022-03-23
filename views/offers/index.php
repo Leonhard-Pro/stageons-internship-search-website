@@ -18,7 +18,7 @@ require("models/SessionStart.php");
 
 <body>
     <?php
-        include("views/layout/header.html");
+        include("views/layout/header.php");
         include("views/layout/filters.php");
     ?>
     <div class="list">

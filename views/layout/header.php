@@ -1,4 +1,9 @@
 <header>
+
+        <div id="top_left_icons">
+            <div id="Icon_contacts" onclick="Contacts()"></div>
+            <div id="Icon_bell" onclick="Bell()"></div>
+        </div>
         <div id="logo_cesi_2"></div>
         <h1>Stageons</h1>
 
@@ -22,11 +27,6 @@
                 </a>
             </td>
         </nav>
-
-        <div id="top_left_icons">
-            <div id="Icon_contacts" onclick="Contacts()"></div>
-            <div id="Icon_bell" onclick="Bell()"></div>
-        </div>
 </header>
 
 

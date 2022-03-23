@@ -8,6 +8,7 @@ require(ROOT.'core/controller.php');
 //get the differents parameters from the URL
 $params = explode('/', $_GET['p']);
 $controller = ucfirst($params[0]);
+$controller == null ? $controller = "login" : 0;
 $action = isset($params[1]) ? $params[1] : 'index'; //if no file called from URL load index
 
 //include the file that is asked by the URL

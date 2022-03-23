@@ -19,29 +19,8 @@ require("models/SessionStart.php");
 <body>
     <?php
         include("views/layout/header.html");
+        include("views/layout/filters.php");
     ?>
-    <div id="Filtres">
-        <div id="Filtre_1" class="Filtre">
-            <input type="text" id="What" placeholder="What :">
-            <input type="text" id="Where" placeholder="Where :">
-            <input type="button" id="Search" value="Search">
-            <div id=Icon_filtre onclick="Show_all()"></div>
-            <div id=Icon_barre onclick="Show_all()"></div>
-        </div>
-        <div id="Filtre_2" class="Filtre">
-            <input type="text" id="Skills" placeholder="Skills :">
-            <input type="text" id="Date" placeholder="Date of beginning :">
-            <input type="text" id="Companies" placeholder="Companies :">
-            <input type="text" id="Duration" placeholder="Duration :">
-            <br><br>
-        </div>
-        <div id="Filtre_3" class="Filtre">
-            <input type="text" id="Class_concerned" placeholder="Concerned classes :">
-            <input type="text" id="Remuneration" placeholder="Remuneration :">
-            <input type="text" id="Number_places" placeholder="Number of places :">
-
-        </div>
-    </div>
     <div class="list">
         <?php
         for ($i=0; $i<10; $i++)

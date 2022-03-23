@@ -1,5 +1,5 @@
 <?php
-class Advencement extends Controller {
+class Advancement extends Controller {
 
     function index() {
         $this->render('index');

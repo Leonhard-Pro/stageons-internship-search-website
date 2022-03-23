@@ -76,24 +76,28 @@ body {
         padding-left: 5px;
         padding-right: 20px;
     } 
-#Icon_contacts {
-    height: 50px;
-    width: 50px;
-    background-image: url("../resources/icon_contacts.png");
-    background-size: cover;
-    position: relative;
-    top: -140px;
-    right: -1710px;
+#top_left_icons{
+    position:relative;
+    right: -1720px;
+    top: -120px;
+    width: 110px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
 }
-#Icon_bell {
-    height: 50px;
-    width: 50px;
-    background-image: url("../resources/icon_cloche.png");
-    background-size: cover;
-    position: relative;
-    top: -189px;
-    right: -1805;
-}
+    #Icon_contacts {
+        height: 50px;
+        width: 50px;
+        background-image: url("../resources/icon_contacts.png");
+        background-size: cover;
+        margin-right: 15px;
+    }
+    #Icon_bell {
+        height: 50px;
+        width: 50px;
+        background-image: url("../resources/icon_cloche.png");
+        background-size: cover;
+    }
 h1 {
     font-family: $fontFamily;
     font-size: 50px;
@@ -162,7 +166,7 @@ a:hover {
     background-image: url("../resources/icon_filtre.png");
     background-size: cover;
     position: relative;
-    bottom: 62px;
+    bottom: 39px;
     left: 470px;
 }
 #Icon_barre {

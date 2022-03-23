@@ -19,7 +19,7 @@ include("views/layout/header.php");
         <div id="account-box-informations">
             <h3>Personnal information</h3>
             <input readonly="readonly" type="text" id="Login" value="<?php echo $user->getLogin(); ?>">
-            <input readonly="readonly" type="password" id="Password" value="<?php echo $user->getPassword_Login(); ?>">
+            <input readonly="readonly" type="password" id="Password" value="<?php echo $user->getPassword(); ?>">
             <?php if ($userType == "Student" || $userType == "Class_Pilot" || $userType == "Delegate"): ?>
                 <input readonly="readonly" type="text" id="First_name" value="<?php echo $user->getFirstName(); ?>">
                 <input readonly="readonly" type="text" id="Surname" value="<?php echo $user->getName(); ?>">

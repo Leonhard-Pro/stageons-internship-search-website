@@ -8,6 +8,6 @@ require(ROOT.'core/user/groups/Student.php');
 session_start();
 if(isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
-    $userType = $user->getUserType();
+    $userType = $user->getType();
 }
 ?>

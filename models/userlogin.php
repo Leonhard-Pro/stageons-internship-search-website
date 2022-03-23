@@ -1,3 +1,8 @@
+<?php 
+    require 'convertStringToBinaryArray.php';
+    require 'SessionStart.php'
+?>
+
 <?php
 class UserLogin extends Model {
     
@@ -36,7 +41,114 @@ class UserLogin extends Model {
             return -2;
         }
 
+        $user = $this->getUserObject($login, $pwrd);
+        $_SESSION['user'] = $user;
+
+        if($user == -3) {
+            return -3;
+        }
+
+
+
         return $user;
+    }
+
+    function getAdminObject($id_user) {
+
+        $this->table = ' administrator LEFT JOIN user ON administrator.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization ';
+
+        $user = $this->find(array(
+            'conditions' => " administrator.Id_User = ". $id_user ." ",
+            'fields' => ' administrator.Id_Administrator, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code ',
+            'order' => ' Id_Administrator ASC '
+        ));
+
+        if($user == false) return false;
+
+        $authorizations = convertStringToBinaryArray($user->Authorization_Code);
+        $administrator = new Administrator($user->Id_User, $user->Id_Administrator, $user->Login, $user->Password_Login, $authorizations);
+
+        return $administrator;
+    }
+
+    function getPilotObject($id_user) {
+
+        $this->table = 'class_pilot LEFT JOIN person ON class_pilot.Id_Person = person.Id_Person LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization';
+ 
+        $user = $this->find(array(
+            'conditions' => "person.Id_User = ". $id_user."",
+            'fields' => 'class_pilot.Id_Class_Pilot, person.Person_Name, person.Person_First_Name, person.Person_Email, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code',
+            'order' => 'Id_Class_Pilot ASC'
+        ));
+        if($user == false) return false;
+
+        $authorizations = convertStringToBinaryArray($user->Authorization_Code);
+        $pilot = new Class_Pilot($user->Id_User, $user->Id_Class_Pilot, $user->Person_Name, $user->Person_First_Name, $user->Person_Email, $user->Login, $user->Password_Login, $authorizations);
+
+        return $pilot;
+    }
+
+    function getDelegateObject($id_user) {
+
+        $this->table = 'delegate LEFT JOIN person ON delegate.Id_Person = person.Id_Person LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization';
+ 
+        $user = $this->find(array(
+            'conditions' => "person.Id_User = ". $id_user ."",
+            'fields' => 'delegate.Id_Delegate, person.Person_Name, person.Person_First_Name, person.Person_Email, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code',
+            'order' => 'Id_Delegate ASC'
+        ));
+        if($user == false) return false;
+
+        $authorizations = convertStringToBinaryArray($user->Authorization_Code);
+        $delegate = new Delegate($user->Id_User, $user->Id_Delegate, $user->Person_Name, $user->Person_First_Name, $user->Person_Email, $user->Login, $user->Password_Login, $authorizations);
+
+        return $delegate;
+    }
+
+    function getStudentObject($id_user) {
+
+        $this->table = 'student LEFT JOIN person ON student.Id_Person = person.Id_Person LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization';
+ 
+        $user = $this->find(array(
+            'conditions' => "person.Id_User = ". $id_user ."",
+            'fields' => 'student.Id_Student, person.Person_Name, person.Person_First_Name, person.Person_Email, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code',
+            'order' => 'Id_Student ASC'
+        ));
+        if($user == false) return false;
+
+        $authorizations = convertStringToBinaryArray($user->Authorization_Code);
+        $student = new Student($user->Id_User, $user->Id_Student, $user->Person_Name, $user->Person_First_Name, $user->Person_Email, $user->Login, $user->Password_Login, $authorizations);
+
+        return $student;
+    }
+
+    function getUserObject($login, $pwrd) {
+
+        $user = $this->find(array(
+            'conditions' => "Login = '$login' AND Password_Login = '$pwrd'",
+            'order' => 'Id_User ASC'
+        ));
+        
+        $id_user = $user->Id_User;
+        echo $id_user;
+        
+        
+        $userObject = $this->getAdminObject($id_user);
+        if ($userObject != false) return $userObject;
+        
+        $userObject = $this->getPilotObject($id_user);
+        if ($userObject != false) return $userObject;
+
+        $userObject = $this->getDelegateObject($id_user);
+        if ($userObject != false) return $userObject;
+
+        $userObject = $this->getStudentObject($id_user);
+        if ($userObject == false) return -3;
+        
+        $this->table = 'user'; //reset the table to user table
+ 
+
+        return $userObject;
     }
 }
 ?>

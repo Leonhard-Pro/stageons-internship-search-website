@@ -29,47 +29,47 @@ class Student{
     //Public
     
     //Protected
-    protected function getUserType()
+    public function getUserType()
     {
         return $this->_User_Type;
     }
 
-    protected function getId_User()
+    public function getId_User()
     {
         return $this->_Id_User;
     }
 
-    protected function getId_Student()
+    public function getId_Student()
     {
         return $this->_Id_Student;
     }
 
-    protected function getName()
+    public function getName()
     {
         return $this->_Name;
     }
 
-    protected function getFirstName()
+    public function getFirstName()
     {
         return $this->_First_Name;
     }
 
-    protected function getEmail()
+    public function getEmail()
     {
         return $this->_Email;
     }
 
-    protected function getLogin()
+    public function getLogin()
     {
         return $this->_Login;
     }
 
-    protected function getPassword_Login()
+    public function getPassword_Login()
     {
         return $this->_Password_Login;
     }
 
-    protected function getAuthorization()
+    public function getAuthorization()
     {
         return $this->_Authorizations;
     }

@@ -29,7 +29,7 @@ class Class_Pilot{
     //Public
     
     //Protected
-    protected function getUserType()
+    public function getUserType()
     {
         return $this->_User_Type;
     }

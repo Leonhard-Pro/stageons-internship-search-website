@@ -1,8 +1,8 @@
 
 function Contacts(){
-    location.href = "myaccount.php";
+    location.href = "Documents Html/myaccount.php";
 };
 
 function Bell(){
-    location.href = "notifications.html";
+    location.href = "Documents Html/notifications.html";
 };

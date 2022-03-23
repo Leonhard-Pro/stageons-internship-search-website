@@ -1,8 +1,10 @@
 <?php 
-require("models/CL_Administrator.php");
-require("models/CL_Class_Pilot.php");
-require("models/CL_Delegate.php");
-require("models/CL_Student.php");
+require(ROOT.'core/user/User.php');
+require(ROOT.'core/user/Person.php');
+require(ROOT.'core/user/groups/Administrator.php');
+require(ROOT.'core/user/groups/Pilot.php');
+require(ROOT.'core/user/groups/Delegate.php');
+require(ROOT.'core/user/groups/Student.php');
 session_start();
 if(isset($_SESSION['user'])) $user = $_SESSION['user'];
 ?>

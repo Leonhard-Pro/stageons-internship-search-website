@@ -1,18 +1,12 @@
 <?php 
-    require 'convertStringToBinaryArray.php';
-    require 'SessionStart.php'
+    require (ROOT.'/core/tools/convertStringToBinaryArray.php');
+    require ('SessionStart.php');
 ?>
 
 <?php
 class UserLogin extends Model {
     
     var $table = 'user';
-
-    function getUserById($id = 1) {
-        return $this->find(array(
-            'order' => 'NoPil DESC'
-        ));
-    }
 
     function loginExist($login) {
 
@@ -77,7 +71,7 @@ class UserLogin extends Model {
         if($user == false) return false;
 
         $authorizations = convertStringToBinaryArray($user->Authorization_Code);
-        $pilot = new Class_Pilot($user->Id_User, $user->Id_Class_Pilot, $user->Person_Name, $user->Person_First_Name, $user->Person_Email, $user->Login, $user->Password_Login, $authorizations);
+        $pilot = new Pilot($user->Id_User, $user->Id_Student, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
 
         return $pilot;
     }
@@ -94,7 +88,7 @@ class UserLogin extends Model {
         if($user == false) return false;
 
         $authorizations = convertStringToBinaryArray($user->Authorization_Code);
-        $delegate = new Delegate($user->Id_User, $user->Id_Delegate, $user->Person_Name, $user->Person_First_Name, $user->Person_Email, $user->Login, $user->Password_Login, $authorizations);
+        $delegate = new Delegate($user->Id_User, $user->Id_Student, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
 
         return $delegate;
     }
@@ -111,7 +105,7 @@ class UserLogin extends Model {
         if($user == false) return false;
 
         $authorizations = convertStringToBinaryArray($user->Authorization_Code);
-        $student = new Student($user->Id_User, $user->Id_Student, $user->Person_Name, $user->Person_First_Name, $user->Person_Email, $user->Login, $user->Password_Login, $authorizations);
+        $student = new Student($user->Id_User, $user->Id_Student, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
 
         return $student;
     }

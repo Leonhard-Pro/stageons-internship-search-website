@@ -11,7 +11,7 @@
 
 <body>
     <?php
-        include("views/layout/header.html");
+        include("views/layout/header.php");
     ?>
     <input type="text" id="Surname" value="Surname :">
     <input type="text" id="First_name" value="First name :">

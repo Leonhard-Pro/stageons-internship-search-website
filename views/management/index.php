@@ -8,8 +8,8 @@
 </head>
 
 <?php
-include("header.html");
-?>
+        include("views/layout/header.html");
+        ?>
 
 <body>
     <div id="Nav_2">

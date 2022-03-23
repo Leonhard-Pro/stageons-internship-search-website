@@ -15,9 +15,9 @@ require("models/SessionStart.php");
 </head>
 
 <body>
-<?php
-include("Documents Html/header.html");
-?>
+    <?php
+        include("views/layout/header.html");
+    ?>
     <div id="Filtres">
         <div id="Filtre_1" class="Filtre">
             <input type="text" id="What" placeholder="What :">

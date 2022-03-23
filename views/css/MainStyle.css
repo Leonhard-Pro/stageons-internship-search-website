@@ -185,22 +185,6 @@ a:hover {
   left: 35%;
 }
 
-#bouton {
-  position: relative;
-  bottom: 115%;
-  left: 16vw;
-  width: 150px;
-}
-
-#Search {
-  font-family: Calibri, Arial;
-  background-color: #2d7dbc;
-  color: white;
-  line-height: 200%;
-  width: 100%;
-  border-radius: 40px 40px 40px 40px;
-}
-
 #Icon_filtre {
   height: 40px;
   width: 40px;
@@ -224,6 +208,15 @@ a:hover {
 #What,
 #Where {
   height: 100%;
+}
+
+#Search {
+  font-family: Calibri, Arial;
+  background-color: #2d7dbc;
+  color: white;
+  line-height: 200%;
+  width: 150px;
+  border-radius: 40px 40px 40px 40px;
 }
 
 #Skills,

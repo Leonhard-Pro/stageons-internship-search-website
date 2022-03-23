@@ -71,7 +71,7 @@ class UserLogin extends Model {
         if($user == false) return false;
 
         $authorizations = convertStringToBinaryArray($user->Authorization_Code);
-        $pilot = new Pilot($user->Id_User, $user->Id_Student, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
+        $pilot = new Pilot($user->Id_User, $user->Id_Class_Pilot, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
 
         return $pilot;
     }
@@ -88,7 +88,7 @@ class UserLogin extends Model {
         if($user == false) return false;
 
         $authorizations = convertStringToBinaryArray($user->Authorization_Code);
-        $delegate = new Delegate($user->Id_User, $user->Id_Student, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
+        $delegate = new Delegate($user->Id_User, $user->Id_Delegate, $user->Login, $user->Password_Login, $authorizations, $user->Person_Name, $user->Person_First_Name, $user->Person_Email);
 
         return $delegate;
     }

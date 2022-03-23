@@ -44,12 +44,6 @@ class UserLogin extends Model {
         $user = $this->getUserObject($login, $pwrd);
         $_SESSION['user'] = $user;
 
-        if($user == -3) {
-            return -3;
-        }
-
-
-
         return $user;
     }
 

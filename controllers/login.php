@@ -18,8 +18,12 @@ class Login extends Controller {
         //$this->set($d);
         if(isset($this->data['email']) && isset($this->data['pwrd'])) {
             $user = $this->UserLogin->getInfos($this->data['email'], $this->data['pwrd']);
+            $error_code = 0;
+            if(!$user instanceof Administrator) {
+                $error_code = $user;
+            }
 
-            switch ($user) {             
+            switch ($error_code) {
                 case -1:
                     $ph['login'] = array(
                         'error' => 'Wrong User Login!',
@@ -39,8 +43,9 @@ class Login extends Controller {
                     break;
 
                 default:
-                    echo "<script>console.log('result: " . json_encode($user) . "');</script>";
-                    header("Location:offers");
+                    $debug = (array) $user;
+                    echo "<script>console.log(JSON.parse(JSON.stringify(" . json_encode($debug) . ")));</script>";
+                    //header("Location:offers");
                     break;
             }
             $this->set($ph);

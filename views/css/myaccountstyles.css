@@ -1,0 +1,57 @@
+#account-box {
+  width: 90vw;
+  max-width: 350px;
+  min-width: 200px;
+  height: auto;
+  padding: 2vw;
+  margin: 5vh auto;
+  position: relative;
+  background-color: white;
+  border-radius: 2vw;
+}
+
+#account-box-informations {
+  width: 76vw;
+  max-width: 300px;
+  min-width: 150px;
+  height: auto;
+  padding: 2vw;
+  margin: 2vh auto;
+  position: relative;
+  text-align: center;
+}
+
+#account-box-informations input[type="text"], #account-box-informations input[type="password"] {
+  width: 100%;
+  margin-bottom: 8px;
+  border: 1px solid;
+  border-radius: 2vw;
+  border-color: #2d7dbc;
+  padding: 8px;
+  padding-left: 15px;
+}
+
+#account-box-informations form {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+#logout {
+  border: 1px solid;
+  border-radius: 2vw;
+  border-color: black;
+  width: 75%;
+  min-width: 100px;
+  padding: 8px;
+  margin: 0 auto;
+  position: relative;
+  background-color: red;
+  color: white;
+}
+
+#logout:hover {
+  border-color: #2d7dbc;
+  background-color: white;
+  color: red;
+}
+/*# sourceMappingURL=myaccountstyles.css.map */

@@ -7,9 +7,8 @@ body {
 #Link_offers {
   height: 40px;
   width: 120px;
-  position: absolute;
-  top: 150px;
-  left: 40px;
+  margin-top: 0px;
+  margin-left: 2vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,9 +29,8 @@ body {
 #Link_companies {
   height: 40px;
   width: 150px;
-  position: absolute;
-  top: 150px;
-  left: 200px;
+  margin-top: -50px;
+  margin-left: 10vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,12 +48,11 @@ body {
   padding-right: 20px;
 }
 
-#Link_management {
+#Link_Advancement {
   height: 40px;
   width: 160px;
-  position: absolute;
-  top: 150px;
-  left: 390px;
+  margin-top: -50px;
+  margin-left: 20vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,12 +70,11 @@ body {
   padding-right: 20px;
 }
 
-#Link_Advancement {
+#Link_management {
   height: 40px;
   width: 160px;
-  position: absolute;
-  top: 150px;
-  left: 590px;
+  margin-top: -50px;
+  margin-left: 30vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,9 +93,8 @@ body {
 }
 
 #top_left_icons {
-  position: relative;
-  right: -1720px;
-  top: -120px;
+  margin-left: 90vw;
+  margin-top: 20px;
   width: 110px;
   height: 60px;
   display: -webkit-box;
@@ -131,13 +126,21 @@ h1 {
   font-size: 50px;
   color: white;
   text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 header {
   background-color: #00416d;
   width: 100%;
-  height: 180px;
-  padding: 1% 1% 2%;
+  height: 200px;
+  padding: 3vh;
+  margin: 0%;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
   margin: 0%;
 }
 
@@ -268,7 +271,7 @@ a:hover {
   font-family: Calibri, Arial;
   background-color: #f9f9fd;
   width: 90%;
-  height: 90px;
+  height: auto;
   margin: 20px;
   padding: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -320,56 +323,6 @@ a:hover {
 
 #Offer_1 {
   top: 100%;
-}
-
-#My_account {
-  font-family: Calibri, Arial;
-  font-size: 100%;
-  background-color: white;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-bottom: 30%;
-  height: 1%;
-  float: center;
-  background-size: cover;
-  position: absolute;
-  top: 24%;
-  border-radius: 10% 10% 10% 10%;
-}
-
-#My_account h3 {
-  font-size: 250%;
-  text-decoration: underline;
-}
-
-#My_account .input {
-  height: 300%;
-  width: 75%;
-  margin-left: 10%;
-}
-
-#My_account .button {
-  font-family: Calibri, Arial;
-  color: white;
-  font-size: 150%;
-  background-color: red;
-  text-align: center;
-  text-decoration: none;
-  width: 50%;
-  line-height: 150%;
-  padding: 1%;
-  padding-left: 5%;
-  padding-right: 3%;
-  margin: 5%;
-  margin-left: 23%;
-  border-radius: 40px 40px 40px 40px;
-  -webkit-transition: 0.75s;
-  transition: 0.75s;
-  display: inline;
-}
-
-#My_account .button:hover {
-  background-color: #be1515;
 }
 
 @media (max-width: 780px) {

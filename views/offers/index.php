@@ -7,6 +7,8 @@ require("models/SessionStart.php");
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stageons ~ offers</title>
     <link rel="stylesheet" href="views/css/MainStyle.css">
     <script src="views/js/jquery-3.6.0.min.js"></script>
@@ -15,31 +17,10 @@ require("models/SessionStart.php");
 </head>
 
 <body>
-<?php
-include("Documents Html/header.html");
-?>
-    <div id="Filtres">
-        <div id="Filtre_1" class="Filtre">
-            <input type="text" id="What" placeholder="What :">
-            <input type="text" id="Where" placeholder="Where :">
-            <input type="button" id="Search" value="Search">
-            <div id=Icon_filtre onclick="Show_all()"></div>
-            <div id=Icon_barre onclick="Show_all()"></div>
-        </div>
-        <div id="Filtre_2" class="Filtre">
-            <input type="text" id="Skills" placeholder="Skills :">
-            <input type="text" id="Date" placeholder="Date of beginning :">
-            <input type="text" id="Companies" placeholder="Companies :">
-            <input type="text" id="Duration" placeholder="Duration :">
-            <br><br>
-        </div>
-        <div id="Filtre_3" class="Filtre">
-            <input type="text" id="Class_concerned" placeholder="Concerned classes :">
-            <input type="text" id="Remuneration" placeholder="Remuneration :">
-            <input type="text" id="Number_places" placeholder="Number of places :">
-
-        </div>
-    </div>
+    <?php
+        include("views/layout/header.php");
+        include("views/layout/filters.php");
+    ?>
     <div class="list">
         <?php
         for ($i=0; $i<10; $i++)

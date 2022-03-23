@@ -6,5 +6,8 @@ require(ROOT.'core/user/groups/Pilot.php');
 require(ROOT.'core/user/groups/Delegate.php');
 require(ROOT.'core/user/groups/Student.php');
 session_start();
-if(isset($_SESSION['user'])) $user = $_SESSION['user'];
+if(isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+    $userType = $user->getUserType();
+}
 ?>

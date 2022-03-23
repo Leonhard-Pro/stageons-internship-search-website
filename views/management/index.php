@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stageons ~ management</title>
-    <link rel="stylesheet" href="../Feuilles de styles/MainStyle.css">
+    <link rel="stylesheet" href="views/css/MainStyle.css">
 </head>
 
-<?php
-include("header.html");
-?>
-
 <body>
+    <?php
+        include("views/layout/header.php");
+    ?>
+
     <div id="Nav_2">
         <nav>
             <a href="offer.php" id="1" class="Nav_2">Offer</a>

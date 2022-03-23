@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="views/css/MainStyle.css">
     <script src="views/js/jquery-3.6.0.min.js"></script>
     <script src="views/js/filter.js" async></script>
+    <script src="views/js/header.js" async></script>
 </head>
 
 

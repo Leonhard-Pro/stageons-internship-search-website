@@ -1,9 +1,16 @@
+$heightHeader: 100px;
+
+body{
+    background-color: rgb(237, 242, 252);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 #account-box {
+    top: $heightHeader;
     width: 90vw;
     max-width: 350px;
     min-width: 200px;
-    height: auto;
-    padding:  2vw;
     margin: 5vh auto;
     position: relative;
 
@@ -17,7 +24,7 @@
     min-width: 150px;
     height: auto;
     padding:  2vw;
-    margin: 2vh auto;
+    margin: auto auto;
     position: relative;
 
     text-align: center;

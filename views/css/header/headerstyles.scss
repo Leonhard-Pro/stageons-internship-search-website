@@ -1,0 +1,206 @@
+$background-color: #00416d;
+$text-color: white;
+$text-focus-color: white;
+$background-focus-color: red;
+
+$heightHeader: 100px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+#navbar {
+    position: fixed;
+    height: $heightHeader;
+    background-color: $background-color;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+.navbar-item {
+    margin: 0.4em;
+    width: 100%;
+}
+
+.home-link,
+.navbar-link {
+    color: $text-color;
+    text-decoration: none;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+}
+
+.home-link:focus,
+.home-link:hover {
+    color: $text-focus-color;
+}
+
+
+.navbar-link {
+    justify-content: center;
+    width: 100%;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+}
+
+.navbar-link:focus,
+.navbar-link:hover {
+    color: $text-focus-color;
+    background-color: $background-focus-color;
+}
+
+
+.navbar-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-logo {
+    width: 126px;
+    height: 32px;
+    margin-right: 0.5em;
+}
+
+#navbar-title {
+    font: 1.5em "Open Sans", sans-serif;
+    color: $text-color;
+}
+
+.navbar-logo-cesi {
+    width: 126px;
+    height: 32px;
+}
+
+
+//Menu Humburger
+#navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    background-color: $text-color;
+}
+
+#navbar-toggle:focus .icon-bar,
+#navbar-toggle:hover .icon-bar {
+    background-color: $text-focus-color;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+    position: absolute;
+    margin: 0;
+    width: 30px;
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+    transform: rotate(45deg);
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+    transform: rotate(-45deg);
+}
+#navbar-menu {
+    position: fixed;
+    top: $heightHeader;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+}
+#navbar-toggle[aria-expanded="true"] + #navbar-menu {
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    visibility: visible;
+}
+.navbar-links {
+    list-style: none;
+    position: absolute;
+    background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 1.4rem;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+    padding: 1em;
+}
+
+
+@media screen and (min-width: 1081px) and (max-width: 1280px) { 
+    .navbar-icon {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 1081px) {
+
+    #navbar-toggle,
+    #navbar-toggle[aria-expanded="true"] {
+        display: none;
+    }
+
+    #navbar-menu,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        display: block;
+        height: 100%;
+    }
+
+    .navbar-links,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+}

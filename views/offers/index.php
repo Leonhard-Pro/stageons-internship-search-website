@@ -11,6 +11,7 @@ require("models/SessionStart.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stageons ~ offers</title>
     <link rel="stylesheet" href="views/css/MainStyle.css">
+    <link rel="stylesheet" href="views/css/header/headerstyles.css">
     <script src="views/js/jquery-3.6.0.min.js"></script>
     <script src="views/js/filter.js" async></script>
     <script src="views/js/header.js" async></script>

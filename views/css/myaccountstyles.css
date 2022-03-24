@@ -1,9 +1,14 @@
+body {
+  background-color: #edf2fc;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 #account-box {
+  top: 100px;
   width: 90vw;
   max-width: 350px;
   min-width: 200px;
-  height: auto;
-  padding: 2vw;
   margin: 5vh auto;
   position: relative;
   background-color: white;
@@ -16,7 +21,7 @@
   min-width: 150px;
   height: auto;
   padding: 2vw;
-  margin: 2vh auto;
+  margin: auto auto;
   position: relative;
   text-align: center;
 }

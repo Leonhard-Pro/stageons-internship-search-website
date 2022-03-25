@@ -17,7 +17,6 @@
 
     <div class="list">
         <!--affichage des companies-->
-        <!-- test-->
     </div>
 
     <div id="companies_more">

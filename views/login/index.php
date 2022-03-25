@@ -35,7 +35,7 @@
                 <input name="pwrd" type="password" id="password" placeholder="Password" required><br><br>
 
                 <input type="checkbox" id="keep_signed_in">
-                <label>Keep me signed in ?</label>
+                <label for="keep_signed_in">Keep me signed in ?</label>
 
                 <br><br>
 

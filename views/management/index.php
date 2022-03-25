@@ -32,7 +32,7 @@
         <?php include("views/layout/filters.php"); ?>
         <div class="management-interface">
         <?php if ($actionManagement == ""): ?>
-            <?php if ( $userAuthorization[3] || $userAuthorization[9] || $userAuthorization[14] || $userAuthorization[18] || $userAuthorization[23]): ?>
+            <?php if ( $userAuthorization[2] || $userAuthorization[8] || $userAuthorization[13] || $userAuthorization[17] || $userAuthorization[22]): ?>
             <form class="form-create" action="" method="POST">
                 <div class="polygon-form">
                     <input name="typeManagement" type="hidden" value="<?php echo $typeManagement;?>"></input>
@@ -54,10 +54,10 @@
                 <div class="management-tools">
                     <form class="form-update-delete" method="POST">
                         <input name="typeManagement" type="hidden" value="<?php echo $typeManagement;?>"></input>
-                        <?php if ($userAuthorization[10]): ?>
+                        <?php if ($userAuthorization[9]): ?>
                             <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                         <?php endif; ?>
-                        <?php if ($userAuthorization[11]): ?>
+                        <?php if ($userAuthorization[10]): ?>
                             <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                         <?php endif; ?>
                     </form>
@@ -76,10 +76,10 @@
                 <div class="management-tools">
                     <form class="form-update-delete" method="POST">
                         <input name="typeManagement" type="hidden" value="<?php echo $typeManagement;?>"></input>
-                        <?php if ($userAuthorization[4]): ?>
+                        <?php if ($userAuthorization[3]): ?>
                             <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                         <?php endif; ?>
-                        <?php if ($userAuthorization[6]): ?>
+                        <?php if ($userAuthorization[5]): ?>
                             <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                         <?php endif; ?>
                     </form>
@@ -100,10 +100,10 @@
                 <div class="management-tools">
                     <form class="form-update-delete" method="POST">
                         <input name="typeManagement" type="hidden" value="<?php echo $typeManagement;?>"></input>
-                        <?php if ($userAuthorization[24]): ?>
+                        <?php if ($userAuthorization[23]): ?>
                             <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                         <?php endif; ?>
-                        <?php if ($userAuthorization[25]): ?>
+                        <?php if ($userAuthorization[24]): ?>
                             <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                         <?php endif; ?>
                     </form>
@@ -121,10 +121,10 @@
                 <div class="management-tools">
                     <form class="form-update-delete" method="POST">
                         <input name="typeManagement" type="hidden" value="<?php echo $typeManagement;?>"></input>
-                        <?php if ($userAuthorization[19]): ?>
+                        <?php if ($userAuthorization[18]): ?>
                             <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                         <?php endif; ?>
-                        <?php if ($userAuthorization[20]): ?>
+                        <?php if ($userAuthorization[19]): ?>
                             <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                         <?php endif; ?>
                     </form>
@@ -144,10 +144,10 @@
                 <div class="management-tools">
                     <form class="form-update-delete" method="POST">
                         <input name="typeManagement" type="hidden" value="<?php echo $typeManagement;?>"></input>
-                        <?php if ($userAuthorization[15]): ?>
+                        <?php if ($userAuthorization[14]): ?>
                             <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                         <?php endif; ?>
-                        <?php if ($userAuthorization[16]): ?>
+                        <?php if ($userAuthorization[15]): ?>
                             <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                         <?php endif; ?>
                     </form>
@@ -171,7 +171,7 @@
                     <input class="personal-email" type="email" placeholder="Email :">
                 </div>
                 <?php endif; ?>
-                <?php if ($typeManagement == "Delegate"): ?>
+                <?php if (($typeManagement == "Delegate") && ($userAuthorization[20])): ?>
                 <h1 class="authorization-title">Authorization</h1>
                 <div class="authorization">
                     <div class="authorization-checkbox">
@@ -204,6 +204,7 @@
                         <input class="checkbox" type="checkbox" id="SFx18" name="SFx18"><label class="label-checkbox" for="SFx18" >Create ?</label>
                         <input class="checkbox" type="checkbox" id="SFx19" name="SFx19"><label class="label-checkbox" for="SFx19" >Update ?</label>
                         <input class="checkbox" type="checkbox" id="SFx20" name="SFx20"><label class="label-checkbox" for="SFx20" >Delete ?</label>
+                        <input class="checkbox" type="checkbox" id="SFx21" name="SFx21"><label class="label-checkbox" for="SFx21" >Assign rights ?</label>
                     </div>
                     <div class="authorization-checkbox">
                         <h1 class="authorization-title authorization-subtitle">Student</h1>

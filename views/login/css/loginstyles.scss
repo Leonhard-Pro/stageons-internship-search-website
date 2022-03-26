@@ -1,8 +1,8 @@
 $colourFont: #00416d;
 $colourForms: #2d7dbc;
 $fontFamily: Calibri, Arial;
-$urlFond: "../resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg";
-$urlLogo: "../resources/logo_cesi_with_text.png";
+$urlFond: "/views/resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg";
+$urlLogo: "/views/resources/logo_cesi_with_text.png";
 
 body {
     height: 100% auto;
@@ -16,7 +16,6 @@ body {
 #logo_cesi {
     height: 10vu;
     width: 43vh;
-    //background-image: url($urlLogo);
     background-size: cover;
     position: absolute;
     top: 50px;

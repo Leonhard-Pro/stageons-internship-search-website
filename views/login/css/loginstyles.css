@@ -26,7 +26,7 @@ body {
 #form_signin {
   font-family: Calibri, Arial;
   color: #00416d;
-  background-image: url("../resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg");
+  background-image: url("/views/resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10px;

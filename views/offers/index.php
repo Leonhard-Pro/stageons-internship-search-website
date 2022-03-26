@@ -5,18 +5,19 @@ require("models/SessionStart.php");
 <!DOCTYPE html>
 <html lang="en">
 
-<meta name="description" content="It's the liste of offers">
+<meta name="description" content="This is the liste of offers">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stageons ~ offers</title>
-    <link rel="stylesheet" href="views/css/MainStyle.css">
-    <link rel="stylesheet" href="views/css/header/headerstyles.css">
-    <script src="views/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="views\layout\css\headerstyles.css">
+    <link rel="stylesheet" href="views\layout\css\mainstyles.css">
+    <link rel="stylesheet" href="views\offers\css\offersstyles.css">    
+    <script src="views\layout\js\jquery-3.6.0.min.js"></script>
     <script src="views/js/filter.js" async></script>
-    <script src="views/js/header.js" async></script>
+    <script src="views\layout\js\header.js" async></script>
 </head>
 
 <body>

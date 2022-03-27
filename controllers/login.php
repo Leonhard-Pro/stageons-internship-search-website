@@ -1,58 +1,51 @@
 <?php
 class Login extends Controller {
 
-    var $models = array('UserLogin');
-
-    function index() {
-        $ph = array();
-        $ph['login'] = array(
+    function index(){
+        $data = array();
+        $data['login'] = array(
             'error' => '',
         );
-        $this->set($ph);
-        ///////////////$this->loadModel('UserLogin');
-        /*$d['login'] = array(
-            'titre' => 'Veuillez entrer votre login',
-            'description' => 'Exemple de description'
-        );*/
-        //$d['login'] = $this->UserLogin->getUserById();
-        //$this->set($d);
-        if(isset($this->data['email']) && isset($this->data['pwrd'])) {
-            $user = $this->UserLogin->getInfos($this->data['email'], $this->data['pwrd']);
+
+        if(isset($_POST['email']) && isset($_POST['pwrd'])) {
+            $this->loadModel('userlogin');
+            $user = $this->userlogin->getInfos($_POST['email'], $_POST['pwrd']);
             $error_code = 0;
-            if(!$user instanceof Administrator) {
+            if(!$user instanceof User) {
                 $error_code = $user;
             }
 
             switch ($error_code) {
                 case -1:
-                    $ph['login'] = array(
+                    $data['login'] = array(
                         'error' => 'Wrong User Login!',
                     );
                     break;
                 
                 case -2:
-                    $ph['login'] = array(
+                    $data['login'] = array(
                         'error' => 'Wrong Password!',
                     );
                     break;
 
                 case -3:
-                    $ph['login'] = array(
+                    $data['login'] = array(
                         'error' => 'Can not access to informations from data base',
                     );
                     break;
 
                 default:
                     $debug = (array) $user;
-                    header("Location:offers");
+                    header("Location:".$user->getDefaultPage()."");
                     echo "<script>console.log(JSON.parse(JSON.stringify(" . json_encode($debug) . ")));</script>";
                     break;
             }
-            $this->set($ph);
-        }
 
+
+        }
         
-        
+        $this->set($data);
+
         if(!isset($_COOKIE['Cookies'])) {
             setcookie('Cookies', false, time()+ (60*60*24*365.25), '/', false, false);
         }
@@ -62,7 +55,7 @@ class Login extends Controller {
 	        header("Location:login");
 	        exit;
         }
-
+        
         $this->render('index');
     }
 }

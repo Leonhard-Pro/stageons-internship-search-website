@@ -1,11 +1,9 @@
 $colourFont: #00416d;
 $colourForms: #2d7dbc;
 $fontFamily: Calibri, Arial;
-$urlFond: "../resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg";
-$urlLogo: "../resources/logo_cesi_with_text.png";
+$urlFond: "../../resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg";
 
 body {
-    height: 100% auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +14,6 @@ body {
 #logo_cesi {
     height: 10vu;
     width: 43vh;
-    //background-image: url($urlLogo);
     background-size: cover;
     position: absolute;
     top: 50px;
@@ -93,11 +90,8 @@ body {
 }
 
 #hidden_logo_cesi{
-    width: 55vw;
-    height: 8.5vh;
-    max-width: 312px; 
-    min-width: 225px;
-    min-height: 60px;
+    width: 199px;
+    height: 50px;
     display: none;
 }
 

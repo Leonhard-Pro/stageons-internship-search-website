@@ -1,5 +1,5 @@
 <?php
-class Offers extends Controller {
+class Statistic extends Controller {
 
 function index(){
     $data = array();

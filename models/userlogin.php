@@ -1,9 +1,15 @@
 <?php 
-    require (ROOT.'/core/tools/convertStringToBinaryArray.php');
-    require ('SessionStart.php');
+    require('core/user/User.php');
+    require('core/user/Person.php');
+    require('core/user/groups/Administrator.php');
+    require('core/user/groups/Pilot.php');
+    require('core/user/groups/Delegate.php');
+    require('core/user/groups/Student.php');
+    require('models/convertStringToBinaryArray.php');
 ?>
 
 <?php
+session_start();
 class UserLogin extends Model {
     
     var $table = 'user';
@@ -36,7 +42,10 @@ class UserLogin extends Model {
         }
 
         $user = $this->getUserObject($login, $pwrd);
-        $_SESSION['user'] = $user;
+        if(!is_int($user)){
+            $_SESSION['user'] = $user;
+        }
+        
 
         return $user;
     }

@@ -1,5 +1,4 @@
 body {
-  height: 100% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,7 +25,7 @@ body {
 #form_signin {
   font-family: Calibri, Arial;
   color: #00416d;
-  background-image: url("../resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg");
+  background-image: url("../../resources/CESI_Corporate_Ecole_Ingenieurs-test.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10px;
@@ -111,11 +110,8 @@ body {
 }
 
 #hidden_logo_cesi {
-  width: 55vw;
-  height: 8.5vh;
-  max-width: 312px;
-  min-width: 225px;
-  min-height: 60px;
+  width: 199px;
+  height: 50px;
   display: none;
 }
 
@@ -172,4 +168,4 @@ input:hover[type="submit"] {
     font-size: 35px;
   }
 }
-/*# sourceMappingURL=loginstyles.css.map */
+/*# sourceMappingURL=styles.css.map */

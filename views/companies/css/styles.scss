@@ -1,0 +1,33 @@
+$colourBackground: rgb(237, 242, 252);
+$colourList: rgb(249, 249, 253);
+$fontFamily: Calibri, Arial;
+
+body {
+    height: auto ;
+    background-color: $colourBackground;
+    margin: 0px;
+}
+
+.list {
+    height: auto;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.tab_list{
+    font-family: $fontFamily;
+    background-color: $colourList;
+    width: 90%;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

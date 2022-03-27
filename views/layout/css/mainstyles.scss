@@ -1,17 +1,9 @@
 //Variables
-$colourHeader: #00416d;
 $colourBackground: rgb(237, 242, 252);
-$colourTitles: white;
-$colourForms: #2d7dbc;
-$colourList: rgb(249, 249, 253);
-$fontFamily: Calibri, Arial;
-$urlFond: "../Ressources graphiques/CESI_Corporate_Ecole_Ingenieurs-test.jpg";
-$urlLogo: "../Ressources graphiques/logo_cesi_with_text.svg";
 
-//General
+
 body {
-    height: auto ;
+    margin: 0;
+    padding: 0;
     background-color: $colourBackground;
-    margin: 0px;
 }
-

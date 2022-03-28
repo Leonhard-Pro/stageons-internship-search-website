@@ -78,6 +78,7 @@
 
     
     <?php if ($page['pageName'] == "offers"): ?>
+        <script src="views/layout/js/jquery-3.6.0.min.js"></script>
         <script src="views/offers/js/infoList.js"></script>
     
     <?php endif; ?>

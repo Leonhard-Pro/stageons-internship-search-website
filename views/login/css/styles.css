@@ -122,6 +122,7 @@ body {
   border-width: 1px;
   border-style: solid;
   color: #2d7dbc;
+  margin-right: 10px;
 }
 
 input[type="submit"] {
@@ -131,6 +132,16 @@ input[type="submit"] {
   width: 150px;
   height: 35px;
   color: white;
+}
+
+#login_password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 115%;
 }
 
 input:hover[type="submit"] {

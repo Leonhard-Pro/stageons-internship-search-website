@@ -102,6 +102,7 @@ body {
     border-width: 1px;
     border-style: solid;
     color: $colourForms;
+    margin-right: 10px;
 }
 
 input[type="submit"] {
@@ -111,6 +112,12 @@ input[type="submit"] {
     width: 150px;
     height: 35px;
     color: white;
+}
+
+#login_password{
+    display: flex;
+    align-items: center;
+    width: 115%;
 }
 
 input:hover[type="submit"] {

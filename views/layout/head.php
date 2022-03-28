@@ -20,12 +20,6 @@
     <link rel="stylesheet" href="<?php echo "views/". $page['pageName'] ."/css/styles.css"; ?>">
 
     
-    <?php if ($page['pageName'] == "login"): ?>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="views/login/js/show_pwrd.js" async></script>
-    <?php endif; ?>
-
-    
     <?php if ($page['pageName'] != "login"): ?>
         <!-- Header Part -->
         <link rel="stylesheet" href="views/layout/css/headerstyles.css">
@@ -48,6 +42,8 @@
     
     <?php if ($page['pageName'] == "account"): ?>
         <!-- Account Part -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="views/layout/js/show_pwrd.js" async></script>
     <?php endif; ?>
 
     
@@ -64,6 +60,8 @@
     <?php if ($page['pageName'] == "login"): ?>
         <!-- Login Part -->
         <link rel="stylesheet" href="views/login/css/cookies_bannerstyles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="views/layout/js/show_pwrd.js" async></script>
     <?php endif; ?>
 
     

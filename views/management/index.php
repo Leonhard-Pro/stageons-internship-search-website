@@ -207,7 +207,7 @@
                 <textarea class="offers-description" placeholder="Description :"></textarea>
                 <input class="offers-skill" type="text" placeholder="Skill(s) :">
                 <input class="offers-duration" type="number" placeholder="Duration :">
-                <input class="offers-duration-type" type="text" placeholder="Duration Type :">
+                <input class="offers-duration-type" type="text" placeholder="Time unit :">
                 <input class="offers-degree" type="text" placeholder="Degree require :">
                 <input class="offers-date" type="date" placeholder="Date publish :">
                 <input class="offers-remuneration" type="number" placeholder="Remuneration :">
@@ -233,8 +233,8 @@
             <h1 id="address-title">Address</h1>
             <div class="address-informations">
                 <div class="address-street">
-                    <input class="address-street-num" type="number" placeholder="Num :">
-                    <input class="address-street-name" type="text" placeholder="Name Street :">
+                    <input class="address-street-num" type="number" placeholder="Number :">
+                    <input class="address-street-name" type="text" placeholder="Street name:">
                 </div>
                 <input class="address-postal-code" type="text" placeholder="Postal Code :">
                 <select class="address-city">

@@ -1,6 +1,6 @@
 <div id="account-box">
     <div id="account-box-informations">
-        <h1>Personnal information</h1>
+        <h1>Personal information</h1>
 
         <input readonly="readonly" type="text" id="login" value="<?php echo $user['userObject']->getLogin(); ?>">
         <div id="account_password">

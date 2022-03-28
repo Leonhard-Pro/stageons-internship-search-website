@@ -3,8 +3,10 @@
         <h1>Personnal information</h1>
 
         <input readonly="readonly" type="text" id="login" value="<?php echo $user['userObject']->getLogin(); ?>">
-        <div><input readonly="readonly" type="password" id="password" value="<?php echo $user['userObject']->getPassword(); ?>">
-        <i id="eye" class="fa fa-eye showpwd" onClick="showPwd('password', this)"></i></div>
+        <div id="account_password">
+            <input readonly="readonly" type="password" id="password" value="<?php echo $user['userObject']->getPassword(); ?>">
+            <i id="eye" class="fa fa-eye showpwd" onClick="showPwd('password', this)"></i>
+        </div>
         <?php if ($user['userType'] == "Student" || $user['userType'] == "Pilot" || $user['userType'] == "Delegate"): ?>
             <input readonly="readonly" type="text" id="First_name" value="<?php echo $user['userObject']->getFirstName(); ?>">
             <input readonly="readonly" type="text" id="Surname" value="<?php echo $user['userObject']->getName(); ?>">

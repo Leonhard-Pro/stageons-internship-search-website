@@ -90,4 +90,6 @@
     
     <?php endif; ?>
 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="views/layout/css/mainstyles.css">
 </head>

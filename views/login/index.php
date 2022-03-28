@@ -18,7 +18,9 @@
             <h3 class="Error"><?php echo $login['error']; ?></h3>
 
             <input name="email" type="email" id="email_id" placeholder="Email address" required><br><br>
-            <input name="pwrd" type="password" id="password" placeholder="Password" required><br><br>
+            <div><input name="pwrd" type="password" id="password" placeholder="Password" required>
+            <i id="eye" class="fa fa-eye showpwd" onClick="showPwd('password', this)"></i></div><br><br>
+            
 
             <input type="checkbox" id="keep_signed_in">
             <label for="keep_signed_in">Keep me signed in ?</label>

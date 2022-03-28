@@ -1,17 +1,23 @@
-$colourList: rgb(249, 249, 253);
+$backgroundcolourList: rgb(249, 249, 253);
 $fontFamily: Calibri, Arial;
 
-body {
-    height: auto ;
-    margin: 0px;
+body{
+    height: auto;
+    position: relative;
+    top: 200px;
 }
 
-.list {
+#display_list{
+    display: flex;
+    width: 95%;
     height: auto;
-    width: 70%;
-    position: relative;
-    left: 15%;
-    top: 100px;
+    margin-left: 2.5%;
+    justify-content: space-evenly;
+}
+
+.list{
+    width: 55%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,13 +25,27 @@ body {
 }
 .tab_list{
     font-family: $fontFamily;
-    background-color: $colourList;
+    background-color: $backgroundcolourList;
     width: 90%;
-    height: auto;
-    margin: 20px;
-    padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px;
+    padding: 5px;
+    height: auto;
+}
+
+.container_info{
+    width: 40%;
+
+}
+.further_info{
+    background-color: $backgroundcolourList;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    height: auto;
+    padding: 25px;
+    padding-top: 40px;
+    margin-top: 20px;
 }

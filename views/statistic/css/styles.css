@@ -6,4 +6,15 @@
   padding-top: 10%;
   float: center;
 }
+
+@media screen and (max-width: 1200px) {
+  #doughnut {
+    background-color: white;
+    border-radius: 10% 10% 10% 10%;
+    height: auto;
+    width: 50%;
+    padding-top: 10%;
+    float: center;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

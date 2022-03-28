@@ -78,7 +78,7 @@
 
     
     <?php if ($page['pageName'] == "offers"): ?>
-        <!-- Offers Part -->
+        <script src="views/offers/js/infoList.js"></script>
     
     <?php endif; ?>
 
@@ -87,7 +87,4 @@
         <!-- Statistic Part -->
     
     <?php endif; ?>
-
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="views/layout/css/mainstyles.css">
 </head>

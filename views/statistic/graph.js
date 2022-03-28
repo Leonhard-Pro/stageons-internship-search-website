@@ -19,7 +19,7 @@ let myChart = new Chart(graph, {
     option: {
         title: {
             display: true,
-            text: "Populations Francophones du monde",
+            text: "Student",
             fontSize: 24,
         },
         legent: {

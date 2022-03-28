@@ -44,8 +44,7 @@ input {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-
-@media screen and (min-width: 1500px){
+@media screen and (min-width: 1500px) {
     #Filtre_1 {
         padding-top: 7%;
         padding-left: 35%;
@@ -68,7 +67,7 @@ input {
     }
 }
 
-@media screen and (min-width: 1100px) and (max-width: 1500px){
+@media screen and (min-width: 1100px) and (max-width: 1500px) {
     #Filtre_1 {
         padding-top: 10%;
         padding-left: 35%;
@@ -91,7 +90,7 @@ input {
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 1100px){
+@media screen and (min-width: 800px) and (max-width: 1100px) {
     #Filtre_1 {
         padding-top: 15%;
         padding-left: 1%;
@@ -114,7 +113,7 @@ input {
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     #Filtre_1 {
         padding-top: 20%;
         padding-left: 1%;

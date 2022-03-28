@@ -203,7 +203,8 @@
             <?php if ($management['type'] == "Offers"): ?>
             <h1 id="offers-title">Offer</h1>
             <div class="offers-informations">
-                <input class="offers-title" type="text" placeholder="Title :">
+                <label for="offer_title">blbllb</label>
+                <input class="offers-title" type="text" placeholder="Title :" name="offer_title">
                 <textarea class="offers-description" placeholder="Description :"></textarea>
                 <input class="offers-skill" type="text" placeholder="Skill(s) :">
                 <input class="offers-duration" type="number" placeholder="Duration :">

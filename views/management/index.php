@@ -147,15 +147,15 @@
                     <h1 id="personal-title">Personal information</h1>
                     <div class="personal-informations">
                         <label for="personal-login">Login:</label>
-                        <input class="personal-login" id="personal-login" type="email" placeholder="Login:">
+                        <input class="personal-login" id="personal-login" type="email" placeholder="Login" name="login" required>
                         <label for="personal-password">Password:</label>
-                        <input class="personal-password" id="personal-password" type="password" placeholder="Password:">
+                        <input class="personal-password" id="personal-password" type="password" placeholder="Password" name="password" required>
                         <label for="personal-name">Name:</label>
-                        <input class="personal-name" id="personal-name" type="text" placeholder="Name:">
+                        <input class="personal-name" id="personal-name" type="text" placeholder="Name" name="name" required>
                         <label for="personal-first-name">First Name:</label>
-                        <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name::">
+                        <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name" name="first_name" required>
                         <label for="personal-email">Email:</label>
-                        <input class="personal-email" id="personal-email" type="email" placeholder="Email:">
+                        <input class="personal-email" id="personal-email" type="email" placeholder="Email" name="email" required>
                     </div>
                 <?php endif; ?>
                 <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])): ?>

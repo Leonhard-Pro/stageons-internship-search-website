@@ -50,6 +50,10 @@
   background-color: #ff9e81;
 }
 
+#main #filters {
+  margin-top: 100px;
+}
+
 #main .management-interface {
   width: 100%;
   height: auto;

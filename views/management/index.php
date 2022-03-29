@@ -11,8 +11,9 @@
         </form>
     </div>
 
-    <?php include("views/layout/filter.php"); ?>
-
+    <div id="filters">
+    <?php include("views/layout/filters.php"); ?>
+    </div>
     <div class="management-interface">
     <?php if ($management['action'] == ""): ?>
         <?php if ( $user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]): ?>

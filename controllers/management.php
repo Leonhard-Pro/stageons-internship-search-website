@@ -4,6 +4,10 @@ class Management extends Controller {
 function index(){
     $data = array();
 
+    $data['filter'] = array (
+        'type' => 'Offers'
+    );
+
 
     if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
         header("Location:login");
@@ -16,17 +20,25 @@ function index(){
         );
         $data['management'] = $management;
     }
+
     
     if (isset($_POST["typeManagement"])){
         $management['type'] = $_POST["typeManagement"];
         $management['action'] = "";
         $data['management'] = $management;
+        $data['filter'] = array (
+            'type' => $management['type']
+        );
     }
+
+    
     
     if (isset($_POST["actionManagement"])){
         $management['action'] = $_POST["actionManagement"];
         $data['management'] = $management;
     }
+
+    
 
 
     $this->loadModel('userinformations');

@@ -5,14 +5,19 @@
             $numberArticle = 10;
             $numberPages = 3;
 
-            if(explode('=',$_SERVER['REQUEST_URI'])[1])
+            if(isset(explode('=',$_SERVER['REQUEST_URI'])[1]))
             {
+                if(explode('=',$_SERVER['REQUEST_URI'])[1])
                 $currentPage = explode('=',$_SERVER['REQUEST_URI'])[1];
             }
             else
             {
                 $currentPage = 1;
             }
+
+            if($currentPage >= $numberPages)
+                $currentPage = $numberPages;
+
         ?>
         <div id="pages_buttons">
             <?php 

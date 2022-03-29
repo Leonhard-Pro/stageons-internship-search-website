@@ -54,6 +54,39 @@ body {
   height: auto;
 }
 
+#pages_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#pages_buttons a {
+  text-decoration: none;
+  font-size: 25px;
+  margin: 10px;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.list #pages_buttons a:not([href]) {
+  background-color: red;
+  border-radius: 20px;
+}
+
 .container_info {
   width: 0%;
 }

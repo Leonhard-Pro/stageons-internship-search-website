@@ -143,11 +143,16 @@
                 <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student") : ?>
                     <h1 id="personal-title">Personal information</h1>
                     <div class="personal-informations">
-                        <input class="personal-login" type="email" placeholder="Login :">
-                        <input class="personal-password" type="password" placeholder="Password :">
-                        <input class="personal-name" type="text" placeholder="Name :">
-                        <input class="personal-first-name" type="text" placeholder="First Name : :">
-                        <input class="personal-email" type="email" placeholder="Email :">
+                        <label for="personal-login">Login :</label>
+                        <input class="personal-login" id="personal-login" type="email" placeholder="Login :">
+                        <label for="personal-password">Password :</label>
+                        <input class="personal-password" id="personal-password" type="password" placeholder="Password :">
+                        <label for="personal-name">Name :</label>
+                        <input class="personal-name" id="personal-name" type="text" placeholder="Name :">
+                        <label for="personal-first-name">First Name :</label>
+                        <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name : :">
+                        <label for="personal-email">Email :</label>
+                        <input class="personal-email" id="personal-email" type="email" placeholder="Email :">
                     </div>
                 <?php endif; ?>
                 <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])) : ?>
@@ -204,29 +209,45 @@
                 <?php if ($management['type'] == "Offers") : ?>
                     <h1 id="offers-title">Offer</h1>
                     <div class="offers-informations">
-                        <input class="offers-title" type="text" placeholder="Title :">
-                        <textarea class="offers-description" placeholder="Description :"></textarea>
-                        <input class="offers-skill" type="text" placeholder="Skill(s) :">
-                        <input class="offers-duration" type="number" placeholder="Duration :">
-                        <input class="offers-duration-type" type="text" placeholder="Duration Type :">
-                        <input class="offers-degree" type="text" placeholder="Degree require :">
-                        <input class="offers-date" type="date" placeholder="Date publish :">
-                        <input class="offers-remuneration" type="number" placeholder="Remuneration :">
-                        <input class="offers-number-places" type="number" placeholder="Number place :">
-                        <input class="offers-link" type="text" placeholder="Link :">
+                        <label for="offers-title">Title : :</label>
+                        <input class="offers-title" id="offers-title" type="text" placeholder="Title :">
+                        <label for="personal-login">Description :</label>
+                        <textarea class="offers-description" id="offers-description" placeholder="Description :"></textarea>
+                        <label for="personal-login">Skill(s) :</label>
+                        <input class="offers-skill" id="offers-skill" type="text" placeholder="Skill(s) :">
+                        <label for="personal-login">Duration :</label>
+                        <input class="offers-duration" id="offers-duration" type="number" placeholder="Duration :">
+                        <label for="personal-login">Duration Type :</label>
+                        <input class="offers-duration-type" id="offers-duration-type" type="text" placeholder="Duration Type :">
+                        <label for="personal-login">Degree require :</label>
+                        <input class="offers-degree" id="offers-degree" type="text" placeholder="Degree require :">
+                        <label for="personal-login">Date :</label>
+                        <input class="offers-date" id="offers-date" type="date" placeholder="Date publish :">
+                        <label for="personal-login">Remuneration :</label>
+                        <input class="offers-remuneration" id="offers-remuneration" type="number" placeholder="Remuneration :">
+                        <label for="personal-login">Number place :</label>
+                        <input class="offers-number-places" id="offers-number-places" type="number" placeholder="Number place :">
+                        <label for="personal-login">Link :</label>
+                        <input class="offers-link" id="offers-link" type="text" placeholder="Link :">
                     </div>
                 <?php endif; ?>
 
                 <?php if ($management['type'] == "Companies") : ?>
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
-                        <input class="companies-title" type="text" placeholder="Name" name="name">
-                        <textarea class="companies-description" placeholder="Description" name="description" form="management-form"></textarea>
-                        <input class="companies-email" type="email" placeholder="Email" name="email">
-                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity">
-                        <input class="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
-                        <input class="companies-degree" type="text" placeholder="Degree require" name="degree_require">
-                        <input class="companies-visible" type="checkbox" id="visible" name="visible"><label class="visible-label" for="visible">Visible ?</label>
+                        <label for="companies-title">Name :</label>
+                        <input class="companies-title" id="companies-title" type="text" placeholder="Name" name="name">
+                        <label for="companies-description">Description :</label>
+                        <textarea class="companies-description" id="companies-description" placeholder="Description" name="description" form="management-form"></textarea>
+                        <label for="companies-email">Email :</label>
+                        <input class="companies-email" id="companies-email" type="email" placeholder="Email" name="email">
+                        <label for="companies-domain-activity">Domain Activity :</label>
+                        <input class="companies-domain-activity" id="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity">
+                        <label for="companies-cesi-accpet">Committed Intern :</label>
+                        <input class="companies-cesi-accpet" id="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
+                        <label for="companies-degree">Degree require :</label>
+                        <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require">
+                        <input class="companies-visible" id="companies-visible" type="checkbox" id="visible" name="visible"><label class="visible-label" for="visible">Visible ?</label>
                     </div>
                 <?php endif; ?>
 
@@ -234,10 +255,14 @@
                     <h1 id="address-title">Address</h1>
                     <div class="address-informations">
                         <div class="address-street">
-                            <input class="address-street-num" type="number" placeholder="Number" name="adrss_number">
-                            <input class="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
+                            <label for="address-street-num">Number :</label>
+                            <input class="address-street-num" id="address-street-num" type="number" placeholder="Number" name="adrss_number">
+                            <label for="address-street-name">Street Name :</label>
+                            <input class="address-street-name" id="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
                         </div>
+                        <label for="pc">Postal Code :</label>
                         <input class="address-postal-code" id="pc" type="text" placeholder="Postal Code" name="adrss_postal_code" oninput="verifpc()">
+                        <label for="city">City :</label>
                         <select class="address-city" id="city" name="adrss_city">
 
                         </select>

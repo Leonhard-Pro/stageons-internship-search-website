@@ -1,5 +1,6 @@
 $backgroundcolourList: rgb(249, 249, 253);
 $fontFamily: Calibri, Arial;
+$background-color: #00416d;
 
 body{
     height: auto;
@@ -64,7 +65,70 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
     height: auto;
-    padding: 25px;
+    padding: 0px;
     padding-top: 40px;
     margin-top: 20px;
+    display: block;
+    background-color: $background-color;
+    font-family: $fontFamily;
+
+    #header_info{
+        width: 100%;
+        padding: 20px;
+
+        input[type=checkbox]{
+            display: none;
+        }
+
+        input[type=checkbox] + label{
+            background-image: url("../../resources/icon_not_heart.png");
+            background-size: cover;
+            height: 60px;
+            width: 60px;
+            display: inline-block;
+            padding: 0 0 0 0px;
+        }
+        input[type=checkbox]:checked + label{
+            background-image: url("../../resources/icon_heart.png");
+            background-size: cover;
+            height: 60px;
+            width: 60px;
+            display: inline-block;
+            padding: 0 0 0 0px;
+        }
+    }
+
+    #body_info{
+        background-color: $backgroundcolourList;
+        border-radius: 5px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        ul{
+            list-style: none;
+        }
+
+        input[type = button]{
+            width: 100%;
+            height: 40px;
+            background-color: $background-color;
+            border: none;
+            border-width: 1px;
+            font-weight: bold;
+            font-size: large;
+            border-radius: 5px;
+        }
+
+        #division_description{
+            border: solid;
+            border-width: 1px;
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        } 
+    }
+
+
 }

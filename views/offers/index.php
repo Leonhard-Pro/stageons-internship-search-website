@@ -52,5 +52,6 @@
         </div>
     </div>
     <div class="container_info" id="right_pannel">
+
     </div>
 </div>

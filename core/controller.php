@@ -3,11 +3,21 @@ class Controller {
 
     var $dataArray = array();
     var $layout = 'default';
+    var $post_data = array();
 
     
 
     function __construct() {
         $this->dataArray = array_merge($this->dataArray, array('page' => array('pageName' => strtolower(get_class($this)))));
+
+        if(isset($_POST)) {
+            echo "<script>console.log(JSON.parse(JSON.stringify(" . json_encode($_POST) . ")));</script>";
+        }
+        if(isset($this->models)) {
+            foreach($this->models as $m) {
+                $this->loadModel($m);
+            }
+        }
     }
 
     function set($data){

@@ -20,7 +20,7 @@
                 <?php endif; ?>
             </div>
             <div class="buttonSearch">
-                <input type="submit" id="Search" value="Search">
+                <input type="submit" name="Search" id="Search" value="Filter">
                 <img id="Icon_filter" src="views\resources\icon_filtre.png" alt="Icon_filter" onclick="filtersDisplay()">
             </div>
             <div class="filters3 filters-hidden">
@@ -81,7 +81,7 @@
             </div>
             <div class="filters10 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                    <label for="skill">Skills:</label><input type="text" name="skill" id="skill" placeholder="Skills required">
+                <label for="degree">Degree require:</label><input type="number" name="degree" id="degree" placeholder="Degree require">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
                 <label for="pilot-confidence-desc">Confidence rate desc:</label><input type="checkbox" name="pilot-confidence" id="pilot-confidence-desc">

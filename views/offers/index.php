@@ -3,8 +3,8 @@
     <div class="list" id="left_pannel">
         <?php 
             $currentPage = 1;
-            $numberArticle = 10;
-            $numberPages = 3;
+            $numberArticle = 5;
+            if (sizeof($SelectOffer)%5 == 0){ $numberPages = sizeof($SelectOffer)/$numberArticle;}else{$numberPages = round(sizeof($SelectOffer)/$numberArticle, 0) + 1;}
 
             if(isset(explode('=',$_SERVER['REQUEST_URI'])[1]))
             {
@@ -31,13 +31,28 @@
         </div>
 
         <?php
-        for ($i = ($currentPage * $numberArticle) - $numberArticle; $i < $currentPage * $numberArticle; $i++) {
-            echo ('<div class="tab_list" onclick="PannelAppear()">
-                    <div>
-                        <h3>Title of the offer '.$i.'</h3>
-                        <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse. We continue, as we want to test responsiveness and any kind of automatic modification.</p>
-                    </div>
-                </div>');
+        
+        if (sizeof($SelectOffer) > 0) {
+            if ($currentPage == $numberPages){
+                for ($i = (($numberPages * $numberArticle) - $numberArticle); $i < sizeof($SelectOffer); $i++) {
+                    echo ('<div class="tab_list" onclick="PannelAppear()">
+                            <div>
+                                <h3> '. $SelectOffer[$i]['Title'] .'</h3>
+                                <p>'. $SelectOffer[$i]['Description'] .'</p>
+                            </div>
+                        </div>');
+                }
+            }
+            else {
+                for ($i = ($currentPage * $numberArticle) - $numberArticle; $i < $currentPage * $numberArticle; $i++) {
+                    echo ('<div class="tab_list" onclick="PannelAppear()">
+                            <div>
+                                <h3> '. $SelectOffer[$i]['Title'] .'</h3>
+                                <p>'. $SelectOffer[$i]['Description'] .'</p>
+                            </div>
+                        </div>');
+                }
+            }
         }
         ?>
 

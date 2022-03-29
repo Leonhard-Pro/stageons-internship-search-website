@@ -11,10 +11,12 @@
             <?php endif; ?>
         </form>
     </div>
-
+    
+    <?php if( $filter['type'] != ""): ?>
     <div id="filters">
     <?php include("views/layout/filters.php"); ?>
     </div>
+    <?php endif; ?>
     
 
     <div class="management-interface">
@@ -277,12 +279,10 @@
                 <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")): ?>
                     <h1 id="address-title">Address</h1>
                     <div class="address-informations">
-                        <div class="address-street">
-                            <label for="address-street-num">Number:</label>
-                            <input class="address-street-num" id="address-street-num" type="number" placeholder="Number" name="adrss_number">
-                            <label for="address-street-name">Street Name:</label>
-                            <input class="address-street-name" id="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
-                        </div>
+                        <label for="address-street-num">Street Number:</label>
+                        <input class="address-street-num" id="address-street-num" type="number" placeholder="Number" name="adrss_number">
+                        <label for="address-street-name">Street Name:</label>
+                        <input class="address-street-name" id="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
                         <label for="pc">Postal Code:</label>
                         <input class="address-postal-code" id="pc" type="text" placeholder="Postal Code" name="adrss_postal_code" oninput="verifpc()">
                         <label for="city">City:</label>

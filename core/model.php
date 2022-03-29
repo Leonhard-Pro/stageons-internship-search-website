@@ -111,7 +111,7 @@ class Model {
         if(isset($data["order"])) { $order = $data["order"]; }
         $sql = "SELECT $fields FROM ".$this->table." WHERE $conditions ORDER BY $order $limit";
         $req = $this->pdo->query($sql);
-        $d = $req->fetch();
+        $d = $req->fetchALL();
 
         return $d;
     }

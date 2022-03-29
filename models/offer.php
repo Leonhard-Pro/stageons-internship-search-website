@@ -1,4 +1,7 @@
 <?php
+require("models/address.php");
+require("models/date.php");
+
 class Offer extends Model {
 
     //prepare variables needed to user methods from other classes
@@ -11,6 +14,40 @@ class Offer extends Model {
         $this->obj_date = new Date();
     }
 
+    function get($login = 1) {
+        //TODO
+    }
+
+    function select(array $data) {
+        $attribut = array(" offer.Title ", " city.City ", " skill.Skill ", " company.Company_Name ", " offer.Duration ", " offer.Duration_Type ", " offer.Remuneration ", " date.Date ", " offer.Number_Of_Places ", " offer.Degree_Level_Required ");
+        $firstloop = true;
+        $condition = "";
+
+        for ($i = 0; $i < sizeof($data); $i++){
+            if ($data[$i] != "") {
+                if ($firstloop)
+                {
+                    $condition = $condition . $attribut[$i]." LIKE '".$data[$i]."%'";
+                    $firstloop =! $firstloop;
+                }
+                else {
+                    $condition = $condition . " AND " . $attribut[$i]." LIKE '".$data[$i]."%'";
+                }
+            }
+        }
+        if ($condition == ""){
+            $condition = " 1=1 ";
+        }
+
+        $this->table = " offer LEFT JOIN company ON offer.Id_Company = company.Id_Company LEFT JOIN address ON address.Id_Address = offer.Id_Address LEFT JOIN city ON city.Id_City = address.Id_City LEFT JOIN postal_code ON city.Id_Postal_Code = postal_code.Id_Postal_Code LEFT JOIN date ON offer.Id_Date = date.Id_Date RIGHT JOIN have_3 ON have_3.Id_Offer = offer.Id_Offer LEFT JOIN skill ON skill.Id_Skill = have_3.Id_Skill ";
+        $requete = array(
+            'conditions' => $condition,
+            'fields' => ' offer.Id_Offer, offer.Title, offer.Description, offer.Degree_Level_Required, offer.Number_Of_Places, offer.Duration, offer.Duration_Type, offer.Remuneration, offer.Link_Offer, offer.visible, company.Company_Name, address.Street_Number, address.Street_Name, city.City, postal_code.Postal_Code, date.Date, skill.Skill  ',
+            'order' => ' Id_Offer ASC '
+        );
+        
+        return $this->find($requete);
+    }
     function create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true) {
 
         //create address

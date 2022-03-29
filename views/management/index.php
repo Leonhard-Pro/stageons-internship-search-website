@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <div id="main">
     <div class="menu-management">

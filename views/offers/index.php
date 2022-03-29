@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <div id="display_list">
     <div class="list" id="left_pannel">
         <?php 

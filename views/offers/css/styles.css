@@ -54,7 +54,7 @@ body {
   height: auto;
 }
 
-#pages_buttons {
+#pages_buttons_up, #pages_buttons_down {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +64,7 @@ body {
           flex-direction: row;
 }
 
-#pages_buttons a {
+#pages_buttons_up a, #pages_buttons_down a {
   text-decoration: none;
   font-size: 25px;
   margin: 10px;
@@ -82,7 +82,7 @@ body {
           justify-content: center;
 }
 
-.list #pages_buttons a:not([href]) {
+#pages_buttons_up a:not([href]), #pages_buttons_down a:not([href]) {
   background-color: red;
   border-radius: 20px;
 }

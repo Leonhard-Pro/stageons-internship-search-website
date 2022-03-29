@@ -19,7 +19,7 @@
                 $currentPage = $numberPages;
 
         ?>
-        <div id="pages_buttons">
+        <div id="pages_buttons_up">
             <?php 
                 for ($p = 1; $p <= $numberPages; $p++)
                 {
@@ -39,6 +39,16 @@
                 </div>');
         }
         ?>
+
+        <div id="pages_buttons_down">
+            <?php 
+                for ($p = 1; $p <= $numberPages; $p++)
+                {
+                    if ($currentPage != $p) echo("<a href='?page=$p'>$p</a>");
+                    else echo("<a>$p</a>");
+                }
+            ?>
+        </div>
     </div>
     <div class="container_info" id="right_pannel">
     </div>

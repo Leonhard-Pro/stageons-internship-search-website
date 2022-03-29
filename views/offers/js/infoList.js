@@ -1,3 +1,11 @@
+document.addEventListener('resize', GetWindowSize, false);
+
+function GetWindowSize(){
+    if (window.width <= "1100px"){
+        console.log("blblb");
+    }
+}
+
 function PannelAppear(){
     $("#right_pannel").hidden = true;
 

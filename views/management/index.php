@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <div id="main">
     <div class="menu-management">
         <form action="" method="POST">
@@ -5,18 +8,20 @@
             <input type="submit" name="typeManagement" value="Companies">
             <input type="submit" name="typeManagement" value="Student">
             <input type="submit" name="typeManagement" value="Delegate">
-            <?php if ($user['userType'] != "Pilot") : ?>
+            <?php if ($user['userType'] != "Pilot"): ?>
                 <input type="submit" name="typeManagement" value="Pilot">
             <?php endif; ?>
         </form>
     </div>
 
-    <?php include("views/layout/filter.php"); ?>
-    <script src="views\management\find_address.js"></script>
+    <div id="filters">
+    <?php include("views/layout/filters.php"); ?>
+    </div>
+    
 
     <div class="management-interface">
-        <?php if ($management['action'] == "") : ?>
-            <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]) : ?>
+        <?php if ($management['action'] == ""): ?>
+            <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]): ?>
                 <form class="form-create" action="" method="POST">
                     <div class="polygon-form">
                         <input name="typeManagement" type="hidden" value="<?php echo $management['type']; ?>"></input>
@@ -26,7 +31,7 @@
             <?php endif ?>
 
 
-            <?php if ($management['type'] == "Offers") : ?>
+            <?php if ($management['type'] == "Offers"): ?>
                 <div class="offer">
                     <div class="informations">
                         <h1 class="information-offer offer-title">Dévéloppement Informatique</h1>
@@ -37,10 +42,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][9]) : ?>
+                            <?php if ($user['userAuthorization'][9]): ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][10]) : ?>
+                            <?php if ($user['userAuthorization'][10]): ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -49,7 +54,7 @@
             <?php endif; ?>
 
 
-            <?php if ($management['type'] == "Companies") : ?>
+            <?php if ($management['type'] == "Companies"): ?>
                 <div class="company">
                     <div class="informations">
                         <h1 class="information-company offer-name-company">CESI</h1>
@@ -58,10 +63,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][3]) : ?>
+                            <?php if ($user['userAuthorization'][3]): ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][5]) : ?>
+                            <?php if ($user['userAuthorization'][5]): ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -71,7 +76,7 @@
 
 
 
-            <?php if ($management['type'] == "Student") : ?>
+            <?php if ($management['type'] == "Student"): ?>
                 <div class="student">
                     <div class="informations">
                         <h1 class="information-student offer-name">GUERREIRO</h1>
@@ -81,10 +86,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][23]) : ?>
+                            <?php if ($user['userAuthorization'][23]): ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][24]) : ?>
+                            <?php if ($user['userAuthorization'][24]): ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -92,7 +97,7 @@
                 </div>
             <?php endif; ?>
 
-            <?php if ($management['type'] == "Delegate") : ?>
+            <?php if ($management['type'] == "Delegate"): ?>
                 <div class="delegate">
                     <div class="informations">
                         <h1 class="information-delegate offer-name">JAMBUT</h1>
@@ -101,10 +106,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][18]) : ?>
+                            <?php if ($user['userAuthorization'][18]): ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][19]) : ?>
+                            <?php if ($user['userAuthorization'][19]): ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -113,7 +118,7 @@
             <?php endif; ?>
 
 
-            <?php if ($management['type'] == "Pilot") : ?>
+            <?php if ($management['type'] == "Pilot"): ?>
                 <div class="pilot">
                     <div class="informations">
                         <h1 class="information-pilot offer-name">SANTILARIO ELENA</h1>
@@ -123,10 +128,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][14]) : ?>
+                            <?php if ($user['userAuthorization'][14]): ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][15]) : ?>
+                            <?php if ($user['userAuthorization'][15]): ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -137,20 +142,25 @@
     </div>
 
 
-    <?php if ($management['action'] == "Create" || $management['action'] == "Update") : ?>
+    <?php if ($management['action'] == "Create" || $management['action'] == "Update"): ?>
         <form method="POST" id="management-form">
             <div class="management-create-update">
-                <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student") : ?>
+                <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student"): ?>
                     <h1 id="personal-title">Personal information</h1>
                     <div class="personal-informations">
-                        <input class="personal-login" type="email" placeholder="Login :">
-                        <input class="personal-password" type="password" placeholder="Password :">
-                        <input class="personal-name" type="text" placeholder="Name :">
-                        <input class="personal-first-name" type="text" placeholder="First Name : :">
-                        <input class="personal-email" type="email" placeholder="Email :">
+                        <label for="personal-login">Login:</label>
+                        <input class="personal-login" id="personal-login" type="email" placeholder="Login:">
+                        <label for="personal-password">Password:</label>
+                        <input class="personal-password" id="personal-password" type="password" placeholder="Password:">
+                        <label for="personal-name">Name:</label>
+                        <input class="personal-name" id="personal-name" type="text" placeholder="Name:">
+                        <label for="personal-first-name">First Name:</label>
+                        <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name::">
+                        <label for="personal-email">Email:</label>
+                        <input class="personal-email" id="personal-email" type="email" placeholder="Email:">
                     </div>
                 <?php endif; ?>
-                <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])) : ?>
+                <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])): ?>
                     <h1 class="authorization-title">Authorization</h1>
                     <div class="authorization">
                         <div class="authorization-checkbox">
@@ -201,43 +211,65 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if ($management['type'] == "Offers") : ?>
+                <?php if ($management['type'] == "Offers"): ?>
                     <h1 id="offers-title">Offer</h1>
-                    <div class="offers-informations">
-                        <input class="offers-title" type="text" placeholder="Title" name="title" required>
-                        <textarea class="offers-description" placeholder="Description" name="description" form="management-form"></textarea>
-                        <input class="offers-skill" type="text" placeholder="Skill(s): e.g. HTML - CSS - PHP" name="skills" required>
-                        <input class="offers-duration" type="number" placeholder="Duration" name="duration" required>
-                        <input class="offers-duration-type" type="text" placeholder="Time Unit" name="time_unit" required>
-                        <input class="offers-degree" type="text" placeholder="Grade required" name="grade" required>
-                        <input class="offers-date" type="date" placeholder="Publish Date" name="publish_date" required>
-                        <input class="offers-remuneration" type="number" placeholder="Remuneration" name="remuneration" required>
-                        <input class="offers-number-places" type="number" placeholder="Number of posts :" name="posts_number" required>
-                        <input class="offers-link" type="text" placeholder="Link" name="link" required>
+                    <div class="offers-informations">                      
+                        <label for="offers-title">Title:</label>
+                        <input class="offers-title" id="offers-title" type="text" placeholder="Title" name="title" required>
+                        <label for="offers-company">Company:</label>
+                        <input class="offers-company" id="offers-company" type="text" placeholder="Company" name="company_name" required>
+                        <label for="personal-login">Description:</label>
+                        <textarea class="offers-description" id="offers-description" placeholder="Description" name="description" form="management-form"></textarea>
+                        <label for="personal-login">Skill(s):</label>
+                        <input class="offers-skill" id="offers-skill" type="text" placeholder="Skill(s): e.g. HTML - CSS - PHP" name="skills" required>
+                        <label for="personal-login">Duration:</label>
+                        <input class="offers-duration" id="offers-duration" type="number" placeholder="Duration" name="duration" required>
+                        <label for="personal-login">Duration Type:</label>
+                        <input class="offers-duration-type" id="offers-duration-type" type="text" placeholder="Time Unit" name="time_unit" required>
+                        <label for="personal-login">Degree require:</label>
+                        <input class="offers-degree" id="offers-degree" type="text" placeholder="Grade required" name="grade" required>
+                        <label for="personal-login">Date:</label>
+                        <input class="offers-date" id="offers-date" type="date" placeholder="Publish Date" name="publish_date" required>
+                        <label for="personal-login">Remuneration:</label>
+                        <input class="offers-remuneration" id="offers-remuneration" type="number" placeholder="Remuneration" name="remuneration" required>
+                        <label for="personal-login">Number place:</label>
+                        <input class="offers-number-places" id="offers-number-places" type="number" placeholder="Number of posts :" name="posts_number" required>
+                        <label for="personal-login">Link:</label>
+                        <input class="offers-link" id="offers-link" type="text" placeholder="Link" name="link" required>
                     </div>
                 <?php endif; ?>
 
-                <?php if ($management['type'] == "Companies") : ?>
+                <?php if ($management['type'] == "Companies"): ?>
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
-                        <input class="companies-title" type="text" placeholder="Name" name="name" required>
-                        <textarea class="companies-description" placeholder="Description" name="description" form="management-form" required></textarea>
-                        <input class="companies-email" type="email" placeholder="Email" name="email" required>
-                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity" required>
-                        <input class="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
-                        <input class="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
-                        <input class="companies-visible" type="checkbox" id="visible" name="visible" checked><label class="visible-label" for="visible">Visible ?</label>
+                        <label for="companies-title">Name:</label>
+                        <input class="companies-title" id="companies-title" type="text" placeholder="Name" name="name" required>
+                        <label for="companies-description">Description:</label>
+                        <textarea class="companies-description" id="companies-description" placeholder="Description" name="description" form="management-form" required></textarea>
+                        <label for="companies-email">Email:</label>
+                        <input class="companies-email" id="companies-email" type="email" placeholder="Email" name="email" required>
+                        <label for="companies-domain-activity">Domain Activity:</label>
+                        <input class="companies-domain-activity" id="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity" required>
+                        <label for="companies-cesi-accpet">Committed Intern:</label>
+                        <input class="companies-cesi-accpet" id="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
+                        <label for="companies-degree">Degree require:</label>
+                        <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
+                        <input class="companies-visible" id="companies-visible" type="checkbox" id="visible" name="visible" checked><label class="visible-label" for="visible">Visible ?</label>
                     </div>
                 <?php endif; ?>
 
-                <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")) : ?>
+                <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")): ?>
                     <h1 id="address-title">Address</h1>
                     <div class="address-informations">
                         <div class="address-street">
-                            <input class="address-street-num" type="number" placeholder="Number" name="adrss_number">
-                            <input class="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
+                            <label for="address-street-num">Number:</label>
+                            <input class="address-street-num" id="address-street-num" type="number" placeholder="Number" name="adrss_number">
+                            <label for="address-street-name">Street Name:</label>
+                            <input class="address-street-name" id="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
                         </div>
+                        <label for="pc">Postal Code:</label>
                         <input class="address-postal-code" id="pc" type="text" placeholder="Postal Code" name="adrss_postal_code" oninput="verifpc()">
+                        <label for="city">City:</label>
                         <select class="address-city" id="city" name="adrss_city" form="management-form">
 
                         </select>
@@ -253,7 +285,7 @@
         </form>
     <?php endif; ?>
 </div>
-<?php if ($management['action'] == "Delete") : ?>
+<?php if ($management['action'] == "Delete"): ?>
     <div class="delete-blur">
     </div>
     <form class="delete-popup">

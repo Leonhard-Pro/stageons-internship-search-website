@@ -15,6 +15,23 @@ function index(){
     if(!$data['user']['userObject'] instanceof User) {
         header("Location:login");
     }
+
+    if(!isset($statistic)){
+        $statistic = array(
+            'type' => 'Offers',
+            'action' => ''
+        );
+        $data['statistic'] = $statistic;
+    }
+
+    
+    if (isset($_POST["typestatistic"])){
+        $statistic['type'] = $_POST["typestatistic"];
+        $data['statistic'] = $statistic;
+        $data['filter'] = array (
+            'type' => $statistic['type']
+        );
+    }
     
     
 

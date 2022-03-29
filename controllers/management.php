@@ -10,6 +10,10 @@ class Management extends Controller {
         $this->loadModel('offer');
         $data = array();
 
+    $data['filter'] = array (
+        'type' => 'Offers'
+    );
+
 
         if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
             header("Location:login");

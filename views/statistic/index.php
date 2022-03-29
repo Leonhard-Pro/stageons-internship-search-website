@@ -1,5 +1,7 @@
  <!-- https://www.chartjs.org/docs/latest/ -->
 
+ <!DOCTYPE html>
+ <html lang="en">
 
  <body>
      <div id="doughnut">
@@ -10,7 +12,7 @@
 
      <?php
 
-     // Here you can add your data in php
+        // Here you can add your data in php
 
         $value1 = 6;
         $value2 = 8;
@@ -20,8 +22,7 @@
         ?>
 
      <script>
-
-    // Here you can convert your data in js
+         // Here you can convert your data in js
 
          var value1 = <?php echo json_encode($value1); ?>;
          var value2 = <?php echo json_encode($value2); ?>;

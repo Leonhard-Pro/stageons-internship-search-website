@@ -50,6 +50,10 @@
   background-color: #ff9e81;
 }
 
+#main #filters {
+  margin-top: 100px;
+}
+
 #main .management-interface {
   width: 100%;
   height: auto;
@@ -352,10 +356,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: bold;
-  font-size: 26px;
   width: 300px;
   margin: 15px auto;
+  font-family: Calibri, Arial;
   background-color: white;
   border-radius: 30px;
 }
@@ -369,6 +372,16 @@
   padding: 10px;
   background-color: white;
   border-radius: 30px;
+}
+
+#main .management-create-update .personal-informations label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+  text-justify: auto;
+  font-family: Calibri, Arial;
 }
 
 #main .management-create-update .personal-informations input {
@@ -424,6 +437,16 @@
   border-radius: 30px;
 }
 
+#main .management-create-update .offers-informations label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+  text-justify: auto;
+  font-family: Calibri, Arial;
+}
+
 #main .management-create-update .offers-informations input {
   display: block;
   width: 20vw;
@@ -434,6 +457,7 @@
   padding: 4px 6px;
   border-radius: 30px;
   color: black;
+  font-family: Calibri, Arial;
 }
 
 #main .management-create-update .offers-informations .offers-description {
@@ -450,6 +474,7 @@
   border-radius: 30px;
   color: black;
   resize: vertical;
+  font-family: Calibri, Arial;
 }
 
 #main .management-create-update .companies-informations {
@@ -461,6 +486,16 @@
   padding: 10px;
   background-color: white;
   border-radius: 30px;
+}
+
+#main .management-create-update .companies-informations label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+  text-justify: auto;
+  font-family: Calibri, Arial;
 }
 
 #main .management-create-update .companies-informations input {
@@ -512,6 +547,16 @@
   padding: 10px;
   background-color: white;
   border-radius: 30px;
+}
+
+#main .management-create-update .address-informations label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+  text-justify: auto;
+  font-family: Calibri, Arial;
 }
 
 #main .management-create-update .address-informations input, #main .management-create-update .address-informations select {

@@ -5,6 +5,7 @@ class Company extends Model {
     var $obj_address;
 
     function __construct() {
+        parent::__construct();
         $this->obj_address = new Address();
     }
 
@@ -31,7 +32,7 @@ class Company extends Model {
         }
     }
 
-    function create($postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept, $company_email, array $domains_activity, $is_visible = true) {
+    function create($postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept = 0, $company_email, array $domains_activity, $is_visible = true) {
 
         //create address
         $this->obj_address->create($postal_code, $city, $street_name, $street_number);

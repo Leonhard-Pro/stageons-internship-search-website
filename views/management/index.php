@@ -206,7 +206,7 @@
                         <input class="companies-title" type="text" placeholder="Name" name="name">
                         <textarea class="companies-description" placeholder="Description" name="description" form="management-form"></textarea>
                         <input class="companies-email" type="email" placeholder="Email" name="email">
-                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity" name="domain_activity">
+                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity">
                         <input class="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
                         <input class="companies-degree" type="text" placeholder="Degree require" name="degree_require">
                         <input class="companies-visible" type="checkbox" id="visible" name="visible"><label class="visible-label" for="visible">Visible ?</label>
@@ -224,7 +224,7 @@
                     </div>
                 <?php endif; ?>
                 <div class="confirm-button">
-                    <button type="submit" name="<?php echo $management['action']; ?>" value="<?php echo $management['action']; ?>"><?php echo $management['action']; ?></button>
+                    <button type="submit" name="<?php echo $management['action']; ?>" value="<?php echo $management['type']; ?>"><?php echo $management['action']; ?></button>
                 </div>
             </div>
             <div class="space-bottom"></div>

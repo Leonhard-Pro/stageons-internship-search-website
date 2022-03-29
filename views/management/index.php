@@ -216,6 +216,8 @@
                     <div class="offers-informations">
                         <label for="offers-title">Title:</label>
                         <input class="offers-title" id="offers-title" type="text" placeholder="Title:">
+                        <label for="offers-company">Company:</label>
+                        <input class="offers-company" id="offers-company" type="text" placeholder="Company:">
                         <label for="personal-login">Description:</label>
                         <textarea class="offers-description" id="offers-description" placeholder="Description:"></textarea>
                         <label for="personal-login">Skill(s):</label>

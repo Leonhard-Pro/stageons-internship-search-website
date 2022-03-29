@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <div id="main">
     <div class="menu-management">
@@ -214,8 +212,8 @@
                 <?php if ($management['type'] == "Offers"): ?>
                     <h1 id="offers-title">Offer</h1>
                     <div class="offers-informations">                      
-                        <label for="offers-title">Title:</label>
-                        <input class="offers-title" id="offers-title" type="text" placeholder="Title" name="title" required>
+                        <label for="offer-title">Title:</label>
+                        <input class="offer-title" id="offer-title" type="text" placeholder="Title" name="title" required>
                         <label for="offers-company">Company:</label>
                         <input class="offers-company" id="offers-company" type="text" placeholder="Company" name="company_name" required>
                         <label for="personal-login">Description:</label>
@@ -254,7 +252,10 @@
                         <input class="companies-cesi-accpet" id="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
                         <label for="companies-degree">Degree require:</label>
                         <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
-                        <input class="companies-visible" id="companies-visible" type="checkbox" id="visible" name="visible" checked><label class="visible-label" for="visible">Visible ?</label>
+                        <div id="division-visible">
+                            <label class="visible-label" for="visible">Visible ?</label>
+                            <input class="companies-visible"  type="checkbox" id="visible" name="visible" checked>
+                        </div>
                     </div>
                 <?php endif; ?>
 

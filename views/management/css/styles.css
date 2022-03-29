@@ -542,6 +542,30 @@
   margin: 5px auto;
 }
 
+#main .management-create-update .companies-informations #division-grade {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main .management-create-update .companies-informations #division-grade .grade {
+  max-width: 15px;
+  min-width: 15px;
+}
+
+#main .management-create-update .companies-informations #division-grade label {
+  font-weight: 100;
+}
+
+#main .management-create-update .companies-informations #division-grade #grade-no-label {
+  padding-right: 20px;
+  border: none;
+  border-right: solid;
+  border-width: 1px;
+  height: 30px;
+}
+
 #main .management-create-update .address-informations {
   display: block;
   width: 50vw;

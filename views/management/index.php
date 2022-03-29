@@ -256,6 +256,21 @@
                             <label class="visible-label" for="visible">Visible ?</label>
                             <input class="companies-visible"  type="checkbox" id="visible" name="visible" checked>
                         </div>
+                            <label for="grade">Grade</label>
+                        <div id="division-grade">
+                            <input type="radio" name="grade" value="None" id="grade-no" class="grade">
+                            <label for="grade-no" id="grade-no-label">None</label>
+                            <input type="radio" name="grade" value="1" id="grade-1" class="grade">
+                            <label for="grade-1">1</label>
+                            <input type="radio" name="grade" value="2" id="grade-2" class="grade">
+                            <label for="grade-2">2</label>
+                            <input type="radio" name="grade" value="3" id="grade-3" class="grade">
+                            <label for="grade-3">3</label>
+                            <input type="radio" name="grade" value="4" id="grade-4" class="grade">
+                            <label for="grade-4">4</label>
+                            <input type="radio" name="grade" value="5" id="grade-5" class="grade">
+                            <label for="grade-5">5</label>
+                        </div>
                     </div>
                 <?php endif; ?>
 

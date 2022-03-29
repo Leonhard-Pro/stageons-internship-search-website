@@ -42,7 +42,7 @@ class UserLogin extends Model {
         }
 
         $user = $this->getUserObject($login, $pwrd);
-        if(!is_int($user)){
+        if($user instanceof User){
             $_SESSION['user'] = $user;
         }
         

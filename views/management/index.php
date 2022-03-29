@@ -204,29 +204,29 @@
                 <?php if ($management['type'] == "Offers") : ?>
                     <h1 id="offers-title">Offer</h1>
                     <div class="offers-informations">
-                        <input class="offers-title" type="text" placeholder="Title :">
-                        <textarea class="offers-description" placeholder="Description :"></textarea>
-                        <input class="offers-skill" type="text" placeholder="Skill(s) :">
-                        <input class="offers-duration" type="number" placeholder="Duration :">
-                        <input class="offers-duration-type" type="text" placeholder="Duration Type :">
-                        <input class="offers-degree" type="text" placeholder="Degree require :">
-                        <input class="offers-date" type="date" placeholder="Date publish :">
-                        <input class="offers-remuneration" type="number" placeholder="Remuneration :">
-                        <input class="offers-number-places" type="number" placeholder="Number place :">
-                        <input class="offers-link" type="text" placeholder="Link :">
+                        <input class="offers-title" type="text" placeholder="Title" name="title" required>
+                        <textarea class="offers-description" placeholder="Description" name="description" form="management-form"></textarea>
+                        <input class="offers-skill" type="text" placeholder="Skill(s): e.g. HTML - CSS - PHP" name="skills" required>
+                        <input class="offers-duration" type="number" placeholder="Duration" name="duration" required>
+                        <input class="offers-duration-type" type="text" placeholder="Time Unit" name="time_unit" required>
+                        <input class="offers-degree" type="text" placeholder="Grade required" name="grade" required>
+                        <input class="offers-date" type="date" placeholder="Publish Date" name="publish_date" required>
+                        <input class="offers-remuneration" type="number" placeholder="Remuneration" name="remuneration" required>
+                        <input class="offers-number-places" type="number" placeholder="Number of posts :" name="posts_number" required>
+                        <input class="offers-link" type="text" placeholder="Link" name="link" required>
                     </div>
                 <?php endif; ?>
 
                 <?php if ($management['type'] == "Companies") : ?>
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
-                        <input class="companies-title" type="text" placeholder="Name" name="name">
-                        <textarea class="companies-description" placeholder="Description" name="description" form="management-form"></textarea>
-                        <input class="companies-email" type="email" placeholder="Email" name="email">
-                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity">
+                        <input class="companies-title" type="text" placeholder="Name" name="name" required>
+                        <textarea class="companies-description" placeholder="Description" name="description" form="management-form" required></textarea>
+                        <input class="companies-email" type="email" placeholder="Email" name="email" required>
+                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity" required>
                         <input class="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
-                        <input class="companies-degree" type="text" placeholder="Degree require" name="degree_require">
-                        <input class="companies-visible" type="checkbox" id="visible" name="visible"><label class="visible-label" for="visible">Visible ?</label>
+                        <input class="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
+                        <input class="companies-visible" type="checkbox" id="visible" name="visible" checked><label class="visible-label" for="visible">Visible ?</label>
                     </div>
                 <?php endif; ?>
 
@@ -238,7 +238,7 @@
                             <input class="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
                         </div>
                         <input class="address-postal-code" id="pc" type="text" placeholder="Postal Code" name="adrss_postal_code" oninput="verifpc()">
-                        <select class="address-city" id="city" name="adrss_city">
+                        <select class="address-city" id="city" name="adrss_city" form="management-form">
 
                         </select>
 

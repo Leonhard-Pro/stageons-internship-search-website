@@ -15,6 +15,10 @@ function index(){
     if(!$data['user']['userObject'] instanceof User) {
         header("Location:login");
     }
+
+    $data['filter'] = array (
+        'type' => 'Offers'
+    );
     
     
 

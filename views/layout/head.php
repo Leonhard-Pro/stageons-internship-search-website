@@ -15,6 +15,7 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="views/layout/css/mainstyles.css">
+    <script src="views/layout/js/jquery-3.6.0.min.js" async></script>
     
     <!-- Current Page Part -->
     <link rel="stylesheet" href="<?php echo "views/". $page['pageName'] ."/css/styles.css"; ?>">
@@ -35,6 +36,7 @@
     <?php if ($page['pageName'] != "account" && $page['pageName'] != "login" && $page['pageName'] && "notifications"): ?>
         <!-- Filters Part -->
         <link rel="stylesheet" href="views/layout/css/filterstyles.css">
+        <script src="views/layout/js/filter.js" async></script>
     <?php endif; ?>
 
     
@@ -67,7 +69,7 @@
     
     <?php if ($page['pageName'] == "management"): ?>
         <!-- Management Part -->
-    
+        <script src="views\management\find_address.js"></script>
     <?php endif; ?>
 
     

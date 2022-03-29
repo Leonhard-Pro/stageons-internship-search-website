@@ -1,1 +1,121 @@
-/* No CSS *//*# sourceMappingURL=filterstyles.css.map */
+
+.filters {
+  margin-top: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+#filters-form
+{
+
+    width: 100%;
+
+    margin-top: 20px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr,1fr,1fr,1fr,1fr,1fr;
+    grid-template-rows: 1fr,1fr,1fr;
+    grid-column-gap: 20px;
+}
+
+.space-left { grid-area: 1 / 1 / 4 / 2; }
+.space-right { grid-area: 1 / 6 / 4 / 7; }
+.filters1 { grid-area: 1 / 2 / 2 / 3; }
+.filters2 { grid-area: 1 / 3 / 2 / 4; }
+.buttonSearch { grid-area: 1 / 4 / 2 / 6; width: 160px; }
+.filters4 { grid-area: 2 / 3 / 3 / 4; }
+.filters5 { grid-area: 2 / 4 / 3 / 5; }
+.filters7 { grid-area: 3 / 2 / 4 / 3; }
+.filters8 { grid-area: 3 / 3 / 4 / 4; }
+.filters9 { grid-area: 3 / 4 / 4 / 5; }
+.filters10 { grid-area: 3 / 5 / 4 / 6; }
+.filters3 { grid-area: 2 / 2 / 3 / 3; }
+.filters6 { grid-area: 2 / 5 / 3 / 6; }
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#filters-form input[type="text"], #filters-form input[type="number"], #filters-form input[type="date"]
+{
+  width: 20vw;
+  max-width: 350px;
+  min-width: 200px;
+  height: 30px;
+
+  padding: 4px 6px;
+  margin-left: 8px;
+  margin-bottom: 10px;
+
+  border-radius: 30px;
+
+  color: black;
+}
+
+#filters-form input[type="checkbox"]{
+  margin-left: 8px;
+}
+
+.filters-hidden {
+  display: none;
+}
+
+#Search {
+    
+  border: 1px solid;
+  border-radius: 30px;
+  border-color: black;
+
+  
+  width: 125px;
+  padding: 8px;
+  position: relative;
+
+  background-color: blue;
+  color: white;
+
+  
+}
+
+#Search:hover {
+
+  border-color: #2d7dbc;;
+
+  background-color: white;
+  color: darkblue;
+
+  
+}
+
+#Icon_filter {
+  width: 30px;
+  height: 30px;
+}
+ 
+
+
+@media screen and (max-width: 930px)
+{
+  #filters-form
+  {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr;
+    grid-column-gap: 0;
+  }
+
+  .filters1 { grid-area: 1 / 1 / 2 / 2; }
+  .filters2 { grid-area: 2 / 1 / 3 / 2; }
+  .filters3 { grid-area: 3 / 1 / 4 / 2; }
+  .filters4 { grid-area: 4 / 1 / 5 / 2; }
+  .filters5 { grid-area: 5 / 1 / 6 / 2; }
+  .filters6 { grid-area: 6 / 1 / 7 / 2; }
+  .filters7 { grid-area: 7 / 1 / 8 / 2; }
+  .filters8 { grid-area: 8 / 1 / 9 / 2; }
+  .filters9 { grid-area: 9 / 1 / 10 / 2; }
+  .filters10 { grid-area: 10 / 1 / 11 / 2; }
+  .buttonSearch { grid-area: 11 / 1 / 12 / 2; }
+
+  
+}

@@ -10,7 +10,10 @@
             <?php endif; ?>
         </form>
     </div>
+
     <?php include("views/layout/filter.php"); ?>
+    <script src="views\management\find_address.js"></script>
+
     <div class="management-interface">
         <?php if ($management['action'] == "") : ?>
             <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]) : ?>
@@ -21,6 +24,8 @@
                     </div>
                 </form>
             <?php endif ?>
+
+
             <?php if ($management['type'] == "Offers") : ?>
                 <div class="offer">
                     <div class="informations">
@@ -42,6 +47,8 @@
                     </div>
                 </div>
             <?php endif; ?>
+
+
             <?php if ($management['type'] == "Companies") : ?>
                 <div class="company">
                     <div class="informations">
@@ -61,6 +68,9 @@
                     </div>
                 </div>
             <?php endif; ?>
+
+
+
             <?php if ($management['type'] == "Student") : ?>
                 <div class="student">
                     <div class="informations">
@@ -81,6 +91,7 @@
                     </div>
                 </div>
             <?php endif; ?>
+
             <?php if ($management['type'] == "Delegate") : ?>
                 <div class="delegate">
                     <div class="informations">
@@ -100,6 +111,8 @@
                     </div>
                 </div>
             <?php endif; ?>
+
+
             <?php if ($management['type'] == "Pilot") : ?>
                 <div class="pilot">
                     <div class="informations">
@@ -122,8 +135,10 @@
             <?php endif; ?>
         <?php endif; ?>
     </div>
+
+
     <?php if ($management['action'] == "Create" || $management['action'] == "Update") : ?>
-        <form method="POST" id="management-form">
+        <form method="POST">
             <div class="management-create-update">
                 <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student") : ?>
                     <h1 id="personal-title">Personal information</h1>
@@ -185,6 +200,7 @@
                         </div>
                     </div>
                 <?php endif; ?>
+
                 <?php if ($management['type'] == "Offers") : ?>
                     <h1 id="offers-title">Offer</h1>
                     <div class="offers-informations">
@@ -200,29 +216,35 @@
                         <input class="offers-link" type="text" placeholder="Link :">
                     </div>
                 <?php endif; ?>
+
                 <?php if ($management['type'] == "Companies") : ?>
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
-                        <input class="companies-title" type="text" placeholder="Name" name="name">
-                        <textarea class="companies-description" placeholder="Description" name="description" form="management-form"></textarea>
-                        <input class="companies-email" type="email" placeholder="Email" name="email">
-                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity" name="domain_activity">
-                        <input class="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
-                        <input class="companies-degree" type="text" placeholder="Degree require" name="degree_require">
-                        <input class="companies-visible" type="checkbox" id="visible" name="visible"><label class="visible-label" for="visible">Visible ?</label>
+                        <input class="companies-title" type="text" placeholder="Title :">
+                        <textarea class="companies-description" placeholder="Description :"></textarea>
+                        <input class="companies-email" type="email" placeholder="Email :">
+                        <input class="companies-domain-activity" type="text" placeholder="Domain Activity :">
+                        <input class="companies-cesi-accpet" type="text" placeholder="Cesi Trainee Accept :">
+                        <input class="companies-degree" type="text" placeholder="Degree require :">
+                        <input class="companies-visible" type="checkbox" id="visible"><label class="visible-label" for="visible">Visible ?</label>
                     </div>
                 <?php endif; ?>
+
                 <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")) : ?>
                     <h1 id="address-title">Address</h1>
                     <div class="address-informations">
                         <div class="address-street">
-                            <input class="address-street-num" type="number" placeholder="Number" name="adrss_number">
-                            <input class="address-street-name" type="text" placeholder="Street Name" name="adrss_street_name">
+                            <input class="address-street-num" type="number" placeholder="Num :">
+                            <input class="address-street-name" type="text" placeholder="Name Street :">
                         </div>
-                        <input class="address-postal-code" type="text" placeholder="Postal Code" name="adrss_postal_code">
-                        <input class="address-city" type="text" placeholder="City" name="adrss_city">
+                        <input class="address-postal-code" id="pc" type="text" placeholder="Postal Code :" oninput="verifpc()">
+                        <select class="address-city" id="city">
+
+                        </select>
+
                     </div>
                 <?php endif; ?>
+
                 <div class="confirm-button">
                     <button type="submit" name="<?php echo $management['action']; ?>" value="<?php echo $management['action']; ?>"><?php echo $management['action']; ?></button>
                 </div>

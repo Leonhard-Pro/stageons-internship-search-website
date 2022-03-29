@@ -11,8 +11,7 @@ class Controller {
         $this->dataArray = array_merge($this->dataArray, array('page' => array('pageName' => strtolower(get_class($this)))));
 
         if(isset($_POST)) {
-            $this->post_data = $_POST;
-            echo "<script>console.log('DEBUG POST: " . json_encode($this->data) . "');</script>";
+            echo "<script>console.log('DEBUG POST: " . json_encode($_POST) . "');</script>";
         }
         if(isset($this->models)) {
             foreach($this->models as $m) {

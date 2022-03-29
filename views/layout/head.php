@@ -69,7 +69,7 @@
     
     <?php if ($page['pageName'] == "management"): ?>
         <!-- Management Part -->
-        <script src="views\management\find_address.js"></script>
+        <script src="views/management/js/find_address.js"></script>
     <?php endif; ?>
 
     

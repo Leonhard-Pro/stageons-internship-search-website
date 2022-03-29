@@ -631,45 +631,6 @@ $fontFamily: Calibri, Arial;
 
                 color: black;
             }
-
-            .address-street {
-
-                display: flex;
-                width: 370px;
-                height: auto;
-
-                margin: 5px auto;
-                padding: 4px 6px;
-
-                .address-street-num,
-                .address-street-name {
-                    display: inline-block;
-                    width: 20vw;
-                    height: 40px;
-
-                    margin: auto;
-                    padding: 4px 6px;
-
-                    border-radius: 30px;
-
-                    color: black;
-                }
-
-                .address-street-num {
-                    min-width: 90px;
-                    max-width: 90px;
-                    margin-right: 5px;
-                }
-
-                .address-street-name {
-                    margin-left: 0;
-                    min-width: 180px;
-                    max-width: 280px;
-                }
-
-            }            
-
-
         }
 
         .confirm-button {

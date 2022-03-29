@@ -6,12 +6,16 @@ class Management extends Controller {
     function index(){
         $data = array();
 
-    $data['filter'] = array (
-        'type' => 'Offers'
-    );
+        $data['filter'] = array (
+            'type' => 'Offers'
+        );
 
 
         if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
+            header("Location:login");
+        }
+
+        if(!$data['user']['userObject'] instanceof User) {
             header("Location:login");
         }
 
@@ -27,11 +31,18 @@ class Management extends Controller {
             $management['type'] = $_POST["typeManagement"];
             $management['action'] = "";
             $data['management'] = $management;
+            $data['filter'] = array (
+                'type' => $management['type']
+            );
         }
         
         if (isset($_POST["actionManagement"])){
             $management['action'] = $_POST["actionManagement"];
             $data['management'] = $management;
+            $data['filter'] = array (
+                'type' => ""
+            );
+
         }
 
         $this->loadModel('userinformations');
@@ -60,9 +71,180 @@ class Management extends Controller {
             }
         }
 
-        if(!$data['user']['userObject'] instanceof User) {
-            header("Location:login");
+
+        if(isset($_POST['Search'])){
+        
+            if($data['filter']['type'] == "Offers"){
+                $filterData = array(
+                    $_POST['what'],
+                    $_POST['where'],
+                    $_POST['skill'],
+                    $_POST['name-company'],
+                    $_POST['duration'],
+                    $_POST['type-duration'],
+                    $_POST['remuneration'],
+                    $_POST['date-published'],
+                    $_POST['numberplaces'],
+                    $_POST['degree']
+                );
+                $this->loadModel('offer');
+                $data['SelectOffer'] = json_decode(json_encode($this->offer->select($filterData)), true);
+            }
+            
+            if($data['filter']['type'] == "Companies"){
+                $filterData = array(
+                    $_POST['what'],
+                    $_POST['where'],
+                    $_POST['skill'],
+                    $_POST['name-company'],
+                    $_POST['duration'],
+                    $_POST['type-duration'],
+                    $_POST['remuneration'],
+                    $_POST['date-published'],
+                    $_POST['numberplaces'],
+                    $_POST['degree']
+                );
+                $this->loadModel('company');
+                $data['SelectCompany'] = json_decode(json_encode($this->company->select($filterData)), true);
+            }
+
+            if($data['filter']['type'] == "Pilot"){
+                $filterData = array(
+                    $_POST['what'],
+                    $_POST['where'],
+                    $_POST['skill'],
+                    $_POST['name-company'],
+                    $_POST['duration'],
+                    $_POST['type-duration'],
+                    $_POST['remuneration'],
+                    $_POST['date-published'],
+                    $_POST['numberplaces'],
+                    $_POST['degree']
+                );
+                $this->loadModel('pilot');
+                $data['SelectPilot'] = json_decode(json_encode($this->pilot->select($filterData)), true);
+            }
+
+            if($data['filter']['type'] == "Delegate"){
+                $filterData = array(
+                    $_POST['what'],
+                    $_POST['where'],
+                    $_POST['skill'],
+                    $_POST['name-company'],
+                    $_POST['duration'],
+                    $_POST['type-duration'],
+                    $_POST['remuneration'],
+                    $_POST['date-published'],
+                    $_POST['numberplaces'],
+                    $_POST['degree']
+                );
+                $this->loadModel('delegate');
+                $data['SelectDelegate'] = json_decode(json_encode($this->delegate->select($filterData)), true);
+            }
+
+            if($data['filter']['type'] == "Student"){
+                $filterData = array(
+                    $_POST['what'],
+                    $_POST['where'],
+                    $_POST['skill'],
+                    $_POST['name-company'],
+                    $_POST['duration'],
+                    $_POST['type-duration'],
+                    $_POST['remuneration'],
+                    $_POST['date-published'],
+                    $_POST['numberplaces'],
+                    $_POST['degree']
+                );
+                $this->loadModel('student');
+                $data['SelectStudent'] = json_decode(json_encode($this->student->select($filterData)), true);
+            }
+            
         }
+        else {
+            if($data['filter']['type'] == "Offers"){
+                $filterData = array(
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                );
+                $this->loadModel('offer');
+                $data['SelectOffer'] = json_decode(json_encode($this->offer->select($filterData)), true);
+            } 
+            if($data['filter']['type'] == "Companies"){
+                $filterData = array(
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                );
+                $this->loadModel('company');
+                $data['SelectCompany'] = json_decode(json_encode($this->offer->select($filterData)), true);
+            }
+            if($data['filter']['type'] == "Pilot"){
+                $filterData = array(
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                );
+                $this->loadModel('pilot');
+                $data['SelectPilot'] = json_decode(json_encode($this->pilot->select($filterData)), true);
+            } 
+            if($data['filter']['type'] == "Delegate"){
+                $filterData = array(
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                );
+                $this->loadModel('delegate');
+                $data['SelectDelegate'] = json_decode(json_encode($this->delegate->select($filterData)), true);
+            } 
+            if($data['filter']['type'] == "Student"){
+                $filterData = array(
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                );
+                $this->loadModel('student');
+                $data['SelectStudent'] = json_decode(json_encode($this->student->select($filterData)), true);
+            }  
+            
+        }
+
+        
         
         
 

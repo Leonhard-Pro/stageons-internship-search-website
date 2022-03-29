@@ -571,39 +571,6 @@
   color: black;
 }
 
-#main .management-create-update .address-informations .address-street {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 370px;
-  height: auto;
-  margin: 5px auto;
-  padding: 4px 6px;
-}
-
-#main .management-create-update .address-informations .address-street .address-street-num,
-#main .management-create-update .address-informations .address-street .address-street-name {
-  display: inline-block;
-  width: 20vw;
-  height: 40px;
-  margin: auto;
-  padding: 4px 6px;
-  border-radius: 30px;
-  color: black;
-}
-
-#main .management-create-update .address-informations .address-street .address-street-num {
-  min-width: 90px;
-  max-width: 90px;
-  margin-right: 5px;
-}
-
-#main .management-create-update .address-informations .address-street .address-street-name {
-  margin-left: 0;
-  min-width: 180px;
-  max-width: 280px;
-}
-
 #main .management-create-update .confirm-button {
   width: 100%;
   height: 75px;

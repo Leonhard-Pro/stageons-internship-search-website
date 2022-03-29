@@ -540,7 +540,6 @@ $fontFamily: Calibri, Arial;
             }
 
             input {
-
                 display: block;
                 width: 20vw;
                 max-width: 370px;
@@ -577,16 +576,20 @@ $fontFamily: Calibri, Arial;
                 
             }
 
-            .companies-visible {
+            #division-visible{
+                margin-top: 10px;
+                width: 100%;
                 display: inline-block;
-                width: 49%;
-                margin: 5px auto;
-            }
 
-            .visible-label {
-                display: inline-block;
-                width: 49%;
-                margin: 5px auto;
+                .companies-visible {
+                    max-width: 30px;
+                    min-width: 30px;
+                }
+
+                .visible-label {
+                    display: inline-block;
+                    margin: 5px auto;
+                }
             }
         }
 

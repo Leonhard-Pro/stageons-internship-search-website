@@ -6,8 +6,8 @@ class Management extends Controller {
     function index(){
         $this->loadModel('Address');
         $this->loadModel('Company');
-        $this->loadModel('date');
-        $this->loadModel('offer');
+        $this->loadModel('Date');
+        $this->loadModel('Offer');
         $data = array();
 
     $data['filter'] = array (
@@ -79,9 +79,9 @@ class Management extends Controller {
                     $city = $_POST['adrss_city'];
                     $postal_code = $_POST['adrss_postal_code'];
                     $street_number = $_POST['adrss_number'];
-                    $company_name = $_POST[''];
+                    $company_name = $_POST['company_name'];
 
-                    $this->Offer->create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name);
+                    $this->Offer->create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills);
                     break;
             }
         }

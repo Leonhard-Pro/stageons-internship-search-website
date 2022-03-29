@@ -1,4 +1,6 @@
 <head>
+    <!DOCTYPE html>
+    <html lang="en">
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -16,12 +18,12 @@
     <!-- Global CSS -->
     <link rel="stylesheet" href="views/layout/css/mainstyles.css">
     <script src="views/layout/js/jquery-3.6.0.min.js" async></script>
-    
-    <!-- Current Page Part -->
-    <link rel="stylesheet" href="<?php echo "views/". $page['pageName'] ."/css/styles.css"; ?>">
 
-    
-    <?php if ($page['pageName'] != "login"): ?>
+    <!-- Current Page Part -->
+    <link rel="stylesheet" href="<?php echo "views/" . $page['pageName'] . "/css/styles.css"; ?>">
+
+
+    <?php if ($page['pageName'] != "login") : ?>
         <!-- Header Part -->
         <link rel="stylesheet" href="views/layout/css/headerstyles.css">
         <script src="views/layout/js/headerBugerMenu.js" async></script>
@@ -32,62 +34,62 @@
     <?php endif; ?>
 
 
-    
-    <?php if ($page['pageName'] != "account" && $page['pageName'] != "login" && $page['pageName'] && "notifications"): ?>
+
+    <?php if ($page['pageName'] != "account" && $page['pageName'] != "login" && $page['pageName'] && "notifications") : ?>
         <!-- Filters Part -->
         <link rel="stylesheet" href="views/layout/css/filterstyles.css">
         <script src="views/layout/js/filter.js" async></script>
     <?php endif; ?>
 
-    
 
-    
-    <?php if ($page['pageName'] == "account"): ?>
+
+
+    <?php if ($page['pageName'] == "account") : ?>
         <!-- Account Part -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="views/layout/js/show_pwrd.js" async></script>
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "advancement"): ?>
+
+    <?php if ($page['pageName'] == "advancement") : ?>
         <!-- Advancement Part -->
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "companies"): ?>
+
+    <?php if ($page['pageName'] == "companies") : ?>
         <!-- Companies Part -->
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "login"): ?>
+
+    <?php if ($page['pageName'] == "login") : ?>
         <!-- Login Part -->
         <link rel="stylesheet" href="views/login/css/cookies_bannerstyles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="views/layout/js/show_pwrd.js" async></script>
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "management"): ?>
+
+    <?php if ($page['pageName'] == "management") : ?>
         <!-- Management Part -->
         <script src="views/management/js/find_address.js"></script>
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "notifications"): ?>
+
+    <?php if ($page['pageName'] == "notifications") : ?>
         <!-- Notifications Part -->
-        
+
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "offers"): ?>
+
+    <?php if ($page['pageName'] == "offers") : ?>
         <script src="views/layout/js/jquery-3.6.0.min.js"></script>
         <script src="views/offers/js/infoList.js"></script>
-    
+
     <?php endif; ?>
 
-    
-    <?php if ($page['pageName'] == "statistic"): ?>
+
+    <?php if ($page['pageName'] == "statistic") : ?>
         <!-- Statistic Part -->
-    
+
     <?php endif; ?>
 </head>

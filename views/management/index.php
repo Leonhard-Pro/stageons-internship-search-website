@@ -1,3 +1,4 @@
+
 <div id="main">
     <div class="menu-management">
         <form action="" method="POST">
@@ -148,15 +149,15 @@
                     <h1 id="personal-title">Personal information</h1>
                     <div class="personal-informations">
                         <label for="personal-login">Login:</label>
-                        <input class="personal-login" id="personal-login" type="email" placeholder="Login:">
+                        <input class="personal-login" id="personal-login" type="email" placeholder="Login" name="login" required>
                         <label for="personal-password">Password:</label>
-                        <input class="personal-password" id="personal-password" type="password" placeholder="Password:">
+                        <input class="personal-password" id="personal-password" type="password" placeholder="Password" name="password" required>
                         <label for="personal-name">Name:</label>
-                        <input class="personal-name" id="personal-name" type="text" placeholder="Name:">
+                        <input class="personal-name" id="personal-name" type="text" placeholder="Name" name="name" required>
                         <label for="personal-first-name">First Name:</label>
-                        <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name::">
+                        <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name" name="first_name" required>
                         <label for="personal-email">Email:</label>
-                        <input class="personal-email" id="personal-email" type="email" placeholder="Email:">
+                        <input class="personal-email" id="personal-email" type="email" placeholder="Email" name="email" required>
                     </div>
                 <?php endif; ?>
                 <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])): ?>
@@ -212,27 +213,29 @@
 
                 <?php if ($management['type'] == "Offers"): ?>
                     <h1 id="offers-title">Offer</h1>
-                    <div class="offers-informations">
-                        <label for="offers-title">Title:</label>
-                        <input class="offers-title" id="offers-title" type="text" placeholder="Title:">
+                    <div class="offers-informations">                      
+                        <label for="offer-title">Title:</label>
+                        <input class="offer-title" id="offer-title" type="text" placeholder="Title" name="title" required>
+                        <label for="offers-company">Company:</label>
+                        <input class="offers-company" id="offers-company" type="text" placeholder="Company" name="company_name" required>
                         <label for="personal-login">Description:</label>
-                        <textarea class="offers-description" id="offers-description" placeholder="Description:"></textarea>
+                        <textarea class="offers-description" id="offers-description" placeholder="Description" name="description" form="management-form"></textarea>
                         <label for="personal-login">Skill(s):</label>
-                        <input class="offers-skill" id="offers-skill" type="text" placeholder="Skill(s):">
+                        <input class="offers-skill" id="offers-skill" type="text" placeholder="Skill(s): e.g. HTML - CSS - PHP" name="skills" required>
                         <label for="personal-login">Duration:</label>
-                        <input class="offers-duration" id="offers-duration" type="number" placeholder="Duration:">
-                        <label for="personal-login">Duration Type:</label>
-                        <input class="offers-duration-type" id="offers-duration-type" type="text" placeholder="Duration Type:">
+                        <input class="offers-duration" id="offers-duration" type="number" placeholder="Duration" name="duration" required>
+                        <label for="personal-login">Time Unit:</label>
+                        <input class="offers-duration-type" id="offers-duration-type" type="text" placeholder="Time Unit" name="time_unit" required>
                         <label for="personal-login">Degree require:</label>
-                        <input class="offers-degree" id="offers-degree" type="text" placeholder="Degree require:">
+                        <input class="offers-degree" id="offers-degree" type="text" placeholder="Grade required" name="grade" required>
                         <label for="personal-login">Date:</label>
-                        <input class="offers-date" id="offers-date" type="date" placeholder="Date publish:">
+                        <input class="offers-date" id="offers-date" type="date" placeholder="Publish Date" name="publish_date" required>
                         <label for="personal-login">Remuneration:</label>
-                        <input class="offers-remuneration" id="offers-remuneration" type="number" placeholder="Remuneration:">
+                        <input class="offers-remuneration" id="offers-remuneration" type="number" placeholder="Remuneration" name="remuneration" required>
                         <label for="personal-login">Number place:</label>
-                        <input class="offers-number-places" id="offers-number-places" type="number" placeholder="Number place:">
+                        <input class="offers-number-places" id="offers-number-places" type="number" placeholder="Number of posts :" name="posts_number" required>
                         <label for="personal-login">Link:</label>
-                        <input class="offers-link" id="offers-link" type="text" placeholder="Link:">
+                        <input class="offers-link" id="offers-link" type="text" placeholder="Link" name="link" required>
                     </div>
                 <?php endif; ?>
 
@@ -240,18 +243,36 @@
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
                         <label for="companies-title">Name:</label>
-                        <input class="companies-title" id="companies-title" type="text" placeholder="Name" name="name">
+                        <input class="companies-title" id="companies-title" type="text" placeholder="Name" name="name" required>
                         <label for="companies-description">Description:</label>
-                        <textarea class="companies-description" id="companies-description" placeholder="Description" name="description" form="management-form"></textarea>
+                        <textarea class="companies-description" id="companies-description" placeholder="Description" name="description" form="management-form" required></textarea>
                         <label for="companies-email">Email:</label>
-                        <input class="companies-email" id="companies-email" type="email" placeholder="Email" name="email">
+                        <input class="companies-email" id="companies-email" type="email" placeholder="Email" name="email" required>
                         <label for="companies-domain-activity">Domain Activity:</label>
-                        <input class="companies-domain-activity" id="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity">
+                        <input class="companies-domain-activity" id="companies-domain-activity" type="text" placeholder="Domain Activity: e.g. WEB - Network - IT" name="domain_activity" required>
                         <label for="companies-cesi-accpet">Committed Intern:</label>
                         <input class="companies-cesi-accpet" id="companies-cesi-accpet" type="text" placeholder="Committed Intern" name="committed_intern">
                         <label for="companies-degree">Degree require:</label>
-                        <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require">
-                        <input class="companies-visible" id="companies-visible" type="checkbox" id="visible" name="visible"><label class="visible-label" for="visible">Visible ?</label>
+                        <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
+                        <div id="division-visible">
+                            <label class="visible-label" for="visible">Visible ?</label>
+                            <input class="companies-visible"  type="checkbox" id="visible" name="visible" checked>
+                        </div>
+                            <label for="grade">Grade</label>
+                        <div id="division-grade">
+                            <input type="radio" name="grade" value="None" id="grade-no" class="grade">
+                            <label for="grade-no" id="grade-no-label">None</label>
+                            <input type="radio" name="grade" value="1" id="grade-1" class="grade">
+                            <label for="grade-1">1</label>
+                            <input type="radio" name="grade" value="2" id="grade-2" class="grade">
+                            <label for="grade-2">2</label>
+                            <input type="radio" name="grade" value="3" id="grade-3" class="grade">
+                            <label for="grade-3">3</label>
+                            <input type="radio" name="grade" value="4" id="grade-4" class="grade">
+                            <label for="grade-4">4</label>
+                            <input type="radio" name="grade" value="5" id="grade-5" class="grade">
+                            <label for="grade-5">5</label>
+                        </div>
                     </div>
                 <?php endif; ?>
 
@@ -265,7 +286,7 @@
                         <label for="pc">Postal Code:</label>
                         <input class="address-postal-code" id="pc" type="text" placeholder="Postal Code" name="adrss_postal_code" oninput="verifpc()">
                         <label for="city">City:</label>
-                        <select class="address-city" id="city" name="adrss_city">
+                        <select class="address-city" id="city" name="adrss_city" form="management-form">
 
                         </select>
 

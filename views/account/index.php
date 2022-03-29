@@ -4,7 +4,7 @@
 
         <label for="login">Login:</label>
         <input readonly="readonly" type="text" id="login" value="<?php echo $user['userObject']->getLogin(); ?>">
-            <label for="account_password">Password:</label>
+            <label for="password">Password:</label>
         <div id="account_password">
             <input readonly="readonly" type="password" id="password" value="<?php echo $user['userObject']->getPassword(); ?>">
             <i id="eye" class="fa fa-eye showpwd" onClick="showPwd('password', this)"></i>

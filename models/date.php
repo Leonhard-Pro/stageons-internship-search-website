@@ -1,8 +1,9 @@
 <?php
 class Date extends Model {
-
-    //create date
+    
     function create($date) {
+
+        //create date
         $this->table = 'date';
         $this->createWhereNotExists(array(
             'fields' => 'date.Date',

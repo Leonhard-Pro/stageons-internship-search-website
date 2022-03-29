@@ -526,16 +526,44 @@
   resize: vertical;
 }
 
-#main .management-create-update .companies-informations .companies-visible {
+#main .management-create-update .companies-informations #division-visible {
+  margin-top: 10px;
+  width: 100%;
   display: inline-block;
-  width: 49%;
+}
+
+#main .management-create-update .companies-informations #division-visible .companies-visible {
+  max-width: 30px;
+  min-width: 30px;
+}
+
+#main .management-create-update .companies-informations #division-visible .visible-label {
+  display: inline-block;
   margin: 5px auto;
 }
 
-#main .management-create-update .companies-informations .visible-label {
-  display: inline-block;
-  width: 49%;
-  margin: 5px auto;
+#main .management-create-update .companies-informations #division-grade {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main .management-create-update .companies-informations #division-grade .grade {
+  max-width: 15px;
+  min-width: 15px;
+}
+
+#main .management-create-update .companies-informations #division-grade label {
+  font-weight: 100;
+}
+
+#main .management-create-update .companies-informations #division-grade #grade-no-label {
+  padding-right: 20px;
+  border: none;
+  border-right: solid;
+  border-width: 1px;
+  height: 30px;
 }
 
 #main .management-create-update .address-informations {

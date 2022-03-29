@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 
 <div class="list">
     <?php

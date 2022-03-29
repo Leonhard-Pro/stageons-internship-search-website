@@ -1,8 +1,5 @@
  <!-- https://www.chartjs.org/docs/latest/ -->
-
- <!DOCTYPE html>
- <html lang="en">
-
+ 
  <body>
      <div id="doughnut">
          <canvas id="graph" width="400%" height="100%"></canvas>

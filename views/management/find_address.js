@@ -39,14 +39,11 @@ function verifpc() {
     xhr.send();
 };
 
-document.getElementById("city").addEventListener("input", function () {
-
-});
-
 function createTextInput(value) {
     let obj = document.createElement("input");
     obj.id = "city";
     obj.type = "text";
+    obj.name = "adrss_city";
     obj.value = value;
     return obj;
 };
@@ -54,6 +51,7 @@ function createTextInput(value) {
 function createSelect(valueList) {
     let obj = document.createElement("select");
     obj.id = "city";
+    obj.name = "adrss_city";
     obj.onblur = selectToTextInput;
     for (var i = 0; i < valueList.length; i++) {
         var option = document.createElement("option");

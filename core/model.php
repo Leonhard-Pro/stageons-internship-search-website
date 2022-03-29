@@ -90,10 +90,14 @@ class Model {
 
     public function createWhereNotExists($data) {
         isset($data["fields"]) ? $fields = $data["fields"] : 0;
-        isset($data["fields_dual"]) ? $fields_dual = $data["field_duals"] : 0;
+        isset($data["fields_dual"]) ? $fields_dual = $data["fields_dual"] : 0;
         isset($data["conditions"]) ? $conditions = $data["conditions"] : 0;
 
         $sql = "INSERT INTO $this->table ($fields) SELECT * FROM (SELECT $fields_dual FROM DUAL) AS temp WHERE NOT EXISTS (SELECT $fields FROM $this->table WHERE $conditions)";
+        //echo "<div>";
+        //echo $sql;
+        //echo "</div>";
+        $this->pdo->exec($sql);
     }
 
     public function find($data = array()) {

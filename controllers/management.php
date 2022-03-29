@@ -83,6 +83,11 @@ class Management extends Controller {
 
                     $this->Offer->create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills);
                     break;
+
+                case 'Student':
+
+                    //TODO
+                    break;
             }
         }
 

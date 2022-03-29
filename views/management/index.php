@@ -222,7 +222,7 @@
                         <input class="offers-skill" id="offers-skill" type="text" placeholder="Skill(s): e.g. HTML - CSS - PHP" name="skills" required>
                         <label for="personal-login">Duration:</label>
                         <input class="offers-duration" id="offers-duration" type="number" placeholder="Duration" name="duration" required>
-                        <label for="personal-login">Duration Type:</label>
+                        <label for="personal-login">Time Unit:</label>
                         <input class="offers-duration-type" id="offers-duration-type" type="text" placeholder="Time Unit" name="time_unit" required>
                         <label for="personal-login">Degree require:</label>
                         <input class="offers-degree" id="offers-degree" type="text" placeholder="Grade required" name="grade" required>

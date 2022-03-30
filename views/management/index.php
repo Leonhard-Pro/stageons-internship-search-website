@@ -1,3 +1,38 @@
+<?php 
+    $currentPage = 1;
+    $numberArticle = 5;
+
+    if($management['type'] == 'Offers'){
+        $sizeArray = sizeof($SelectOffer);
+    }else if($management['type'] == 'Companies'){
+        $sizeArray = sizeof($SelectCompany);
+    }else if($management['type'] == 'Pilot'){
+        $sizeArray = sizeof($SelectPilot);
+    }else if($management['type'] == 'Delegate'){
+        $sizeArray = sizeof($SelectDelegate);
+    }else if($management['type'] == 'Student'){
+        $sizeArray = sizeof($SelectStudent);
+    }
+
+    if ($sizeArray%5 == 0){ $numberPages = $sizeArray/$numberArticle;}else{$numberPages = round($sizeArray/$numberArticle, 0) + 1;}
+
+    if(isset(explode('=',$_SERVER['REQUEST_URI'])[1]))
+    {
+        if(explode('=',$_SERVER['REQUEST_URI'])[1])
+        $currentPage = explode('=',$_SERVER['REQUEST_URI'])[1];
+    }
+    else
+    {
+        $currentPage = 1;
+    }
+
+    if($currentPage >= $numberPages)
+        $currentPage = $numberPages;
+
+
+    
+?>
+
 <div id="main">
     <div class="menu-management">
         <form action="" method="POST">
@@ -16,11 +51,23 @@
             <?php include("views/layout/filters.php"); ?>
         </div>
     <?php endif; ?>
-
-
+    
+    <?php echo "pagename";echo $page['pageName'];?>
     <div class="management-interface">
-        <?php if ($management['action'] == "") : ?>
-            <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]) : ?>
+            
+        <div id="pages_buttons_up">
+            <?php 
+                for ($p = 1; $p <= $numberPages; $p++)
+                {
+                    if ($currentPage != $p) echo("<a href='?page=$p'>$p</a>");
+                    else echo("<a>$p</a>");
+                }
+            ?>
+        </div>
+
+            
+        <?php if ($management['action'] == ""): ?>
+            <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]): ?>
                 <form class="form-create" action="" method="POST">
                     <div class="polygon-form">
                         <input name="typeManagement" type="hidden" value="<?php echo $management['type']; ?>"></input>
@@ -29,114 +76,226 @@
                 </form>
             <?php endif ?>
 
+            <?php
+            if ($sizeArray > 0) {
+                if ($currentPage == $numberPages){
+                    for ($i = (($numberPages * $numberArticle) - $numberArticle); $i < $sizeArray; $i++) {
+                        if ($management['type'] == "Offers"){
+                            echo ('<div class="offer">
+                                    <div class="informations">
+                                        <h1 class="information-offer offer-title">'.$SelectOffer[$i]['Title'].'</h1>
+                                        <h2 class="information-offer offer-name-company">'.$SelectOffer[$i]['Company_Name'].'</h2>
+                                        <h3 class="information-offer offer-locate">'.$SelectOffer[$i]['City'].' ('.$SelectOffer[$i]['Postal_Code'].')</h3>
+                                        <h3 class="information-offer offer-degree">'.$SelectOffer[$i]['Degree_Level_Required'].'</h3>
+                                        <h3 class="information-offer offer-date-publish">'.$SelectOffer[$i]['Date'].'</h3>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][9]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][10]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Companies"){
+                            echo ('<div class="company">
+                                    <div class="informations">
+                                        <h1 class="information-company company-name-company">'. $SelectCompany[$i]["Company_Name"].'</h1>
+                                        <h2 class="information-company company-locate">'. $SelectCompany[$i]["City"].' ('. $SelectCompany[$i]["Postal_Code"].')</h2>
+                                        <h2 class="information-company company-domain-activity">'. $SelectCompany[$i]["Domain_Activity"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][3]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][5]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Student"){
+                            echo ('<div class="student">
+                                    <div class="informations">
+                                        <h1 class="information-student student-name">'. $SelectStudent[$i]["Person_Name"].'</h1>
+                                        <h1 class="information-student student-first-name">'. $SelectStudent[$i]["Person_First_Name"].'</h1>
+                                        <h2 class="information-student student-center">'. $SelectStudent[$i]["Center"].'</h2>
+                                        <h2 class="information-student student-class">'. $SelectStudent[$i]["Class"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][23]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][24]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Delegate"){
+                            echo ('<div class="delegate">
+                                    <div class="informations">
+                                        <h1 class="information-delegate delegate-name">'. $SelectDelegate[$i]["Person_Name"].'</h1>
+                                        <h1 class="information-delegate delegate-first-name">'. $SelectDelegate[$i]["Person_First_Name"].'</h1>
+                                        <h2 class="information-delegate delegate-center">'. $SelectDelegate[$i]["Center"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][18]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][19]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Pilot"){
+                            echo ('<div class="pilot">
+                                    <div class="informations">
+                                        <h1 class="information-pilot pilot-name">'. $SelectPilot[$i]["Person_Name"].'</h1>
+                                        <h1 class="information-pilot pilot-first-name">'. $SelectPilot[$i]["Person_First_Name"].'</h1>
+                                        <h2 class="information-pilot pilot-center">'. $SelectPilot[$i]["Center"].'</h2>
+                                        <h2 class="information-pilot pilot-class">'. $SelectPilot[$i]["Class"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][14]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][15]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
 
-            <?php if ($management['type'] == "Offers") : ?>
-                <div class="offer">
-                    <div class="informations">
-                        <h1 class="information-offer offer-title">Dévéloppement Informatique</h1>
-                        <h2 class="information-offer offer-name-company">CESI</h2>
-                        <h3 class="information-offer offer-locate">Villeurbanne (69001)</h3>
-                        <h3 class="information-offer offer-degree">Bac+2</h3>
-                        <h3 class="information-offer offer-date-publish">24/03/2022</h3>
-                    </div>
-                    <div class="management-tools">
-                        <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][9]) : ?>
-                                <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
-                            <?php endif; ?>
-                            <?php if ($user['userAuthorization'][10]) : ?>
-                                <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
-                            <?php endif; ?>
-                        </form>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-
-            <?php if ($management['type'] == "Companies") : ?>
-                <div class="company">
-                    <div class="informations">
-                        <h1 class="information-company offer-name-company">CESI</h1>
-                        <h2 class="information-company offer-locate">Villeurbanne (69001)</h2>
-                        <h2 class="information-company offer-domain-activity">Informatique</h2>
-                    </div>
-                    <div class="management-tools">
-                        <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][3]) : ?>
-                                <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
-                            <?php endif; ?>
-                            <?php if ($user['userAuthorization'][5]) : ?>
-                                <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
-                            <?php endif; ?>
-                        </form>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-
-
-            <?php if ($management['type'] == "Student") : ?>
-                <div class="student">
-                    <div class="informations">
-                        <h1 class="information-student offer-name">GUERREIRO</h1>
-                        <h1 class="information-student offer-first-name">Jordan</h1>
-                        <h2 class="information-student offer-center">Lyon</h2>
-                        <h2 class="information-student offer-class">CPIA2 INFO</h2>
-                    </div>
-                    <div class="management-tools">
-                        <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][23]) : ?>
-                                <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
-                            <?php endif; ?>
-                            <?php if ($user['userAuthorization'][24]) : ?>
-                                <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
-                            <?php endif; ?>
-                        </form>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-            <?php if ($management['type'] == "Delegate") : ?>
-                <div class="delegate">
-                    <div class="informations">
-                        <h1 class="information-delegate offer-name">JAMBUT</h1>
-                        <h1 class="information-delegate offer-first-name">Thomas (69001)</h1>
-                        <h2 class="information-delegate offer-center">Lyon</h2>
-                    </div>
-                    <div class="management-tools">
-                        <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][18]) : ?>
-                                <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
-                            <?php endif; ?>
-                            <?php if ($user['userAuthorization'][19]) : ?>
-                                <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
-                            <?php endif; ?>
-                        </form>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-
-            <?php if ($management['type'] == "Pilot") : ?>
-                <div class="pilot">
-                    <div class="informations">
-                        <h1 class="information-pilot offer-name">SANTILARIO ELENA</h1>
-                        <h1 class="information-pilot offer-first-name">Julio</h1>
-                        <h2 class="information-pilot offer-center">Lyon</h2>
-                        <h3 class="information-pilot offer-class">CPIA2 INFO-CPIA3 INFO</h3>
-                    </div>
-                    <div class="management-tools">
-                        <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][14]) : ?>
-                                <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
-                            <?php endif; ?>
-                            <?php if ($user['userAuthorization'][15]) : ?>
-                                <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
-                            <?php endif; ?>
-                        </form>
-                    </div>
-                </div>
-            <?php endif; ?>
+                    }
+                }
+                else {
+                    for ($i = ($currentPage * $numberArticle) - $numberArticle; $i < $currentPage * $numberArticle; $i++) {
+                        if ($management['type'] == "Offers"){
+                            echo ('<div class="offer">
+                                    <div class="informations">
+                                        <h1 class="information-offer offer-title">'.$SelectOffer[$i]['Title'].'</h1>
+                                        <h2 class="information-offer offer-name-company">'.$SelectOffer[$i]['Company_Name'].'</h2>
+                                        <h3 class="information-offer offer-locate">'.$SelectOffer[$i]['City'].' ('.$SelectOffer[$i]['Postal_Code'].')</h3>
+                                        <h3 class="information-offer offer-degree">'.$SelectOffer[$i]['Degree_Level_Required'].'</h3>
+                                        <h3 class="information-offer offer-date-publish">'.$SelectOffer[$i]['Date'].'</h3>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][9]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][10]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Companies"){
+                            echo ('<div class="company">
+                                    <div class="informations">
+                                        <h1 class="information-company company-name-company">'. $SelectCompanies[$i]["Company_Name"].'</h1>
+                                        <h2 class="information-company company-locate">'. $SelectCompanies[$i]["City"].' ('. $SelectCompanies[$i]["Postal_Code"].')</h2>
+                                        <h2 class="information-company company-domain-activity">'. $SelectCompanies[$i]["Domain_Activity"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][3]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][5]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Student"){
+                            echo ('<div class="student">
+                                    <div class="informations">
+                                        <h1 class="information-student student-name">'. $SelectStudent[$i]["Person_Name"].'</h1>
+                                        <h1 class="information-student student-first-name">'. $SelectStudent[$i]["Person_First_Name"].'</h1>
+                                        <h2 class="information-student student-center">'. $SelectStudent[$i]["Center"].'</h2>
+                                        <h2 class="information-student student-class">'. $SelectStudent[$i]["Class"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][23]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][24]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Delegate"){
+                            echo ('<div class="delegate">
+                                    <div class="informations">
+                                        <h1 class="information-delegate delegate-name">'. $SelectDelegate[$i]["Person_Name"].'</h1>
+                                        <h1 class="information-delegate delegate-first-name">'. $SelectDelegate[$i]["Person_First_Name"].'</h1>
+                                        <h2 class="information-delegate delegate-center">'. $SelectDelegate[$i]["Center"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][18]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][19]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                        if ($management['type'] == "Pilot"){
+                            echo ('<div class="pilot">
+                                    <div class="informations">
+                                        <h1 class="information-pilot pilot-name">'. $SelectPilot[$i]["Person_Name"].'</h1>
+                                        <h1 class="information-pilot pilot-first-name">'. $SelectPilot[$i]["Person_First_Name"].'</h1>
+                                        <h2 class="information-pilot pilot-center">'. $SelectPilot[$i]["Center"].'</h2>
+                                        <h2 class="information-pilot pilot-class">'. $SelectPilot[$i]["Class"].'</h2>
+                                    </div>
+                                    <div class="management-tools">
+                                        <form class="form-update-delete" method="POST">');
+                                            if ($user['userAuthorization'][14]) {
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                            }
+                                            if ($user['userAuthorization'][15]){
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                            }
+                                        echo ('</form>
+                                    </div>
+                                </div>');
+                        }
+                    }
+                }
+            }
+            ?>
+            <div id="pages_buttons_down">
+                <?php 
+                    for ($p = 1; $p <= $numberPages; $p++)
+                    {
+                        if ($currentPage != $p) echo("<a href='?page=$p'>$p</a>");
+                        else echo("<a>$p</a>");
+                    }
+                ?>
+            </div>
         <?php endif; ?>
     </div>
 

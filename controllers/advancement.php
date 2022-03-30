@@ -1,36 +1,66 @@
 <?php
 class Advancement extends Controller {
 
-function index(){
-    $data = array();
+    function index(){
+        $data = array();
 
-    if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
-        header("Location:login");
-    }
-
-
-    $this->loadModel('userinformations');
-    $data['user'] = $this->userinformations->getUserInformation();
-
-    if(!$data['user']['userObject'] instanceof User) {
-        header("Location:login");
-    }
-
-    $data['filter'] = array (
-        'type' => 'Student'
-    );
-    
-    
+        if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
+            header("Location:login");
+        }
 
 
+        $this->loadModel('userinformations');
+        $data['user'] = $this->userinformations->getUserInformation();
 
-    
-    
-    $this->set($data);
+        if(!$data['user']['userObject'] instanceof User) {
+            header("Location:login");
+        }
 
-    
-    
-    $this->render('index');
+        $data['filter'] = array (
+            'type' => 'Student'
+        );
+
+        if(!isset($advancement)){
+            $advancement = array(
+                'type' => 'Wishlist',
+                'action' => ''
+            );
+            $data['advancement'] = $advancement;
+            
+        }
+
+        if (isset($_POST["typeAdvancement"])){
+            $advancement['type'] = $_POST["typeAdvancement"];
+            $advancement['action'] = "";
+            $data['advancement'] = $advancement;
+            $data['filter'] = array (
+                'type' => $advancement['type']
+            );
+            unset($_POST["typeAdvancement"]);
+        }
+
+        if (isset($_POST["actionAdvancement"])){
+            $advancement['action'] = $_POST["actionAdvancement"];
+            $data['advancement'] = $advancement;
+            $data['filter'] = array (
+                'type' => ""
+            );
+            unset($_POST["actionAdvancement"]);
+        }
+
+        if ($date[''])
+        
+        
+
+
+
+        
+        
+        $this->set($data);
+
+        
+        
+        $this->render('index');
     }
 }
 ?>

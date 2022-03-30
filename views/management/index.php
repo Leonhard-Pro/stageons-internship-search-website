@@ -151,7 +151,10 @@
                         <label for="personal-login">Login:</label>
                         <input class="personal-login" id="personal-login" type="email" placeholder="Login" name="login" required>
                         <label for="personal-password">Password:</label>
-                        <input class="personal-password" id="personal-password" type="password" placeholder="Password" name="password" required>
+                        <div id="div-password">
+                            <input class="personal-password" id="personal-password" type="password" placeholder="Password" name="password" required>
+                            <i id="eye" class="fa fa-eye showpwd" onClick="showPwd('personal-password', this)"></i>
+                        </div>
                         <label for="personal-name">Name:</label>
                         <input class="personal-name" id="personal-name" type="text" placeholder="Name" name="name" required>
                         <label for="personal-first-name">First Name:</label>

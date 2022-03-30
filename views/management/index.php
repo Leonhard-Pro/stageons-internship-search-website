@@ -1,4 +1,3 @@
-
 <div id="main">
     <div class="menu-management">
         <form action="" method="POST">
@@ -6,22 +5,22 @@
             <input type="submit" name="typeManagement" value="Companies">
             <input type="submit" name="typeManagement" value="Student">
             <input type="submit" name="typeManagement" value="Delegate">
-            <?php if ($user['userType'] != "Pilot"): ?>
+            <?php if ($user['userType'] != "Pilot") : ?>
                 <input type="submit" name="typeManagement" value="Pilot">
             <?php endif; ?>
         </form>
     </div>
-    
-    <?php if( $filter['type'] != ""): ?>
-    <div id="filters">
-    <?php include("views/layout/filters.php"); ?>
-    </div>
+
+    <?php if ($filter['type'] != "") : ?>
+        <div id="filters">
+            <?php include("views/layout/filters.php"); ?>
+        </div>
     <?php endif; ?>
-    
+
 
     <div class="management-interface">
-        <?php if ($management['action'] == ""): ?>
-            <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]): ?>
+        <?php if ($management['action'] == "") : ?>
+            <?php if ($user['userAuthorization'][2] || $user['userAuthorization'][8] || $user['userAuthorization'][13] || $user['userAuthorization'][17] || $user['userAuthorization'][22]) : ?>
                 <form class="form-create" action="" method="POST">
                     <div class="polygon-form">
                         <input name="typeManagement" type="hidden" value="<?php echo $management['type']; ?>"></input>
@@ -31,7 +30,7 @@
             <?php endif ?>
 
 
-            <?php if ($management['type'] == "Offers"): ?>
+            <?php if ($management['type'] == "Offers") : ?>
                 <div class="offer">
                     <div class="informations">
                         <h1 class="information-offer offer-title">Dévéloppement Informatique</h1>
@@ -42,10 +41,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][9]): ?>
+                            <?php if ($user['userAuthorization'][9]) : ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][10]): ?>
+                            <?php if ($user['userAuthorization'][10]) : ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -54,7 +53,7 @@
             <?php endif; ?>
 
 
-            <?php if ($management['type'] == "Companies"): ?>
+            <?php if ($management['type'] == "Companies") : ?>
                 <div class="company">
                     <div class="informations">
                         <h1 class="information-company offer-name-company">CESI</h1>
@@ -63,10 +62,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][3]): ?>
+                            <?php if ($user['userAuthorization'][3]) : ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][5]): ?>
+                            <?php if ($user['userAuthorization'][5]) : ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -76,7 +75,7 @@
 
 
 
-            <?php if ($management['type'] == "Student"): ?>
+            <?php if ($management['type'] == "Student") : ?>
                 <div class="student">
                     <div class="informations">
                         <h1 class="information-student offer-name">GUERREIRO</h1>
@@ -86,10 +85,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][23]): ?>
+                            <?php if ($user['userAuthorization'][23]) : ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][24]): ?>
+                            <?php if ($user['userAuthorization'][24]) : ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -97,7 +96,7 @@
                 </div>
             <?php endif; ?>
 
-            <?php if ($management['type'] == "Delegate"): ?>
+            <?php if ($management['type'] == "Delegate") : ?>
                 <div class="delegate">
                     <div class="informations">
                         <h1 class="information-delegate offer-name">JAMBUT</h1>
@@ -106,10 +105,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][18]): ?>
+                            <?php if ($user['userAuthorization'][18]) : ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][19]): ?>
+                            <?php if ($user['userAuthorization'][19]) : ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -118,7 +117,7 @@
             <?php endif; ?>
 
 
-            <?php if ($management['type'] == "Pilot"): ?>
+            <?php if ($management['type'] == "Pilot") : ?>
                 <div class="pilot">
                     <div class="informations">
                         <h1 class="information-pilot offer-name">SANTILARIO ELENA</h1>
@@ -128,10 +127,10 @@
                     </div>
                     <div class="management-tools">
                         <form class="form-update-delete" method="POST">
-                            <?php if ($user['userAuthorization'][14]): ?>
+                            <?php if ($user['userAuthorization'][14]) : ?>
                                 <button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>
                             <?php endif; ?>
-                            <?php if ($user['userAuthorization'][15]): ?>
+                            <?php if ($user['userAuthorization'][15]) : ?>
                                 <button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>
                             <?php endif; ?>
                         </form>
@@ -142,10 +141,10 @@
     </div>
 
 
-    <?php if ($management['action'] == "Create" || $management['action'] == "Update"): ?>
+    <?php if ($management['action'] == "Create" || $management['action'] == "Update") : ?>
         <form method="POST" id="management-form">
             <div class="management-create-update">
-                <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student"): ?>
+                <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student") : ?>
                     <h1 id="personal-title">Personal information</h1>
                     <div class="personal-informations">
                         <label for="personal-login">Login:</label>
@@ -167,7 +166,7 @@
                         <input class="personal-class" id="personal-class" type="text" placeholder="Class" name="class" required>
                     </div>
                 <?php endif; ?>
-                <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])): ?>
+                <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])) : ?>
                     <h1 class="authorization-title">Authorization</h1>
                     <div class="authorization">
                         <div class="authorization-checkbox">
@@ -218,9 +217,9 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if ($management['type'] == "Offers"): ?>
+                <?php if ($management['type'] == "Offers") : ?>
                     <h1 id="offers-title">Offer</h1>
-                    <div class="offers-informations">                      
+                    <div class="offers-informations">
                         <label for="offer-title">Title:</label>
                         <input class="offer-title" id="offer-title" type="text" placeholder="Title" name="title" required>
                         <label for="offers-company">Company:</label>
@@ -246,7 +245,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if ($management['type'] == "Companies"): ?>
+                <?php if ($management['type'] == "Companies") : ?>
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
                         <label for="companies-title">Name:</label>
@@ -263,9 +262,9 @@
                         <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
                         <div id="division-visible">
                             <label class="visible-label" for="visible">Visible ?</label>
-                            <input class="companies-visible"  type="checkbox" id="visible" name="visible" checked>
+                            <input class="companies-visible" type="checkbox" id="visible" name="visible" checked>
                         </div>
-                            <label for="grade">Grade</label>
+                        <label for="grade">Grade</label>
                         <div id="division-grade">
                             <input type="radio" name="grade" value="None" id="grade-no" class="grade">
                             <label for="grade-no" id="grade-no-label">None</label>
@@ -283,7 +282,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")): ?>
+                <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")) : ?>
                     <h1 id="address-title">Address</h1>
                     <div class="address-informations">
                         <label for="address-street-num">Street Number:</label>
@@ -308,7 +307,7 @@
         </form>
     <?php endif; ?>
 </div>
-<?php if ($management['action'] == "Delete"): ?>
+<?php if ($management['action'] == "Delete") : ?>
     <div class="delete-blur">
     </div>
     <form class="delete-popup">

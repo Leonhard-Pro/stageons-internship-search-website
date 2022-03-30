@@ -1,3 +1,5 @@
+
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/serviceworker.js');
 };
@@ -11,7 +13,6 @@ self.addEventListener("activate", (event) => {
     self.clients.claim();
 });
 
-
 self.addEventListener("fetch", (event) => {
     event.respondWith(caches.open("cache-dynamique").then(cache =>
         cache.match(event.request).then(cResponse => {
@@ -24,4 +25,3 @@ self.addEventListener("fetch", (event) => {
         })
     ));
 });
-

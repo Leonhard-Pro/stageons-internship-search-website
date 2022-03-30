@@ -49,14 +49,17 @@
             <!-- Account Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
+
         <?php break;
 
         case "advancement": ?>
             <!-- Advancement Part -->
+
         <?php break;
 
         case "companies": ?>
             <!-- Companies Part -->
+
         <?php break;
 
         case "login": ?>
@@ -64,6 +67,7 @@
             <link rel="stylesheet" href="views/login/css/cookies_bannerstyles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
+
         <?php break;
 
         case "management": ?>
@@ -71,22 +75,26 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/management/js/find_address.js"></script>
             <script src="views/layout/js/show_pwrd.js" async></script>
+
         <?php break;
 
         case "notifications": ?>
             <!-- Notifications Part -->
+
         <?php break;
 
         case "offers": ?>
             <!-- Offers Part -->
             <script src="views/layout/js/jquery-3.6.0.min.js"></script>
             <script src="views/offers/js/infoList.js"></script>
+
         <?php break;
 
         case "statistic": ?>
-            <!-- Statistic Part -->
+            <script src="views/statistic/js/statistics.js"></script>
 
-    <?php break; } ?>
+    <?php break;
+    } ?>
 
 
 </head>

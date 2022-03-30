@@ -329,8 +329,13 @@
                         <input class="personal-email" id="personal-email" type="email" placeholder="Email" name="email" required>
                         <label for="personal-center">Center:</label>
                         <input class="personal-center" id="personal-center" type="text" placeholder="Center" name="center" required>
-                        <label for="personal-class">Class:</label>
-                        <input class="personal-class" id="personal-class" type="text" placeholder="Class" name="class" required>
+                        <?php if ($management['type'] == "Pilot"): ?>
+                            <label for="personal-class">Class(es):</label>
+                            <input class="personal-class" id="personal-class" type="text" placeholder="Classes: e.g. CPIA2 - CPIA3" name="class" required>
+                        <?php elseif ($management['type'] == "Student"): ?>
+                            <label for="personal-class">Class:</label>
+                            <input class="personal-class" id="personal-class" type="text" placeholder="Class" name="class" required>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])) : ?>
@@ -338,48 +343,48 @@
                     <div class="authorization">
                         <div class="authorization-checkbox">
                             <h1 class="authorization-title authorization-subtitle">Offer</h1>
-                            <input class="checkbox" type="checkbox" id="SFx2" name="SFx2"><label class="label-checkbox" for="SFx2">Search ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx3" name="SFx3"><label class="label-checkbox" for="SFx3">Create ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx4" name="SFx4"><label class="label-checkbox" for="SFx4">Update ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx5" name="SFx5"><label class="label-checkbox" for="SFx5">Rate ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx6" name="SFx6"><label class="label-checkbox" for="SFx6">Delete ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx7" name="SFx7"><label class="label-checkbox" for="SFx7">Consult Statistics ?</label>
+                            <input class="checkbox" type="checkbox" id="SFx2" name="SFx2"><label class="label-checkbox" for="SFx2">Search</label>
+                            <input class="checkbox" type="checkbox" id="SFx3" name="SFx3"><label class="label-checkbox" for="SFx3">Create</label>
+                            <input class="checkbox" type="checkbox" id="SFx4" name="SFx4"><label class="label-checkbox" for="SFx4">Update</label>
+                            <input class="checkbox" type="checkbox" id="SFx5" name="SFx5"><label class="label-checkbox" for="SFx5">Rate</label>
+                            <input class="checkbox" type="checkbox" id="SFx6" name="SFx6"><label class="label-checkbox" for="SFx6">Delete</label>
+                            <input class="checkbox" type="checkbox" id="SFx7" name="SFx7"><label class="label-checkbox" for="SFx7">Consult Statistics</label>
                         </div>
                         <div class="authorization-checkbox">
                             <h1 class="authorization-title authorization-subtitle">Company</h1>
-                            <input class="checkbox" type="checkbox" id="SFx8" name="SFx8"><label class="label-checkbox" for="SFx8">Search ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx9" name="SFx9"><label class="label-checkbox" for="SFx9">Create ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx10" name="SFx10"><label class="label-checkbox" for="SFx10">Update ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx11" name="SFx11"><label class="label-checkbox" for="SFx11">Delete ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx12" name="SFx12"><label class="label-checkbox" for="SFx12">Consult Statistics ?</label>
+                            <input class="checkbox" type="checkbox" id="SFx8" name="SFx8"><label class="label-checkbox" for="SFx8">Search</label>
+                            <input class="checkbox" type="checkbox" id="SFx9" name="SFx9"><label class="label-checkbox" for="SFx9">Create</label>
+                            <input class="checkbox" type="checkbox" id="SFx10" name="SFx10"><label class="label-checkbox" for="SFx10">Update</label>
+                            <input class="checkbox" type="checkbox" id="SFx11" name="SFx11"><label class="label-checkbox" for="SFx11">Delete</label>
+                            <input class="checkbox" type="checkbox" id="SFx12" name="SFx12"><label class="label-checkbox" for="SFx12">Consult Statistics</label>
                         </div>
                         <div class="authorization-checkbox">
                             <h1 class="authorization-title authorization-subtitle">Pilot</h1>
-                            <input class="checkbox" type="checkbox" id="SFx13" name="SFx13"><label class="label-checkbox" for="SFx13">Search ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx14" name="SFx14"><label class="label-checkbox" for="SFx14">Create ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx15" name="SFx15"><label class="label-checkbox" for="SFx15">Update ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx16" name="SFx16"><label class="label-checkbox" for="SFx16">Delete ?</label>
+                            <input class="checkbox" type="checkbox" id="SFx13" name="SFx13"><label class="label-checkbox" for="SFx13">Search</label>
+                            <input class="checkbox" type="checkbox" id="SFx14" name="SFx14"><label class="label-checkbox" for="SFx14">Create</label>
+                            <input class="checkbox" type="checkbox" id="SFx15" name="SFx15"><label class="label-checkbox" for="SFx15">Update</label>
+                            <input class="checkbox" type="checkbox" id="SFx16" name="SFx16"><label class="label-checkbox" for="SFx16">Delete</label>
                         </div>
                         <div class="authorization-checkbox">
                             <h1 class="authorization-title authorization-subtitle">Delegate</h1>
-                            <input class="checkbox" type="checkbox" id="SFx17" name="SFx17"><label class="label-checkbox" for="SFx17">Search ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx18" name="SFx18"><label class="label-checkbox" for="SFx18">Create ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx19" name="SFx19"><label class="label-checkbox" for="SFx19">Update ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx20" name="SFx20"><label class="label-checkbox" for="SFx20">Delete ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx21" name="SFx21"><label class="label-checkbox" for="SFx21">Assign rights ?</label>
+                            <input class="checkbox" type="checkbox" id="SFx17" name="SFx17"><label class="label-checkbox" for="SFx17">Search</label>
+                            <input class="checkbox" type="checkbox" id="SFx18" name="SFx18"><label class="label-checkbox" for="SFx18">Create</label>
+                            <input class="checkbox" type="checkbox" id="SFx19" name="SFx19"><label class="label-checkbox" for="SFx19">Update</label>
+                            <input class="checkbox" type="checkbox" id="SFx20" name="SFx20"><label class="label-checkbox" for="SFx20">Delete</label>
+                            <input class="checkbox" type="checkbox" id="SFx21" name="SFx21"><label class="label-checkbox" for="SFx21">Assign rights</label>
                         </div>
                         <div class="authorization-checkbox">
                             <h1 class="authorization-title authorization-subtitle">Student</h1>
-                            <input class="checkbox" type="checkbox" id="SFx22" name="SFx22"><label class="label-checkbox" for="SFx22">Search ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx23" name="SFx23"><label class="label-checkbox" for="SFx23">Create ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx24" name="SFx24"><label class="label-checkbox" for="SFx24">Update ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx25" name="SFx25"><label class="label-checkbox" for="SFx25">Delete ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx26" name="SFx26"><label class="label-checkbox" for="SFx26">Consult Statistics ?</label>
+                            <input class="checkbox" type="checkbox" id="SFx22" name="SFx22"><label class="label-checkbox" for="SFx22">Search</label>
+                            <input class="checkbox" type="checkbox" id="SFx23" name="SFx23"><label class="label-checkbox" for="SFx23">Create</label>
+                            <input class="checkbox" type="checkbox" id="SFx24" name="SFx24"><label class="label-checkbox" for="SFx24">Update</label>
+                            <input class="checkbox" type="checkbox" id="SFx25" name="SFx25"><label class="label-checkbox" for="SFx25">Delete</label>
+                            <input class="checkbox" type="checkbox" id="SFx26" name="SFx26"><label class="label-checkbox" for="SFx26">Consult Statistics</label>
                         </div>
                         <div class="authorization-checkbox">
                             <h1 class="authorization-title authorization-subtitle">Management</h1>
-                            <input class="checkbox" type="checkbox" id="SFx32" name="SFx32"><label class="label-checkbox" for="SFx32">Confirm Step 3 ?</label>
-                            <input class="checkbox" type="checkbox" id="SFx33" name="SFx33"><label class="label-checkbox" for="SFx33">Confirm Step 4 ?</label>
+                            <input class="checkbox" type="checkbox" id="SFx32" name="SFx32"><label class="label-checkbox" for="SFx32">Confirm Step 3</label>
+                            <input class="checkbox" type="checkbox" id="SFx33" name="SFx33"><label class="label-checkbox" for="SFx33">Confirm Step 4</label>
                         </div>
                     </div>
                 <?php endif; ?>

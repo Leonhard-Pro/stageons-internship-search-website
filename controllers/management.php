@@ -8,6 +8,12 @@ class Management extends Controller {
         $this->loadModel('Company');
         $this->loadModel('Date');
         $this->loadModel('Offer');
+        $this->loadModel('ManagePerson');
+        $this->loadModel('School');
+        $this->loadModel('Classes');
+        $this->loadModel('ManageStudent');
+        $this->loadModel('ManagePilot');
+        $this->loadModel('ManageDelegate');
         $data = array();
 
         $data['filter'] = array (
@@ -25,8 +31,10 @@ class Management extends Controller {
                 'type' => 'Offers',
                 'action' => ''
             );
-            $data['management'] = $management; 
             $data['filter']['type'] = "Offers";
+            isset($_POST['Create']) ? $management['type'] = $_POST['Create'] : 0;
+            $data['management'] = $management;
+            
         }
         
         
@@ -111,8 +119,31 @@ class Management extends Controller {
                     break;
 
                 case 'Student':
+                case 'Pilot':
+                case 'Delegate':
 
-                    //TODO
+                    $login = $_POST['login'];
+                    $password = $_POST['password'];
+                    $name = $_POST['name'];
+                    $first_name = $_POST['first_name'];
+                    $email = $_POST['email'];
+                    $center = $_POST['center'];
+                    isset($_POST['class']) ? $class = $_POST['class'] : 0;
+                    
+                    if($_POST['Create'] == 'Student') {
+                        $this->ManageStudent->create($login, $password, $name, $first_name, $email, $center, $class);
+
+                    } elseif($_POST['Create'] == 'Pilot') {
+                        $class = explode(" - ", $class);
+                        $this->ManagePilot->create($login, $password, $name, $first_name, $email, $center, $class);
+
+                    } else {
+                        $authorizations = '1';
+                        for ($i = 2; $i < 36; $i++)
+                            $authorizations .= isset($_POST['SFx'.$i]) ? 1 : 0;
+                        
+                        $this->ManageDelegate->create($login, $password, $name, $first_name, $email, $center, $authorizations);
+                    }
                     break;
             }
         }

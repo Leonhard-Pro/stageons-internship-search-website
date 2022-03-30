@@ -1,3 +1,10 @@
+<!--
+
+<link rel="manifest" href="manifest.json">
+<script src="js.js"></script>
+
+-->
+
 
 <?php
 define('WEBROOT', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));

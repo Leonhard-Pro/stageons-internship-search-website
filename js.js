@@ -1,9 +1,6 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('ServiceWorker.js', { scope: '/stageons.fr/' }).then(function(reg) {
-      // registration worked
-      console.log('Registration succeeded. Scope is ' + reg.scope);
-    }).catch(function(error) {
-      // registration failed
-      console.log('Registration failed with ' + error);
-    });
-  };
+
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('ServiceWorker.js')
+    .then( (sw) => console.log('Le Service Worker a été enregistrer', sw))
+    .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+   }

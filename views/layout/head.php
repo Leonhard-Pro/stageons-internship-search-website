@@ -77,7 +77,7 @@ switch($page['pageName']){
             <script src="views/offers/js/infoList.js"></script>
 
         <?php case "statistic": ?>
-            <!-- Statistic Part -->
+            <script src="views/statistic/js/statistics.js"></script>
 
 <?php } ?>
 

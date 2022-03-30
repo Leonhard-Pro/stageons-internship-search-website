@@ -15,3 +15,4 @@
     <div id="filters">
         <?php include("views/layout/filters.php"); ?>
     </div>
+</div>

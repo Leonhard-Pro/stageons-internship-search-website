@@ -188,14 +188,14 @@ $fontFamily: Calibri, Arial;
                     margin-left: 10px;
                 }
 
-                .offer-name-company {
+                .company-name-company {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-locate {
+                .company-locate {
                     font-size: 10px;
                 }
-                .offer-domain-activity {
+                .company-domain-activity {
                     font-size: 10px;
                 }
             }
@@ -229,18 +229,18 @@ $fontFamily: Calibri, Arial;
                     margin-left: 10px;
                 }
 
-                .offer-name {
+                .student-name {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-first-name {
+                .student-first-name {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-center {
+                .student-center {
                     font-size: 12px;
                 }
-                .offer-class {
+                .student-class {
                     font-size: 12px;
                 }
             }
@@ -275,15 +275,15 @@ $fontFamily: Calibri, Arial;
                     margin-left: 10px;
                 }
 
-                .offer-name {
+                .delegate-name {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-first-name {
+                .delegate-first-name {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-center {
+                .delegate-center {
                     font-size: 12px;
                 }
             }
@@ -319,19 +319,19 @@ $fontFamily: Calibri, Arial;
                     margin-left: 10px;
                 }
 
-                .offer-name {
+                .pilot-name {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-first-name {
+                .pilot-first-name {
                     font-weight: bold;
                     font-size: 14px;
                 }
-                .offer-center {
+                .pilot-center {
                     font-weight: bold;
                     font-size: 12px;
                 }
-                .offer-class {
+                .pilot-class {
                     font-weight: bold;
                     font-size: 10px;
                 }
@@ -404,6 +404,27 @@ $fontFamily: Calibri, Arial;
                 color: black;
 
 
+            }
+
+            #div-password{
+                display: block;
+                width: 20vw;
+                max-width: 370px;
+                min-width: 270px;
+                height: 30px;
+
+                margin: 5px auto;
+
+                input{
+                    display: inline-block;
+                    margin: 0px;
+                    width: 92%;
+                    min-width: 200px;
+                }
+
+                i{
+                    display: inline-block;
+                }
             }
         }
 
@@ -655,45 +676,6 @@ $fontFamily: Calibri, Arial;
 
                 color: black;
             }
-
-            .address-street {
-
-                display: flex;
-                width: 370px;
-                height: auto;
-
-                margin: 5px auto;
-                padding: 4px 6px;
-
-                .address-street-num,
-                .address-street-name {
-                    display: inline-block;
-                    width: 20vw;
-                    height: 40px;
-
-                    margin: auto;
-                    padding: 4px 6px;
-
-                    border-radius: 30px;
-
-                    color: black;
-                }
-
-                .address-street-num {
-                    min-width: 90px;
-                    max-width: 90px;
-                    margin-right: 5px;
-                }
-
-                .address-street-name {
-                    margin-left: 0;
-                    min-width: 180px;
-                    max-width: 280px;
-                }
-
-            }            
-
-
         }
 
         .confirm-button {

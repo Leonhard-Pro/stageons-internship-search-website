@@ -16,7 +16,7 @@ class UserLogin extends Model {
 
     function loginExist($login) {
 
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => "Login = '$login'",
             'order' => 'Id_User ASC'
         ));
@@ -33,7 +33,7 @@ class UserLogin extends Model {
 
         if($id_user == -1) return -1;
 
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => "Login = '$login' AND Password_Login = '$pwrd'",
             'order' => 'Id_User ASC'
         ));
@@ -54,7 +54,7 @@ class UserLogin extends Model {
 
         $this->table = ' administrator LEFT JOIN user ON administrator.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization ';
 
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => " administrator.Id_User = ". $id_user ." ",
             'fields' => ' administrator.Id_Administrator, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code ',
             'order' => ' Id_Administrator ASC '
@@ -72,7 +72,7 @@ class UserLogin extends Model {
 
         $this->table = 'class_pilot LEFT JOIN person ON class_pilot.Id_Person = person.Id_Person LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization';
  
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => "person.Id_User = ". $id_user."",
             'fields' => 'class_pilot.Id_Class_Pilot, person.Person_Name, person.Person_First_Name, person.Person_Email, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code',
             'order' => 'Id_Class_Pilot ASC'
@@ -89,7 +89,7 @@ class UserLogin extends Model {
 
         $this->table = 'delegate LEFT JOIN person ON delegate.Id_Person = person.Id_Person LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization';
  
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => "person.Id_User = ". $id_user ."",
             'fields' => 'delegate.Id_Delegate, person.Person_Name, person.Person_First_Name, person.Person_Email, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code',
             'order' => 'Id_Delegate ASC'
@@ -106,7 +106,7 @@ class UserLogin extends Model {
 
         $this->table = 'student LEFT JOIN person ON student.Id_Person = person.Id_Person LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization';
  
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => "person.Id_User = ". $id_user ."",
             'fields' => 'student.Id_Student, person.Person_Name, person.Person_First_Name, person.Person_Email, user.Id_User, user.Login, user.Password_Login, authorization.Authorization_Code',
             'order' => 'Id_Student ASC'
@@ -121,7 +121,7 @@ class UserLogin extends Model {
 
     function getUserObject($login, $pwrd) {
 
-        $user = $this->find(array(
+        $user = $this->findOneRow(array(
             'conditions' => "Login = '$login' AND Password_Login = '$pwrd'",
             'order' => 'Id_User ASC'
         ));

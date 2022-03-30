@@ -30,7 +30,7 @@ class ManageDelegate extends Model {
         ));
 
         //create person
-        $this->obj_person->create($login, $password, $name, $first_name, $email, $id_auth->Id_Authorization);
+        $this->obj_person->create($login, $password, $name, $first_name, $email, $id_auth[0]->Id_Authorization);
 
         //create school
         $this->obj_school->create($center);
@@ -42,6 +42,36 @@ class ManageDelegate extends Model {
             'fields_dual' => "(SELECT person.Id_Person FROM person LEFT JOIN user ON person.Id_User = user.Id_User WHERE person.Person_Name = '$name' AND person.Person_First_Name = '$first_name' AND person.Person_Email = '$email' AND user.Login = '$login' AND user.Password_Login = '$password') as id_person, (SELECT school.Id_School FROM school WHERE school.Center = '$center') as id_school",
             'conditions' => 'delegate.Id_Person = temp.id_person AND delegate.Id_School = temp.id_school'
         ));
+    }
+
+    function select(array $data) {
+        $attribut = array(" person.Person_Name ", " person.Person_First_Name ", " school.Center ");
+        $firstloop = true;
+        $condition = "";
+
+        for ($i = 0; $i < sizeof($data); $i++){
+            if ($data[$i] != "") {
+                if ($firstloop)
+                {
+                    $condition = $condition . $attribut[$i]." LIKE '".$data[$i]."%'";
+                    $firstloop =! $firstloop;
+                }
+                else {
+                    $condition = $condition . " AND " . $attribut[$i]." LIKE '".$data[$i]."%'";
+                }
+            }
+        }
+        if ($condition == ""){
+            $condition = " 1=1 ";
+        }
+
+        $this->table = " delegate LEFT JOIN person ON delegate.Id_Person = person.Id_Person LEFT JOIN school ON delegate.Id_School = school.Id_School LEFT JOIN user ON person.Id_User = user.Id_User LEFT JOIN authorization ON user.Id_Authorization = authorization.Id_Authorization ";
+        $requete = array(
+            'conditions' => $condition,
+            'order' => ' delegate.Id_Delegate ASC '
+        );
+        
+        return $this->find($requete);
     }
 }
 ?>

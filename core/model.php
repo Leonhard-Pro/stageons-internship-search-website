@@ -111,6 +111,22 @@ class Model {
         if(isset($data["order"])) { $order = $data["order"]; }
         $sql = "SELECT $fields FROM ".$this->table." WHERE $conditions ORDER BY $order $limit";
         $req = $this->pdo->query($sql);
+        $d = $req->fetchALL();
+
+        return $d;
+    }
+
+    public function findOneRow($data = array()) {
+        $conditions = "1=1";
+        $fields = "*";
+        $limit = "";
+        $order = "id ASC";
+        if(isset($data["conditions"])) { $conditions = $data["conditions"]; }
+        if(isset($data["fields"])) { $fields = $data["fields"]; }
+        if(isset($data["limit"])) { $limit = "LIMIT ".$data["limit"]; }
+        if(isset($data["order"])) { $order = $data["order"]; }
+        $sql = "SELECT $fields FROM ".$this->table." WHERE $conditions ORDER BY $order $limit";
+        $req = $this->pdo->query($sql);
         $d = $req->fetch();
 
         return $d;

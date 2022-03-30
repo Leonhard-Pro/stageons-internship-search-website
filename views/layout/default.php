@@ -1,5 +1,4 @@
-
-
+<!DOCTYPE html>
 <?php require_once("views/layout/head.php");?>
 
 <body>

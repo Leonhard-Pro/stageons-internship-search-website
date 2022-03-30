@@ -9,17 +9,36 @@ class Company extends Model {
         $this->obj_address = new Address();
     }
 
-    function getAll() {
+    function select(array $data) {
+        $attribut = array(" infocompany.Company_Name ", " infocompany.City ", " domain_activity.Domain_Activity ");
+        $firstloop = true;
+        $condition = "";
 
-        //Get all companies
-        $this->table = 'infocompany.Id_Company, infocompany.Company_Name, infocompany.Domain_Activity, infocompany.City, infocompany.Postal_Code, infocompany.Street_Number, infocompany.Street_Name, infocompany.CESI_Trainee_Accept, scorestudents.scorestudent, confidencepilote.scorepilot';
-        $companies = $this->find(array(
-            //'conditions' => "person.Id_User = ". $id_user."",
-            'fields' => '(SELECT company.Id_Company, company.Company_Name, domain_activity.Domain_Activity, city.City, postal_code.Postal_Code, address.Street_Number, address.Street_Name, company.CESI_Trainee_Accept FROM company LEFT JOIN locate_1 ON company.Id_Company = locate_1.Id_Company LEFT JOIN address ON locate_1.Id_Address = address.Id_Address LEFT JOIN city ON address.Id_City = city.Id_City LEFT JOIN postal_code ON city.Id_Postal_Code = postal_code.Id_Postal_Code RIGHT JOIN own_1 ON company.Id_Company = own_1.Id_Company LEFT JOIN domain_activity ON own_1.Id_Domain_Activity = domain_activity.Id_Domain_Activity) as infocompany LEFT JOIN (SELECT company.Id_Company, AVG(score.Score) as scorestudent FROM score RIGHT JOIN student_evaluation ON score.Id_Score = student_evaluation.Id_Score LEFT JOIN company ON company.Id_Company = student_evaluation.Id_Company GROUP BY company.Id_Company) as scorestudents ON infocompany.Id_Company = scorestudents.Id_Company LEFT JOIN (SELECT scorepilot.Id_Company, (AVG( IFNULL(scorepilot.pilotconfidence, scorepilot.delegateconfidence) + IFNULL(scorepilot.delegateconfidence, scorepilot.pilotconfidence ))/2) as scorepilot FROM (SELECT scorepilot.Id_Company, scorepilot.pilotconfidence, scoredelegate.delegateconfidence FROM (SELECT company.Id_Company, AVG(score.Score) as pilotconfidence FROM score RIGHT JOIN pilot_confidence ON score.Id_Score = pilot_confidence.Id_Score LEFT JOIN company ON company.Id_Company = pilot_confidence.Id_Company GROUP BY company.Id_Company) as scorepilot LEFT OUTER JOIN (SELECT company.Id_Company, AVG(score.Score) as delegateconfidence FROM score RIGHT JOIN delegate_confidence ON score.Id_Score = delegate_confidence.Id_Score LEFT JOIN company ON company.Id_Company = delegate_confidence.Id_Company GROUP BY company.Id_Company) as scoredelegate ON scoredelegate.Id_Company = scorepilot.Id_Company UNION ALL SELECT scorepilot.Id_Company, scorepilot.pilotconfidence, scoredelegate.delegateconfidence FROM (SELECT company.Id_Company, AVG(score.Score) as pilotconfidence FROM score RIGHT JOIN pilot_confidence ON score.Id_Score = pilot_confidence.Id_Score LEFT JOIN company ON company.Id_Company = pilot_confidence.Id_Company GROUP BY company.Id_Company) as scorepilot LEFT OUTER JOIN (SELECT company.Id_Company, AVG(score.Score) as delegateconfidence FROM score RIGHT JOIN delegate_confidence ON score.Id_Score = delegate_confidence.Id_Score LEFT JOIN company ON company.Id_Company = delegate_confidence.Id_Company GROUP BY company.Id_Company) as scoredelegate ON scoredelegate.Id_Company = scorepilot.Id_Company WHERE scorepilot.Id_Company IS NULL) as scorepilot) as confidencepilote ON infocompany.Id_Company = confidencepilote.Id_Company',
-            'order' => 'Id_Company ASC'
-        ));
+        for ($i = 0; $i < sizeof($data); $i++){
+            if ($data[$i] != "") {
+                if ($firstloop)
+                {
+                    $condition = $condition . $attribut[$i]." LIKE '".$data[$i]."%'";
+                    $firstloop =! $firstloop;
+                }
+                else {
+                    $condition = $condition . " AND " . $attribut[$i]." LIKE '".$data[$i]."%'";
+                }
+            }
+        }
+        if ($condition == ""){
+            $condition = " 1=1 ";
+        }
 
-        return $companies;
+        $this->table = " (SELECT company.Id_Company, company.Company_Name, domain_activity.Domain_Activity, city.City, postal_code.Postal_Code, address.Street_Number, address.Street_Name, company.CESI_Trainee_Accept FROM company LEFT JOIN locate_1 ON company.Id_Company = locate_1.Id_Company LEFT JOIN address ON locate_1.Id_Address = address.Id_Address LEFT JOIN city ON address.Id_City = city.Id_City LEFT JOIN postal_code ON city.Id_Postal_Code = postal_code.Id_Postal_Code RIGHT JOIN own_1 ON company.Id_Company = own_1.Id_Company LEFT JOIN domain_activity ON own_1.Id_Domain_Activity = domain_activity.Id_Domain_Activity) as infocompany LEFT JOIN (SELECT company.Id_Company, AVG(score.Score) as scorestudent FROM score RIGHT JOIN student_evaluation ON score.Id_Score = student_evaluation.Id_Score LEFT JOIN company ON company.Id_Company = student_evaluation.Id_Company GROUP BY company.Id_Company) as scorestudents ON infocompany.Id_Company = scorestudents.Id_Company LEFT JOIN (SELECT scorepilot.Id_Company, (AVG( IFNULL(scorepilot.pilotconfidence, scorepilot.delegateconfidence) + IFNULL(scorepilot.delegateconfidence, scorepilot.pilotconfidence ))/2) as scorepilot FROM (SELECT scorepilot.Id_Company, scorepilot.pilotconfidence, scoredelegate.delegateconfidence FROM (SELECT company.Id_Company, AVG(score.Score) as pilotconfidence FROM score RIGHT JOIN pilot_confidence ON score.Id_Score = pilot_confidence.Id_Score LEFT JOIN company ON company.Id_Company = pilot_confidence.Id_Company GROUP BY company.Id_Company) as scorepilot LEFT OUTER JOIN (SELECT company.Id_Company, AVG(score.Score) as delegateconfidence FROM score RIGHT JOIN delegate_confidence ON score.Id_Score = delegate_confidence.Id_Score LEFT JOIN company ON company.Id_Company = delegate_confidence.Id_Company GROUP BY company.Id_Company) as scoredelegate ON scoredelegate.Id_Company = scorepilot.Id_Company UNION ALL SELECT scorepilot.Id_Company, scorepilot.pilotconfidence, scoredelegate.delegateconfidence FROM (SELECT company.Id_Company, AVG(score.Score) as pilotconfidence FROM score RIGHT JOIN pilot_confidence ON score.Id_Score = pilot_confidence.Id_Score LEFT JOIN company ON company.Id_Company = pilot_confidence.Id_Company GROUP BY company.Id_Company) as scorepilot LEFT OUTER JOIN (SELECT company.Id_Company, AVG(score.Score) as delegateconfidence FROM score RIGHT JOIN delegate_confidence ON score.Id_Score = delegate_confidence.Id_Score LEFT JOIN company ON company.Id_Company = delegate_confidence.Id_Company GROUP BY company.Id_Company) as scoredelegate ON scoredelegate.Id_Company = scorepilot.Id_Company WHERE scorepilot.Id_Company IS NULL) as scorepilot) as confidencepilote ON infocompany.Id_Company = confidencepilote.Id_Company ";
+        $requete = array(
+            'conditions' => $condition,
+            'fields' => ' * ',
+            'order' => 'infocompany.Id_Company ASC '
+        );
+        
+        
+        return $this->find($requete);
     }
 
     function addConfidenceRate($score, $company_name, $company_email, $user) {

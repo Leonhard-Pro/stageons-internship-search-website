@@ -1,21 +1,129 @@
+$tabBackgroundColor: white;
+$textColor: white;
+$backgroundColor: rgb(255, 81, 28);
 
-#doughnut {
-  background-color: white;
-  border-radius: 10% 10% 10% 10%; 
-  height: auto;
-  width: 25%;
-  padding-top: 10%;
-  float: center;
+$textColorHover: black;
+$backgroundColorHover: rgb(255, 158, 129);
+$fontFamily: Calibri, Arial;
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-@media screen and (max-width: 1200px) {
-  #doughnut {
-    background-color: white;
-    border-radius: 10% 10% 10% 10%; 
+#main {
+    width: 100%;
     height: auto;
-    width: 50%;
-    padding-top: 10%;
-    float: center;
-  }
+    margin-top: 100px;
+    padding-top: 5px;
 }
+
+.menu-stat {
+    width: 100%;
+    height: 100px;
+
+    background-color: #00416d;
+
+    border-radius: 0 0 30px 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 100px;
+
+    z-index: 9998;
+
+    form {
+        input {
+            width: 5vw;
+            min-width: 80px;
+            max-width: 160px;
+            height: 40px;
+            padding: 2px 5px;
+            margin: auto 0.75vw;
+
+            border: 1px solid;
+            border-color: rgb(184, 58, 19);
+            border-radius: 30px;
+
+            color: $textColor;
+            background-color: $backgroundColor;
+        }
+
+        input:hover,
+        input:focus {
+            transform: 0.75s;
+            color: $textColorHover;
+            background-color: $backgroundColorHover;
+        }
+    }
+}
+
+#filters {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 780px) { 
+
+    #main {
+        .menu-stat {
+
+            border-radius: 0;
+            
+            form {
+                margin: 4px, 4px;
+                padding: 4px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+
+                /* Hide scrollbar for IE, Edge and Firefox */
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+
+                input {
+
+                    width: 160vw;
+                    height: 40px;
+
+                }
+            }
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            form::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+body{
+    display: block;
+
+    #doughnut{
+        margin: 5px auto;
+        background-color: white;
+        border-radius: 10% 10% 10% 10%; 
+        height: auto;
+        width: 30vw;
+        padding-top: 10%;
+        float: center;
+    }
+
+    @media(max-width: 1200px) {
+        #doughnut {
+            background-color: white;
+            border-radius: 10% 10% 10% 10%; 
+            height: auto;
+            width: 50%;
+            padding-top: 20%;
+            float: center;
+    }
+}
+}
+
 

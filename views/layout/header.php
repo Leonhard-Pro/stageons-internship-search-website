@@ -13,7 +13,9 @@
       <ul class="navbar-links">
         <li class="navbar-item"><a class="navbar-link" href="offers"><img class="navbar-icon" src="views/resources/icon_offers.png" alt="Icon_offer">Offers</a></li>
         <li class="navbar-item"><a class="navbar-link" href="companies"><img class="navbar-icon" src="views/resources/icon_companies.png" alt="Icon_companies">Companies</a></li>
+        <?php if ($user['userType'] != "Student"): ?>
         <li class="navbar-item"><a class="navbar-link" href="management"><img class="navbar-icon" src="views/resources/icon_management.png" alt="Icon_management">Management</a></li>
+        <?php endif; ?>
         <li class="navbar-item"><a class="navbar-link" href="advancement"><img class="navbar-icon" src="views/resources/icon_advancement.png" alt="Icon_advancement">Advancement</a></li>
         <li class="navbar-item"><a class="navbar-link" href="statistic"><img class="navbar-icon" src="views/resources/icon_statistic.png" alt="Icon_advancement">Statistic</a></li>
         <li class="navbar-item"><a class="navbar-link" href="notifications"><img class="navbar-icon" src="views/resources/icon_notifications.png" alt="Icon_notification">Notification</a></li>

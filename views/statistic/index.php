@@ -1,65 +1,68 @@
- <!-- https://www.chartjs.org/docs/latest/ -->
- 
- <body>
-     <div id="doughnut">
-         <canvas id="graph" width="400%" height="100%"></canvas>
-     </div>
+<div id="main">
+    <div class="menu-stat">
+        <form action="" method="POST">
+            <input type="submit" name="typeStat" value="Offers">
+            <input type="submit" name="typeStat" value="Companies">
+            <input type="submit" name="typeStat" value="Student">
+        </form>
+    </div>
+</div>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 
-     <?php
+<!-- https://www.chartjs.org/docs/latest/ -->
 
-        // Here you can add your data in php
+<body>
+    <div id="doughnut">
+        <canvas id="graph" width="400%" height="100%"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 
-        $value1 = 6;
-        $value2 = 8;
-        $value3 = 3;
-        $value4 = 4;
+    <?php
+    // Here you can add your data in php
+    $valuesOffers = array(50, 100, 60);
+    $valuesCompanies = array(60, 78, 92);
+    $valuesStudents = array(125, 98, 100, 200);
+    ?>
 
-        ?>
+    <script>
+        // Here you can convert your data in js
+        var colours = ["green", "blue", "orange", "red", "yellow", "purple"];
+        var labels = [];
+        var values = [];
 
-     <script>
-         // Here you can convert your data in js
+        // Here you have the principale code for the graph
+        // https://www.chartjs.org/docs/latest/
 
-         var value1 = <?php echo json_encode($value1); ?>;
-         var value2 = <?php echo json_encode($value2); ?>;
-         var value3 = <?php echo json_encode($value3); ?>;
-         var value4 = <?php echo json_encode($value4); ?>;
+        if( "<?php echo $statistic['type']; ?>" == "Offers")
+        {
+            labels = ["Offers no one applied to", "Availlable offers", "Finished offers"];
+            values = <?php echo json_encode($valuesOffers) ?>;
 
-         // Here you have the principale code for the graph
+            CreateGraph("Offers",
+                        labels,
+                        colours,
+                        values);
+        }
+        else if ("<?php echo $statistic['type']; ?>" == "Companies")
+        {
+            labels = ["Companies without any CESI intern", "Companies with one CESI intern", "Companies with two or more CESI interns"];
+            values = <?php echo json_encode($valuesCompanies) ?>;
 
-         // https://www.chartjs.org/docs/latest/
+            CreateGraph("Companies",
+                        labels,
+                        colours,
+                        values);
+        }
+        else
+        {
+            labels = ["Student with an internship", "Student without an internship", "Work-study student", "Project student"];
+            values = <?php echo json_encode($valuesStudents) ?>;
 
-         const graph = document.getElementById('graph').getContext('2d');
+            CreateGraph("Students",
+                        labels,
+                        colours,
+                        values);
+        }
+    </script>
 
-         let myChart = new Chart(graph, {
-             type: "doughnut",
-             data: {
-                 labels: ["Student with an internship", "Student without an internship", "Work-study student", "Project student"], // The different titles
-                 datasets: [{
-                     label: "Student",
-                     data: [value1, value2, value3, value4], // Your value
-                     backgroundColor: ["red", "orange", "salmon", "blue"], // The color of the graph
-                     hoverBorderWidh: 3,
-                 }, ],
-             },
-             option: {
-                 title: {
-                     display: true,
-                     text: "Student",
-                     fontSize: 24,
-                 },
-                 legent: {
-                     display: false,
-                 },
-                 devicePixelRatio: 0.1,
-                 layout: {
-                     padding: {
-                         top: 20,
-                     }
-                 }
-             },
-         });
-     </script>
-
- </body>
+</body>

@@ -25,15 +25,15 @@ function index(){
     }
 
     
-    if (isset($_POST["typestatistic"])){
-        $statistic['type'] = $_POST["typestatistic"];
+    if (isset($_POST["typeStat"])){
+        $statistic['type'] = $_POST["typeStat"];
         $data['statistic'] = $statistic;
         $data['filter'] = array (
             'type' => $statistic['type']
         );
     }
     
-    
+
 
 
 

@@ -20,6 +20,44 @@ function index(){
         'type' => 'Offers'
     );
     
+
+    if(isset($_POST['Search'])){
+        
+        if($data['filter']['type'] == "Offers"){
+            $filterData = array(
+                $_POST['what'],
+                $_POST['where'],
+                $_POST['skill'],
+                $_POST['name-company'],
+                $_POST['duration'],
+                $_POST['type-duration'],
+                $_POST['remuneration'],
+                $_POST['date-published'],
+                $_POST['numberplaces'],
+                $_POST['degree']
+            );
+        } 
+        $this->loadModel('offer');
+        $data['SelectOffer'] = json_decode(json_encode($this->offer->select($filterData)), true);
+    }
+    else {
+        if($data['filter']['type'] == "Offers"){
+            $filterData = array(
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            );
+        } 
+        $this->loadModel('offer');
+        $data['SelectOffer'] = json_decode(json_encode($this->offer->select($filterData)), true);
+    }
     
 
 

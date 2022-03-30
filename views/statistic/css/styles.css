@@ -1,3 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+  padding-top: 5px;
+}
+
+.menu-stat {
+  width: 100%;
+  height: 100px;
+  background-color: #00416d;
+  border-radius: 0 0 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 100px;
+  z-index: 9998;
+}
+
+.menu-stat form input {
+  width: 5vw;
+  min-width: 80px;
+  max-width: 160px;
+  height: 40px;
+  padding: 2px 5px;
+  margin: auto 0.75vw;
+  border: 1px solid;
+  border-color: #b83a13;
+  border-radius: 30px;
+  color: white;
+  background-color: #ff511c;
+}
+
+.menu-stat form input:hover,
+.menu-stat form input:focus {
+  -webkit-transform: 0.75s;
+          transform: 0.75s;
+  color: black;
+  background-color: #ff9e81;
+}
+
+#filters {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 780px) {
+  #main .menu-stat {
+    border-radius: 0;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+  }
+  #main .menu-stat form {
+    margin: 4px, 4px;
+    padding: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  #main .menu-stat form input {
+    width: 160vw;
+    height: 40px;
+  }
+  #main .menu-stat form::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 #doughnut {
   background-color: white;
   border-radius: 10% 10% 10% 10%;
@@ -13,7 +96,7 @@
     border-radius: 10% 10% 10% 10%;
     height: auto;
     width: 50%;
-    padding-top: 10%;
+    padding-top: 20%;
     float: center;
   }
 }

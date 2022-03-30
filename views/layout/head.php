@@ -25,7 +25,7 @@
     <?php if ($page['pageName'] != "login") : ?>
         <!-- Header Part -->
         <link rel="stylesheet" href="views/layout/css/headerstyles.css">
-        <script src="views/layout/js/headerBugerMenu.js" async></script>
+        <script src="views/layout/js/headerBugerMenu.js"></script>
 
         <!-- Footer Part -->
         <link rel="stylesheet" href="views/layout/css/footerstyles.css">
@@ -37,6 +37,7 @@
     <?php if ($page['pageName'] != "account" && $page['pageName'] != "login" && $page['pageName'] && "notifications") : ?>
         <!-- Filters Part -->
         <link rel="stylesheet" href="views/layout/css/filterstyles.css">
+        <link rel="stylesheet" href="views/layout/css/pagination.css">
         <script src="views/layout/js/filter.js" async></script>
     <?php endif; ?>
 

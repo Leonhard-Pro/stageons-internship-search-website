@@ -91,7 +91,7 @@
         <?php break;
 
         case "statistic": ?>
-            <!-- Statistic Part -->
+            <script src="views/statistic/js/statistics.js"></script>
 
     <?php break;
     } ?>

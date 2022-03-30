@@ -101,25 +101,29 @@ $fontFamily: Calibri, Arial;
 
 
 
+body{
+    display: block;
 
+    #doughnut{
+        margin: 5px auto;
+        background-color: white;
+        border-radius: 10% 10% 10% 10%; 
+        height: auto;
+        width: 30vw;
+        padding-top: 10%;
+        float: center;
+    }
 
-#doughnut {
-  background-color: white;
-  border-radius: 10% 10% 10% 10%; 
-  height: auto;
-  width: 25%;
-  padding-top: 10%;
-  float: center;
+    @media(max-width: 1200px) {
+        #doughnut {
+            background-color: white;
+            border-radius: 10% 10% 10% 10%; 
+            height: auto;
+            width: 50%;
+            padding-top: 20%;
+            float: center;
+    }
+}
 }
 
-@media screen and (max-width: 1200px) {
-  #doughnut {
-    background-color: white;
-    border-radius: 10% 10% 10% 10%; 
-    height: auto;
-    width: 50%;
-    padding-top: 20%;
-    float: center;
-  }
-}
 

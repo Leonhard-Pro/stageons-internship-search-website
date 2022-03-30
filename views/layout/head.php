@@ -41,45 +41,52 @@
         <script src="views/layout/js/filter.js" async></script>
     <?php endif; ?>
 
-<?php
+    <?php
 
-switch($page['pageName']){
+    switch ($page['pageName']) {
 
         case "account": ?>
             <!-- Account Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
+        <?php break;
 
-        <?php case "advancement": ?>
+        case "advancement": ?>
             <!-- Advancement Part -->
+        <?php break;
 
-        <?php case "companies": ?>
+        case "companies": ?>
             <!-- Companies Part -->
+        <?php break;
 
-        <?php case "login": ?>
+        case "login": ?>
             <!-- Login Part -->
             <link rel="stylesheet" href="views/login/css/cookies_bannerstyles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
+        <?php break;
 
-        <?php case "management": ?>
+        case "management": ?>
             <!-- Management Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/management/js/find_address.js"></script>
             <script src="views/layout/js/show_pwrd.js" async></script>
+        <?php break;
 
-        <?php case "notifications": ?>
+        case "notifications": ?>
             <!-- Notifications Part -->
+        <?php break;
 
-        <?php case "offers": ?>
+        case "offers": ?>
             <!-- Offers Part -->
             <script src="views/layout/js/jquery-3.6.0.min.js"></script>
             <script src="views/offers/js/infoList.js"></script>
+        <?php break;
 
-        <?php case "statistic": ?>
+        case "statistic": ?>
             <!-- Statistic Part -->
 
-<?php } ?>
+    <?php break; } ?>
 
 
 </head>

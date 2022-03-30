@@ -1,10 +1,41 @@
 document.addEventListener('resize', GetWindowSize, false);
 
+
 function GetWindowSize(){
     if (window.width <= "1100px"){
         console.log("blblb");
     }
 }
+
+let codeHtml ='<div class="further_info">';
+codeHtml +=     '<div id="header_info">'
+codeHtml +=         '<h2>Title</h2>';
+codeHtml +=         '<input type="checkbox" name="like_button" value="valuable" id="like_button"/><label for="like_button"></label>';
+codeHtml +=     '</div>';
+codeHtml +=     '<div id="body_info">';
+codeHtml +=         '<ul>';
+codeHtml +=             '<li>Company Name</li>';
+codeHtml +=             '<li>City (Postal code)</li>';
+codeHtml +=             '<li>Date</li>';
+codeHtml +=         '</ul>';
+codeHtml +=         '<input type="button" name="Apply" id="apply_button" value="Apply">';
+codeHtml +=         '<ul>';
+codeHtml +=             '<li>Degree</li>';
+codeHtml +=             '<li>Nb places</li>';
+codeHtml +=             '<li>skill</li>';
+codeHtml +=             '<li>Duration, durationtype</li>';
+codeHtml +=         '</ul>';
+codeHtml +=         '<div id="division_description">';
+codeHtml +=             '<p>';
+codeHtml +=                 'placeholder for the description';
+codeHtml +=             '</p>';
+codeHtml +=         '</div>';
+codeHtml +=     '</div>';
+codeHtml += '</div>';
+
+
+
+
 
 function PannelAppear(){
     $("#right_pannel").hidden = true;
@@ -16,7 +47,7 @@ function PannelAppear(){
     $("#right_pannel").hide();
     $("#left_pannel").width("55%");
     $("#right_pannel").width("40%");
-    $("#right_pannel").html("<div class=\"further_info\"><h2>Title of the offer</h2> <p>Google, one of the most famous companies in the world, is known for being the biggest IT company in terms of use per day. Bla bla bla, this is a test verse. We continue, as we want to test responsiveness and any kind of automatic modification.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat odio, laoreet in velit ut, posuere egestas diam. Vivamus mauris lacus, imperdiet in sem eget, consequat varius sem. Proin commodo sollicitudin ex, sed fermentum ligula scelerisque eu. Phasellus luctus mauris egestas nisl eleifend, id vulputate justo maximus. Nullam efficitur urna eu felis ullamcorper, at suscipit arcu dictum. Nam mauris sapien, sodales ut tellus vel, convallis ullamcorper ante. Mauris pretium pretium tempus. Etiam commodo eros augue, pulvinar lacinia nunc malesuada vitae. Quisque ultricies mattis urna quis tincidunt. Ut vel ligula aliquet, faucibus enim at, dictum quam. Nullam massa augue, consectetur non vehicula vitae, sollicitudin sed felis. Proin pharetra rutrum lorem, quis aliquam ex pellentesque at. Vestibulum elementum magna sed justo blandit, sit amet eleifend metus cursus. Etiam volutpat vel nisl sit amet cursus.  </p></div>");
+    $("#right_pannel").html(codeHtml);
     
     $("#right_pannel").fadeIn();
 }

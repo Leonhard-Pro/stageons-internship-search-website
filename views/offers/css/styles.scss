@@ -5,7 +5,6 @@ $background-color: #00416d;
 body{
     height: auto;
     position: relative;
-    top: 200px;
 }
 
 #display_list{
@@ -75,6 +74,10 @@ body{
     #header_info{
         width: 100%;
         padding: 20px;
+
+        h2{
+            color: $backgroundcolourList;
+        }
 
         input[type=checkbox]{
             display: none;

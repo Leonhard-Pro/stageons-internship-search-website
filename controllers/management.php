@@ -25,8 +25,8 @@ class Management extends Controller {
                 'type' => 'Offers',
                 'action' => ''
             );
-            $data['management'] = $management;
-            
+            $data['management'] = $management; 
+            $data['filter']['type'] = "Offers";
         }
         
         
@@ -38,18 +38,6 @@ class Management extends Controller {
                 'type' => $management['type']
             );
             unset($_POST["typeManagement"]);
-            //Show companies
-            //$companies = $this->Company->getAll();
-        }
-        
-        
-        if (isset($_POST["actionManagement"])){
-            $management['action'] = $_POST["actionManagement"];
-            $data['management'] = $management;
-            $data['filter'] = array (
-                'type' => ""
-            );
-            unset($_POST["actionManagement"]);
         }
         
         if(isset($_POST['type'])){
@@ -62,6 +50,18 @@ class Management extends Controller {
             );
             unset($_POST['type']);
         }
+        
+        if (isset($_POST["actionManagement"])){
+            $management['action'] = $_POST["actionManagement"];
+            $data['management'] = $management;
+            $data['filter'] = array (
+                'type' => ""
+            );
+            unset($_POST["actionManagement"]);
+            var_dump($data['management']['action']);
+        }
+        
+        
 
         $this->loadModel('userinformations');
         $data['user'] = $this->userinformations->getUserInformation();
@@ -235,7 +235,7 @@ class Management extends Controller {
                 );
                 $this->loadModel('managestudent');
                 $data['SelectStudent'] = json_decode(json_encode($this->managestudent->select($filterData)), true);
-            }  
+            }
             
         }
 

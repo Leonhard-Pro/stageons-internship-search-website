@@ -1,33 +1,39 @@
 <?php 
+
+    var_dump($management['action']);
+    if ($management['action'] == ""){
     $currentPage = 1;
     $numberArticle = 5;
+    
+        if($management['type'] == 'Offers'){
+            $sizeArray = sizeof($SelectOffer);
+        }else if($management['type'] == 'Companies'){
+            $sizeArray = sizeof($SelectCompany);
+        }else if($management['type'] == 'Pilot'){
+            $sizeArray = sizeof($SelectPilot);
+        }else if($management['type'] == 'Delegate'){
+            $sizeArray = sizeof($SelectDelegate);
+        }else if($management['type'] == 'Student'){
+            $sizeArray = sizeof($SelectStudent);
+        }
+    
 
-    if($management['type'] == 'Offers'){
-        $sizeArray = sizeof($SelectOffer);
-    }else if($management['type'] == 'Companies'){
-        $sizeArray = sizeof($SelectCompany);
-    }else if($management['type'] == 'Pilot'){
-        $sizeArray = sizeof($SelectPilot);
-    }else if($management['type'] == 'Delegate'){
-        $sizeArray = sizeof($SelectDelegate);
-    }else if($management['type'] == 'Student'){
-        $sizeArray = sizeof($SelectStudent);
+        if ($sizeArray%5 == 0){ $numberPages = $sizeArray/$numberArticle;}else{$numberPages = round($sizeArray/$numberArticle, 0) + 1;}
+
+        if(isset(explode('=',$_SERVER['REQUEST_URI'])[1]))
+        {
+            if(explode('=',$_SERVER['REQUEST_URI'])[1])
+            $currentPage = explode('=',$_SERVER['REQUEST_URI'])[1];
+        }
+        else
+        {
+            $currentPage = 1;
+        }
+
+        if($currentPage >= $numberPages){
+            $currentPage = $numberPages;
+        }
     }
-
-    if ($sizeArray%5 == 0){ $numberPages = $sizeArray/$numberArticle;}else{$numberPages = round($sizeArray/$numberArticle, 0) + 1;}
-
-    if(isset(explode('=',$_SERVER['REQUEST_URI'])[1]))
-    {
-        if(explode('=',$_SERVER['REQUEST_URI'])[1])
-        $currentPage = explode('=',$_SERVER['REQUEST_URI'])[1];
-    }
-    else
-    {
-        $currentPage = 1;
-    }
-
-    if($currentPage >= $numberPages)
-        $currentPage = $numberPages;
 
 
     
@@ -52,9 +58,8 @@
         </div>
     <?php endif; ?>
     
-    <?php echo "pagename";echo $page['pageName'];?>
     <div class="management-interface">
-            
+        <?php if ($management['action'] == ""): ?> 
         <div id="pages_buttons_up">
             <?php 
                 for ($p = 1; $p <= $numberPages; $p++)
@@ -64,6 +69,7 @@
                 }
             ?>
         </div>
+        <?php endif; ?> 
 
             
         <?php if ($management['action'] == ""): ?>
@@ -287,6 +293,7 @@
                 }
             }
             ?>
+            <?php if ($management['action'] == ""): ?> 
             <div id="pages_buttons_down">
                 <?php 
                     for ($p = 1; $p <= $numberPages; $p++)
@@ -296,6 +303,7 @@
                     }
                 ?>
             </div>
+            <?php endif; ?> 
         <?php endif; ?>
     </div>
 

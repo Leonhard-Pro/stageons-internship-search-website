@@ -7,6 +7,8 @@ function GetWindowSize(){
     }
 }
 
+let shown = false;
+
 let codeHtml ='<div class="further_info">';
 codeHtml +=     '<div id="header_info">'
 codeHtml +=         '<h2>Title</h2>';
@@ -38,16 +40,26 @@ codeHtml += '</div>';
 
 
 function PannelAppear(){
-    $("#right_pannel").hidden = true;
+    if (!shown)
+    {
+        $("#right_pannel").hidden = true;
 
-    if ($("#right_pannel").width == "0%")
-        {
-            $("#right_pannel").fadeOut();
-        }
-    $("#right_pannel").hide();
-    $("#left_pannel").width("55%");
-    $("#right_pannel").width("40%");
-    $("#right_pannel").html(codeHtml);
-    
-    $("#right_pannel").fadeIn();
+        if ($("#right_pannel").width == "0%")
+            {
+                $("#right_pannel").fadeOut();
+            }
+        $("#right_pannel").hide();
+        $("#left_pannel").width("55%");
+        $("#right_pannel").width("40%");
+        $("#right_pannel").html(codeHtml);
+        
+        $("#right_pannel").fadeIn();
+        shown = true
+    }
+    else
+    {
+        setTimeout(() => { $("#right_pannel").width("0%"); $("#left_pannel").width("70%");}, 400);
+        $("#right_pannel").fadeOut();
+        shown = false;
+    }
 }

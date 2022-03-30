@@ -104,6 +104,10 @@
   padding: 20px;
 }
 
+.further_info #header_info h2 {
+  color: #f9f9fd;
+}
+
 .further_info #header_info input[type=checkbox] {
   display: none;
 }

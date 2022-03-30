@@ -40,16 +40,16 @@
             <input type="submit" name="typeManagement" value="Companies">
             <input type="submit" name="typeManagement" value="Student">
             <input type="submit" name="typeManagement" value="Delegate">
-            <?php if ($user['userType'] != "Pilot"): ?>
+            <?php if ($user['userType'] != "Pilot") : ?>
                 <input type="submit" name="typeManagement" value="Pilot">
             <?php endif; ?>
         </form>
     </div>
-    
-    <?php if( $filter['type'] != ""): ?>
-    <div id="filters">
-    <?php include("views/layout/filters.php"); ?>
-    </div>
+
+    <?php if ($filter['type'] != "") : ?>
+        <div id="filters">
+            <?php include("views/layout/filters.php"); ?>
+        </div>
     <?php endif; ?>
     
     <?php echo "pagename";echo $page['pageName'];?>
@@ -300,25 +300,32 @@
     </div>
 
 
-    <?php if ($management['action'] == "Create" || $management['action'] == "Update"): ?>
+    <?php if ($management['action'] == "Create" || $management['action'] == "Update") : ?>
         <form method="POST" id="management-form">
             <div class="management-create-update">
-                <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student"): ?>
+                <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student") : ?>
                     <h1 id="personal-title">Personal information</h1>
                     <div class="personal-informations">
                         <label for="personal-login">Login:</label>
                         <input class="personal-login" id="personal-login" type="email" placeholder="Login" name="login" required>
                         <label for="personal-password">Password:</label>
-                        <input class="personal-password" id="personal-password" type="password" placeholder="Password" name="password" required>
+                        <div id="div-password">
+                            <input class="personal-password" id="personal-password" type="password" placeholder="Password" name="password" required>
+                            <i id="eye" class="fa fa-eye showpwd" onClick="showPwd('personal-password', this)"></i>
+                        </div>
                         <label for="personal-name">Name:</label>
                         <input class="personal-name" id="personal-name" type="text" placeholder="Name" name="name" required>
                         <label for="personal-first-name">First Name:</label>
                         <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name" name="first_name" required>
                         <label for="personal-email">Email:</label>
                         <input class="personal-email" id="personal-email" type="email" placeholder="Email" name="email" required>
+                        <label for="personal-center">Center:</label>
+                        <input class="personal-center" id="personal-center" type="text" placeholder="Center" name="center" required>
+                        <label for="personal-class">Class:</label>
+                        <input class="personal-class" id="personal-class" type="text" placeholder="Class" name="class" required>
                     </div>
                 <?php endif; ?>
-                <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])): ?>
+                <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])) : ?>
                     <h1 class="authorization-title">Authorization</h1>
                     <div class="authorization">
                         <div class="authorization-checkbox">
@@ -369,9 +376,9 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if ($management['type'] == "Offers"): ?>
+                <?php if ($management['type'] == "Offers") : ?>
                     <h1 id="offers-title">Offer</h1>
-                    <div class="offers-informations">                      
+                    <div class="offers-informations">
                         <label for="offer-title">Title:</label>
                         <input class="offer-title" id="offer-title" type="text" placeholder="Title" name="title" required>
                         <label for="offers-company">Company:</label>
@@ -397,7 +404,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if ($management['type'] == "Companies"): ?>
+                <?php if ($management['type'] == "Companies") : ?>
                     <h1 id="companies-title">Company</h1>
                     <div class="companies-informations">
                         <label for="companies-title">Name:</label>
@@ -414,9 +421,9 @@
                         <input class="companies-degree" id="companies-degree" type="text" placeholder="Degree require" name="degree_require" required>
                         <div id="division-visible">
                             <label class="visible-label" for="visible">Visible ?</label>
-                            <input class="companies-visible"  type="checkbox" id="visible" name="visible" checked>
+                            <input class="companies-visible" type="checkbox" id="visible" name="visible" checked>
                         </div>
-                            <label for="grade">Grade</label>
+                        <label for="grade">Grade</label>
                         <div id="division-grade">
                             <input type="radio" name="grade" value="None" id="grade-no" class="grade">
                             <label for="grade-no" id="grade-no-label">None</label>
@@ -434,7 +441,7 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")): ?>
+                <?php if (($management['type'] == "Companies") || ($management['type'] == "Offers")) : ?>
                     <h1 id="address-title">Address</h1>
                     <div class="address-informations">
                         <label for="address-street-num">Street Number:</label>
@@ -459,7 +466,7 @@
         </form>
     <?php endif; ?>
 </div>
-<?php if ($management['action'] == "Delete"): ?>
+<?php if ($management['action'] == "Delete") : ?>
     <div class="delete-blur">
     </div>
     <form class="delete-popup">

@@ -2,40 +2,42 @@
 require_once("models/address.php");
 require_once("models/date.php");
 
-class Offer extends Model {
+class Offer extends Model
+{
 
     //prepare variables needed to user methods from other classes
     var $obj_address;
     var $obj_date;
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->obj_address = new Address();
         $this->obj_date = new Date();
     }
 
-    function get($login = 1) {
+    function get($login = 1)
+    {
         //TODO
     }
 
-    function select(array $data) {
+    function select(array $data)
+    {
         $attribut = array(" offer.Title ", " city.City ", " skill.Skill ", " company.Company_Name ", " offer.Duration ", " offer.Duration_Type ", " offer.Remuneration ", " date.Date ", " offer.Number_Of_Places ", " offer.Degree_Level_Required ");
         $firstloop = true;
         $condition = "";
 
-        for ($i = 0; $i < sizeof($data); $i++){
+        for ($i = 0; $i < sizeof($data); $i++) {
             if ($data[$i] != "") {
-                if ($firstloop)
-                {
-                    $condition = $condition . $attribut[$i]." LIKE '".$data[$i]."%'";
-                    $firstloop =! $firstloop;
-                }
-                else {
-                    $condition = $condition . " AND " . $attribut[$i]." LIKE '".$data[$i]."%'";
+                if ($firstloop) {
+                    $condition = $condition . $attribut[$i] . " LIKE '" . $data[$i] . "%'";
+                    $firstloop = !$firstloop;
+                } else {
+                    $condition = $condition . " AND " . $attribut[$i] . " LIKE '" . $data[$i] . "%'";
                 }
             }
         }
-        if ($condition == ""){
+        if ($condition == "") {
             $condition = " 1=1 ";
         }
 
@@ -45,11 +47,11 @@ class Offer extends Model {
             'fields' => ' offer.Id_Offer, offer.Title, offer.Description, offer.Degree_Level_Required, offer.Number_Of_Places, offer.Duration, offer.Duration_Type, offer.Remuneration, offer.Link_Offer, offer.visible, company.Company_Name, address.Street_Number, address.Street_Name, city.City, postal_code.Postal_Code, date.Date, skill.Skill  ',
             'order' => ' Id_Offer ASC '
         );
-        
+
         return $this->find($requete);
     }
-    
-    function create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true) {
+    function create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true)
+    {
 
         //create address
         $this->obj_address->create($postal_code, $city, $street_name, $street_number);
@@ -66,7 +68,7 @@ class Offer extends Model {
         ));
 
         foreach ($skills as $skill) {
-        
+
             //create skills
             $this->table = 'skill';
             $this->createWhereNotExists(array(

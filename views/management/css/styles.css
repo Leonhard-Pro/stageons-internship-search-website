@@ -396,6 +396,26 @@
   color: black;
 }
 
+#main .management-create-update .personal-informations #div-password {
+  display: block;
+  width: 20vw;
+  max-width: 370px;
+  min-width: 270px;
+  height: 30px;
+  margin: 5px auto;
+}
+
+#main .management-create-update .personal-informations #div-password input {
+  display: inline-block;
+  margin: 0px;
+  width: 92%;
+  min-width: 200px;
+}
+
+#main .management-create-update .personal-informations #div-password i {
+  display: inline-block;
+}
+
 #main .management-create-update .authorization .authorization-subtitle {
   font-weight: bold;
   font-size: 20px;

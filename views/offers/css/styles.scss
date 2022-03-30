@@ -3,7 +3,6 @@ $fontFamily: Calibri, Arial;
 $background-color: #00416d;
 
 
-
 #display_list{
     display: flex;
     width: 95%;
@@ -71,6 +70,10 @@ $background-color: #00416d;
     #header_info{
         width: 100%;
         padding: 20px;
+
+        h2{
+            color: $backgroundcolourList;
+        }
 
         input[type=checkbox]{
             display: none;

@@ -405,6 +405,27 @@ $fontFamily: Calibri, Arial;
 
 
             }
+
+            #div-password{
+                display: block;
+                width: 20vw;
+                max-width: 370px;
+                min-width: 270px;
+                height: 30px;
+
+                margin: 5px auto;
+
+                input{
+                    display: inline-block;
+                    margin: 0px;
+                    width: 92%;
+                    min-width: 200px;
+                }
+
+                i{
+                    display: inline-block;
+                }
+            }
         }
 
         .authorization {

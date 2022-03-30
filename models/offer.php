@@ -1,6 +1,6 @@
 <?php
-require("models/address.php");
-require("models/date.php");
+require_once("models/address.php");
+require_once("models/date.php");
 
 class Offer extends Model {
 

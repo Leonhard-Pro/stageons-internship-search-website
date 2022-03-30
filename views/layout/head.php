@@ -49,7 +49,7 @@ switch($page['pageName']){
             <!-- Account Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
-        
+
         <?php case "advancement": ?>
             <!-- Advancement Part -->
 
@@ -77,9 +77,7 @@ switch($page['pageName']){
         <?php case "statistic": ?>
             <!-- Statistic Part -->
 
-<?php    } ?>
-
-
+<?php } ?>
 
 
 </head>

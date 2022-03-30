@@ -158,6 +158,10 @@
                         <input class="personal-first-name" id="personal-first-name" type="text" placeholder="First Name" name="first_name" required>
                         <label for="personal-email">Email:</label>
                         <input class="personal-email" id="personal-email" type="email" placeholder="Email" name="email" required>
+                        <label for="personal-center">Center:</label>
+                        <input class="personal-center" id="personal-center" type="text" placeholder="Center" name="center" required>
+                        <label for="personal-class">Class:</label>
+                        <input class="personal-class" id="personal-class" type="text" placeholder="Class" name="class" required>
                     </div>
                 <?php endif; ?>
                 <?php if (($management['type'] == "Delegate") && ($user['userAuthorization'][20])): ?>

@@ -19,10 +19,7 @@ class Management extends Controller {
             header("Location:login");
         }
 
-        if(!$data['user']['userObject'] instanceof User) {
-            header("Location:login");
-        }
-
+    
         if(!isset($management)){
             $management = array(
                 'type' => 'Offers',
@@ -54,6 +51,10 @@ class Management extends Controller {
 
         $this->loadModel('userinformations');
         $data['user'] = $this->userinformations->getUserInformation();
+
+        if(!$data['user']['userObject'] instanceof User) {
+            header("Location:login");
+        }
 
         if(isset($_POST['Create'])) {
             switch ($_POST['Create']) {

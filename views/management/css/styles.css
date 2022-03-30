@@ -178,16 +178,16 @@
   margin-left: 10px;
 }
 
-#main .management-interface .company .informations .offer-name-company {
+#main .management-interface .company .informations .company-name-company {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .company .informations .offer-locate {
+#main .management-interface .company .informations .company-locate {
   font-size: 10px;
 }
 
-#main .management-interface .company .informations .offer-domain-activity {
+#main .management-interface .company .informations .company-domain-activity {
   font-size: 10px;
 }
 
@@ -222,21 +222,21 @@
   margin-left: 10px;
 }
 
-#main .management-interface .student .informations .offer-name {
+#main .management-interface .student .informations .student-name {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .student .informations .offer-first-name {
+#main .management-interface .student .informations .student-first-name {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .student .informations .offer-center {
+#main .management-interface .student .informations .student-center {
   font-size: 12px;
 }
 
-#main .management-interface .student .informations .offer-class {
+#main .management-interface .student .informations .student-class {
   font-size: 12px;
 }
 
@@ -271,17 +271,17 @@
   margin-left: 10px;
 }
 
-#main .management-interface .delegate .informations .offer-name {
+#main .management-interface .delegate .informations .delegate-name {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .delegate .informations .offer-first-name {
+#main .management-interface .delegate .informations .delegate-first-name {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .delegate .informations .offer-center {
+#main .management-interface .delegate .informations .delegate-center {
   font-size: 12px;
 }
 
@@ -316,22 +316,22 @@
   margin-left: 10px;
 }
 
-#main .management-interface .pilot .informations .offer-name {
+#main .management-interface .pilot .informations .pilot-name {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .pilot .informations .offer-first-name {
+#main .management-interface .pilot .informations .pilot-first-name {
   font-weight: bold;
   font-size: 14px;
 }
 
-#main .management-interface .pilot .informations .offer-center {
+#main .management-interface .pilot .informations .pilot-center {
   font-weight: bold;
   font-size: 12px;
 }
 
-#main .management-interface .pilot .informations .offer-class {
+#main .management-interface .pilot .informations .pilot-class {
   font-weight: bold;
   font-size: 10px;
 }

@@ -13,12 +13,12 @@ class Management extends Controller {
         $data['filter'] = array (
             'type' => 'Offers'
         );
-
-
+        
         if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
             header("Location:login");
         }
 
+        
     
         if(!isset($management)){
             $management = array(
@@ -26,7 +26,9 @@ class Management extends Controller {
                 'action' => ''
             );
             $data['management'] = $management;
+            
         }
+        
         
         if (isset($_POST["typeManagement"])){
             $management['type'] = $_POST["typeManagement"];
@@ -35,10 +37,11 @@ class Management extends Controller {
             $data['filter'] = array (
                 'type' => $management['type']
             );
-
+            unset($_POST["typeManagement"]);
             //Show companies
             //$companies = $this->Company->getAll();
         }
+        
         
         if (isset($_POST["actionManagement"])){
             $management['action'] = $_POST["actionManagement"];
@@ -46,7 +49,18 @@ class Management extends Controller {
             $data['filter'] = array (
                 'type' => ""
             );
-
+            unset($_POST["actionManagement"]);
+        }
+        
+        if(isset($_POST['type'])){
+            $data['management'] = array(
+                'type' => $_POST['type'],
+                'action' => ''
+            );
+            $data['filter'] = array (
+                'type' => $_POST['type']
+            );
+            unset($_POST['type']);
         }
 
         $this->loadModel('userinformations');
@@ -103,9 +117,8 @@ class Management extends Controller {
             }
         }
 
-
-        if(isset($_POST['Search'])){
         
+        if(isset($_POST['Search'])){
             if($data['filter']['type'] == "Offers"){
                 $filterData = array(
                     $_POST['what'],
@@ -125,16 +138,10 @@ class Management extends Controller {
             
             if($data['filter']['type'] == "Companies"){
                 $filterData = array(
-                    $_POST['what'],
-                    $_POST['where'],
-                    $_POST['skill'],
                     $_POST['name-company'],
-                    $_POST['duration'],
-                    $_POST['type-duration'],
-                    $_POST['remuneration'],
-                    $_POST['date-published'],
-                    $_POST['numberplaces'],
-                    $_POST['degree']
+                    $_POST['where'],
+                    $_POST['domain-activity']
+                    //$_POST[''] Faire le rate
                 );
                 $this->loadModel('company');
                 $data['SelectCompany'] = json_decode(json_encode($this->company->select($filterData)), true);
@@ -142,55 +149,36 @@ class Management extends Controller {
 
             if($data['filter']['type'] == "Pilot"){
                 $filterData = array(
-                    $_POST['what'],
-                    $_POST['where'],
-                    $_POST['skill'],
-                    $_POST['name-company'],
-                    $_POST['duration'],
-                    $_POST['type-duration'],
-                    $_POST['remuneration'],
-                    $_POST['date-published'],
-                    $_POST['numberplaces'],
-                    $_POST['degree']
+                    $_POST['name'],
+                    $_POST['first-name'],
+                    $_POST['school'],
+                    $_POST['class']
                 );
-                $this->loadModel('pilot');
-                $data['SelectPilot'] = json_decode(json_encode($this->pilot->select($filterData)), true);
+                $this->loadModel('managepilot');
+                $data['SelectPilot'] = json_decode(json_encode($this->managepilot->select($filterData)), true);
             }
 
             if($data['filter']['type'] == "Delegate"){
                 $filterData = array(
-                    $_POST['what'],
-                    $_POST['where'],
-                    $_POST['skill'],
-                    $_POST['name-company'],
-                    $_POST['duration'],
-                    $_POST['type-duration'],
-                    $_POST['remuneration'],
-                    $_POST['date-published'],
-                    $_POST['numberplaces'],
-                    $_POST['degree']
+                    $_POST['name'],
+                    $_POST['first-name'],
+                    $_POST['school']
                 );
-                $this->loadModel('delegate');
-                $data['SelectDelegate'] = json_decode(json_encode($this->delegate->select($filterData)), true);
+                $this->loadModel('managedelegate');
+                $data['SelectDelegate'] = json_decode(json_encode($this->managedelegate->select($filterData)), true);
             }
 
             if($data['filter']['type'] == "Student"){
                 $filterData = array(
-                    $_POST['what'],
-                    $_POST['where'],
-                    $_POST['skill'],
-                    $_POST['name-company'],
-                    $_POST['duration'],
-                    $_POST['type-duration'],
-                    $_POST['remuneration'],
-                    $_POST['date-published'],
-                    $_POST['numberplaces'],
-                    $_POST['degree']
+                    $_POST['name'],
+                    $_POST['first-name'],
+                    $_POST['school'],
+                    $_POST['class']
                 );
-                $this->loadModel('student');
-                $data['SelectStudent'] = json_decode(json_encode($this->student->select($filterData)), true);
+                $this->loadModel('managestudent');
+                $data['SelectStudent'] = json_decode(json_encode($this->managestudent->select($filterData)), true);
             }
-            
+            unset($_POST['Search']);
         }
         else {
             if($data['filter']['type'] == "Offers"){
@@ -213,65 +201,40 @@ class Management extends Controller {
                 $filterData = array(
                     "",
                     "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
                     ""
+                    //$_POST[''] Faire le rate
                 );
                 $this->loadModel('company');
-                $data['SelectCompany'] = json_decode(json_encode($this->offer->select($filterData)), true);
+                $data['SelectCompany'] = json_decode(json_encode($this->company->select($filterData)), true);
             }
             if($data['filter']['type'] == "Pilot"){
                 $filterData = array(
                     "",
                     "",
                     "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
                     ""
                 );
-                $this->loadModel('pilot');
-                $data['SelectPilot'] = json_decode(json_encode($this->pilot->select($filterData)), true);
+                $this->loadModel('managepilot');
+                $data['SelectPilot'] = json_decode(json_encode($this->managepilot->select($filterData)), true);
             } 
             if($data['filter']['type'] == "Delegate"){
                 $filterData = array(
                     "",
                     "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
                     ""
                 );
-                $this->loadModel('delegate');
-                $data['SelectDelegate'] = json_decode(json_encode($this->delegate->select($filterData)), true);
+                $this->loadModel('managedelegate');
+                $data['SelectDelegate'] = json_decode(json_encode($this->managedelegate->select($filterData)), true);
             } 
             if($data['filter']['type'] == "Student"){
                 $filterData = array(
                     "",
                     "",
                     "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
                     ""
                 );
-                $this->loadModel('student');
-                $data['SelectStudent'] = json_decode(json_encode($this->student->select($filterData)), true);
+                $this->loadModel('managestudent');
+                $data['SelectStudent'] = json_decode(json_encode($this->managestudent->select($filterData)), true);
             }  
             
         }

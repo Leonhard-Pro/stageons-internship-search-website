@@ -1,5 +1,4 @@
 <head>
-    <!DOCTYPE html>
     <html lang="en">
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -26,7 +25,7 @@
     <?php if ($page['pageName'] != "login") : ?>
         <!-- Header Part -->
         <link rel="stylesheet" href="views/layout/css/headerstyles.css">
-        <script src="views/layout/js/headerBugerMenu.js" async></script>
+        <script src="views/layout/js/headerBugerMenu.js"></script>
 
         <!-- Footer Part -->
         <link rel="stylesheet" href="views/layout/css/footerstyles.css">
@@ -38,48 +37,88 @@
     <?php if ($page['pageName'] != "account" && $page['pageName'] != "login" && $page['pageName'] && "notifications") : ?>
         <!-- Filters Part -->
         <link rel="stylesheet" href="views/layout/css/filterstyles.css">
+        <link rel="stylesheet" href="views/layout/css/pagination.css">
         <script src="views/layout/js/filter.js" async></script>
     <?php endif; ?>
 
-<?php
+    <?php
 
-switch($page['pageName']){
+    switch ($page['pageName']) {
 
         case "account": ?>
             <!-- Account Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
 
-        <?php case "advancement": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "advancement": ?>
             <!-- Advancement Part -->
 
-        <?php case "companies": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "companies": ?>
             <!-- Companies Part -->
 
-        <?php case "login": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "login": ?>
             <!-- Login Part -->
             <link rel="stylesheet" href="views/login/css/cookies_bannerstyles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
 
-        <?php case "management": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "management": ?>
             <!-- Management Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/management/js/find_address.js"></script>
             <script src="views/layout/js/show_pwrd.js" async></script>
 
-        <?php case "notifications": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "notifications": ?>
             <!-- Notifications Part -->
 
-        <?php case "offers": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "offers": ?>
             <!-- Offers Part -->
             <script src="views/layout/js/jquery-3.6.0.min.js"></script>
             <script src="views/offers/js/infoList.js"></script>
 
-        <?php case "statistic": ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+        <?php break;
+
+        case "statistic": ?>
             <script src="views/statistic/js/statistics.js"></script>
 
-<?php } ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+    <?php break;
+    } ?>
 
 
 </head>

@@ -1,3 +1,25 @@
+
+this.addEventListener('install', function(event) {
+    event.waitUntil(
+      caches.open('v1').then(function(cache) {
+        return cache.addAll([
+          'index.php',
+          'views/login/index.php',
+        ]);
+      })
+    );
+  });
+
+
+
+
+/*
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('ServiceWorker.js')
+    .then( (sw) => console.log('Le Service Worker a été enregistrer', sw))
+    .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+   }
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/serviceworker.js');
 };
@@ -24,4 +46,4 @@ self.addEventListener("fetch", (event) => {
         })
     ));
 });
-
+*/

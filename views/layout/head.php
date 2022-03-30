@@ -49,14 +49,26 @@
             <!-- Account Part -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "advancement": ?>
             <!-- Advancement Part -->
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "companies": ?>
             <!-- Companies Part -->
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "login": ?>
@@ -64,6 +76,10 @@
             <link rel="stylesheet" href="views/login/css/cookies_bannerstyles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/layout/js/show_pwrd.js" async></script>
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "management": ?>
@@ -71,22 +87,38 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <script src="views/management/js/find_address.js"></script>
             <script src="views/layout/js/show_pwrd.js" async></script>
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "notifications": ?>
             <!-- Notifications Part -->
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "offers": ?>
             <!-- Offers Part -->
             <script src="views/layout/js/jquery-3.6.0.min.js"></script>
             <script src="views/offers/js/infoList.js"></script>
+
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
         <?php break;
 
         case "statistic": ?>
             <!-- Statistic Part -->
 
-    <?php break; } ?>
+            <link rel="manifest" href="manifest.json">
+            <script src="js.js"></script>
+
+    <?php break;
+    } ?>
 
 
 </head>

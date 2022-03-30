@@ -1,9 +1,3 @@
-body {
-  height: auto;
-  position: relative;
-  top: 200px;
-}
-
 #display_list {
   display: -webkit-box;
   display: -ms-flexbox;

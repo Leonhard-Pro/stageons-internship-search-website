@@ -48,6 +48,7 @@ class Offer extends Model {
         
         return $this->find($requete);
     }
+    
     function create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true) {
 
         //create address

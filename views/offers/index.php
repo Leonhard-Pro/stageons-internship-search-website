@@ -35,20 +35,46 @@
         if (sizeof($SelectOffer) > 0) {
             if ($currentPage == $numberPages){
                 for ($i = (($numberPages * $numberArticle) - $numberArticle); $i < sizeof($SelectOffer); $i++) {
-                    echo ('<div class="tab_list" onclick="PannelAppear()">
+                    echo ('<div class="tab_list">
                             <div>
                                 <h3> '. $SelectOffer[$i]['Title'] .'</h3>
-                                <p>'. $SelectOffer[$i]['Description'] .'</p>
+                                <p> <b>Company:</b> '. $SelectOffer[$i]['Company_Name'] .'</p>
+                                <p> <b>Description:</b> '. $SelectOffer[$i]['Description'] .'</p>
+                                <p> <b>Duration:</b> '. $SelectOffer[$i]['Duration'] .'</p>
+                                <p> <b>Duration Type:</b> '. $SelectOffer[$i]['Duration_Type'] .'</p>
+                                <p> <b>Remuneration:</b> '. $SelectOffer[$i]['Remuneration'] .'</p>
+                                <p> <b>Number_Of_Places:</b> '. $SelectOffer[$i]['Number_Of_Places'] .'</p>
+                                <p> <b>Required Degree:</b> '. $SelectOffer[$i]['Degree_Level_Required'] .'</p>
+                                <p> <b>Street Number:</b> '. $SelectOffer[$i]['Street_Number'] .'</p>
+                                <p> <b>Street Name:</b> '. $SelectOffer[$i]['Street_Name'] .'</p>
+                                <p> <b>City Name:</b> '. $SelectOffer[$i]['City'] .'</p>
+                                <p> <b>Postal Code:</b> '. $SelectOffer[$i]['Postal_Code'] .'</p>
+                                <p> <b>Required Skill:</b> '. $SelectOffer[$i]['Skill'] .'</p>
+                                <p> <b>Published Date:</b> '. $SelectOffer[$i]['Date'] .'</p>
+                                <p> <b>Link Offer:</b> '. $SelectOffer[$i]['Link_Offer'] .'</p>
                             </div>
                         </div>');
                 }
             }
             else {
                 for ($i = ($currentPage * $numberArticle) - $numberArticle; $i < $currentPage * $numberArticle; $i++) {
-                    echo ('<div class="tab_list" onclick="PannelAppear()">
+                    echo ('<div class="tab_list">
                             <div>
                                 <h3> '. $SelectOffer[$i]['Title'] .'</h3>
-                                <p>'. $SelectOffer[$i]['Description'] .'</p>
+                                <p> <b>Company:</b> '. $SelectOffer[$i]['Company_Name'] .'</p>
+                                <p> <b>Description:</b> '. $SelectOffer[$i]['Description'] .'</p>
+                                <p> <b>Duration:</b> '. $SelectOffer[$i]['Duration'] .'</p>
+                                <p> <b>Duration Type:</b> '. $SelectOffer[$i]['Duration_Type'] .'</p>
+                                <p> <b>Remuneration:</b> '. $SelectOffer[$i]['Remuneration'] .'</p>
+                                <p> <b>Number_Of_Places:</b> '. $SelectOffer[$i]['Number_Of_Places'] .'</p>
+                                <p> <b>Required Degree:</b> '. $SelectOffer[$i]['Degree_Level_Required'] .'</p>
+                                <p> <b>Street Number:</b> '. $SelectOffer[$i]['Street_Number'] .'</p>
+                                <p> <b>Street Name:</b> '. $SelectOffer[$i]['Street_Name'] .'</p>
+                                <p> <b>City Name:</b> '. $SelectOffer[$i]['City'] .'</p>
+                                <p> <b>Postal Code:</b> '. $SelectOffer[$i]['Postal_Code'] .'</p>
+                                <p> <b>Required Skill:</b> '. $SelectOffer[$i]['Skill'] .'</p>
+                                <p> <b>Published Date:</b> '. $SelectOffer[$i]['Date'] .'</p>
+                                <p> <b>Link Offer:</b> '. $SelectOffer[$i]['Link_Offer'] .'</p>
                             </div>
                         </div>');
                 }

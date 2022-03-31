@@ -42,7 +42,7 @@
                 <label for="name-company">Company's name:</label><input type="text" name="name-company" id="name-company" placeholder="Name of the company that posted the offer">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
-                <label for="student-rate-asc">Student rate asc:</label><input type="checkbox" name="student-rate" id="student-rate-asc">
+
             <?php endif; ?>
             <?php if ($filter['type'] == "Pilot" || $filter['type'] == "Student"): ?>
             <label for="class">Class code:</label><input class="filter5"type="text" name="class" id="class" placeholder="Class code">
@@ -53,12 +53,12 @@
                 <label for="duration">Duration:</label><input type="number" name="duration" id="duration" placeholder="Duration (only in integer)">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
-                <label for="student-rate-desc">Student rate desc:</label><input type="checkbox" name="student-rate" id="student-rate-desc">
+
             <?php endif; ?>
             </div>
             <div class="filters6 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="type-duration">Duration type:</label><input type="text" name="type-duration" id="type-duration" placeholder="Examples: days, weeks, months, years">
+
             <?php endif; ?>
             </div>
             <div class="filters7 filters-hidden">
@@ -71,7 +71,7 @@
                     <label for="date-published">Published date:</label><input type="date" name="date-published" id="date-published" placeholder="Date of publication">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
-                <label for="pilot-confidence-asc">Confidence rate asc:</label><input type="checkbox" name="pilot-confidence" id="pilot-confidence-asc">
+
             <?php endif; ?>
             </div>
             <div class="filters9 filters-hidden">
@@ -79,7 +79,6 @@
                 <label for="numberplaces">Places:</label><input type="number" name="numberplaces" id="numberplaces" placeholder="Number of places left">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
-                <label for="pilot-confidence-desc">Confidence rate desc:</label><input type="checkbox" name="pilot-confidence" id="pilot-confidence-desc">
             <?php endif; ?>
             </div>
             <div class="filters10 filters-hidden">

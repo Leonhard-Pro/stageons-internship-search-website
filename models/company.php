@@ -1,4 +1,7 @@
 <?php
+require_once("models/address.php");
+require_once("models/date.php");
+
 class Company extends Model {
 
     //prepare variables needed to user methods from other classes

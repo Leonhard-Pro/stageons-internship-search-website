@@ -20,6 +20,37 @@ function index(){
         'type' => 'Companies'
     );
     
+
+    if(isset($_POST['Search'])){
+        
+        if($data['filter']['type'] == "Companies"){
+            $filterData = array(
+                $_POST['name-company'],
+                $_POST['where'],
+                $_POST['domain-activity']
+            );
+        } 
+        $this->loadModel('company');
+        $data['SelectCompany'] = json_decode(json_encode($this->company->select($filterData)), true);
+    }
+    else {
+        if($data['filter']['type'] == "Companies"){
+            $filterData = array(
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            );
+        } 
+        $this->loadModel('company');
+        $data['SelectCompany'] = json_decode(json_encode($this->company->select($filterData)), true);
+    }
     
 
 

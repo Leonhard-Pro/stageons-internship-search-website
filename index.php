@@ -1,9 +1,9 @@
-<!--
+
 
 <link rel="manifest" href="manifest.json">
 <script src="js.js"></script>
 
--->
+
 
 
 <?php

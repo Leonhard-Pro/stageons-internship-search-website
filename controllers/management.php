@@ -211,7 +211,7 @@ class Management extends Controller {
 
                     $id_offer = $_POST['id'];
 
-                    $this->Offer->create($id_offer, $postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills);
+                    $this->Offer->edit($id_offer, $postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills);
                     break;
 
                 case 'Student':
@@ -227,19 +227,19 @@ class Management extends Controller {
                     isset($_POST['class']) ? $class = $_POST['class'] : 0;
                     $id_type = $_POST['id'];
                     
-                    if($_POST['Create'] == 'Student') {
-                        $this->ManageStudent->create($id_type, $login, $password, $name, $first_name, $email, $center, $class);
+                    if($_POST['Update'] == 'Student') {
+                        $this->ManageStudent->edit($id_type, $login, $password, $name, $first_name, $email, $center, $class);
 
-                    } elseif($_POST['Create'] == 'Pilot') {
+                    } elseif($_POST['Update'] == 'Pilot') {
                         $classes = explode(" - ", $class);
-                        $this->ManagePilot->create($id_type, $login, $password, $name, $first_name, $email, $center, $classes);
+                        $this->ManagePilot->edit($id_type, $login, $password, $name, $first_name, $email, $center, $classes);
 
                     } else {
                         $authorizations = '1';
                         for ($i = 2; $i < 36; $i++)
                             $authorizations .= isset($_POST['SFx'.$i]) ? 1 : 0;
                         
-                        $this->ManageDelegate->create($id_type, $login, $password, $name, $first_name, $email, $center, $authorizations);
+                        $this->ManageDelegate->edit($id_type, $login, $password, $name, $first_name, $email, $center, $authorizations);
                     }
                     break;
             }

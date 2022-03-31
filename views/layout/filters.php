@@ -84,7 +84,7 @@
             </div>
             <div class="filters10 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="degree">Degree require:</label><input type="number" name="degree" id="degree" placeholder="Degree require">
+                <label for="degree">Degree require:</label><input type="text" name="degree" id="degree" placeholder="Degree require">
             <?php endif; ?>
             </div>
             <?php if($page['pageName'] == "management"): ?>

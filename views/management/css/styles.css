@@ -779,6 +779,19 @@
   border-color: #a77474;
 }
 
+.delete-popup .delete-popup-box #exit-button {
+  background-color: #2600ff;
+  color: white;
+  border-color: #00025c;
+}
+
+.delete-popup .delete-popup-box #exit-button:focus,
+.delete-popup .delete-popup-box #exit-button:hover {
+  background-color: #4c4b9c;
+  color: white;
+  border-color: #01004d;
+}
+
 .management-tools {
   width: 24%;
   height: 100%;

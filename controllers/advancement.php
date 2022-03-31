@@ -9,8 +9,8 @@ class Advancement extends Controller {
         }
 
 
-        $this->loadModel('userinformations');
-        $data['user'] = $this->userinformations->getUserInformation();
+        $this->loadModel('informations');
+        $data['user'] = $this->informations->getUserInformation();
 
         if(!$data['user']['userObject'] instanceof User) {
             header("Location:login");
@@ -48,7 +48,6 @@ class Advancement extends Controller {
             unset($_POST["actionAdvancement"]);
         }
 
-        if ($date[''])
         
         
 

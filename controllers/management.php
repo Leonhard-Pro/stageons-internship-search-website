@@ -1,4 +1,7 @@
 <?php
+
+require_once('models/convertStringToBinaryArray.php');
+
 class Management extends Controller {
 
     //var $models = array('userinformations', 'date', 'address', 'offer', 'company');
@@ -19,6 +22,7 @@ class Management extends Controller {
         $data['filter'] = array (
             'type' => 'Offers'
         );
+        $data['offerInformations'] = "";
         
         if(!isset($_COOKIE['Cookies']) || ($_COOKIE['Cookies'] == false)) {
             header("Location:login");
@@ -66,13 +70,24 @@ class Management extends Controller {
                 'type' => ""
             );
             unset($_POST["actionManagement"]);
-            var_dump($data['management']['action']);
+        }
+
+        $this->loadModel('informations');
+        $data['user'] = $this->informations->getUserInformation();
+
+        //To send the information of the offer to the update form
+        if ($management['action'] == "Update"){
+            $i = $_POST["update-id-informations"];
+            $data['offerInformations'] = $this->informations->getInformationById($i);
+            if ($management['type'] == "Delegate"){
+                $data['authorizations'] = convertStringToBinaryArray($data['offerInformations']['Authorization_Code']);
+            }
+            unset($_POST['update-id-informations']);
         }
         
         
 
-        $this->loadModel('userinformations');
-        $data['user'] = $this->userinformations->getUserInformation();
+        
 
         if(!$data['user']['userObject'] instanceof User) {
             header("Location:login");
@@ -268,6 +283,34 @@ class Management extends Controller {
                 $data['SelectStudent'] = json_decode(json_encode($this->managestudent->select($filterData)), true);
             }
             
+        }
+
+        if(isset($data['filter']['type'])){
+            $dataSwitch = $data['filter']['type'];
+            switch($dataSwitch) {
+                case "Offers":
+                    $_SESSION['informationOffer'] = $data['SelectOffer'];
+                    break;
+
+                case "Companies":
+                    $_SESSION['informationOffer'] = $data['SelectCompany'];
+                    break;
+
+                case "Student":
+                    $_SESSION['informationOffer'] = $data['SelectStudent'];
+                    break;
+
+                case "Pilot":
+                    $_SESSION['informationOffer'] = $data['SelectPilot'];
+                    break;
+
+                case "Delegate":
+                    $_SESSION['informationOffer'] = $data['SelectDelegate'];
+                    break;
+                
+                default:
+                    break;
+            }
         }
 
         

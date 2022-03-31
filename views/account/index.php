@@ -14,7 +14,7 @@
             <input readonly="readonly" type="text" id="First_name" value="<?php echo $user['userObject']->getFirstName(); ?>">
             <label for="Surname">Last name:</label>
             <input readonly="readonly" type="text" id="Surname" value="<?php echo $user['userObject']->getName(); ?>">
-            <label for="Email">Email adress:</label>
+            <label for="Email">Email address:</label>
             <input readonly="readonly" type="text" id="Email" value="<?php echo $user['userObject']->getEmail();?>">
         <?php endif; ?>
         <form action="" method="POST">

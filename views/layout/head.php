@@ -2,7 +2,7 @@
     <html lang="en">
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <title>Stageons-<?php echo $page['pageName']; ?></title>
     <meta name="author" content="Stageons CESI">

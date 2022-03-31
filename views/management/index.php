@@ -99,10 +99,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][9]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][10]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -120,10 +120,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][3]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][5]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -142,10 +142,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][23]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][24]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -163,10 +163,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][18]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][19]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -185,10 +185,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][14]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][15]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -213,10 +213,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][9]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][10]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -234,10 +234,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][3]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][5]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -256,10 +256,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][23]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][24]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -277,10 +277,10 @@
                                         echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][18]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][19]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>
@@ -299,10 +299,10 @@
                                             echo ('<input name="typeManagement" type="hidden" value="'. $management["type"] .'"></input>');
                                             echo ("<input name='update-id-informations' type='hidden' value='" . $i . "'></input>");
                                             if ($user['userAuthorization'][14]) {
-                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Update"><img class="icon-update" src="views/resources/icon_update.png" alt="actionManagement"></button>');
                                             }
                                             if ($user['userAuthorization'][15]){
-                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png"></button>');
+                                                echo ('<button type="submit" name="actionManagement" value="Delete"><img class="icon-delete" src="views/resources/icon_delete.png" alt="actionManagement"></button>');
                                             }
                                         echo ('</form>
                                     </div>

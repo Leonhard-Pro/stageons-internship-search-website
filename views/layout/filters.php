@@ -5,10 +5,10 @@
         <form method="POST" id="filters-form">
             <div class="filters1">
                 <?php if ($filter['type'] == "Offers"): ?>
-                <label for="what">What:  </label><input type="text" name="what" id="what" placeholder="traineeship name, keyword">
+                <label for="what">What:  </label><input type="text" name="what" id="what" placeholder="internship name, keywords">
                 <?php endif; ?>
                 <?php if ($filter['type'] == "Companies"): ?>
-                    <label for="name-company">Name company:</label><input type="text" name="name-company" id="name-company" placeholder="Name of the company that posted the offer">
+                    <label for="name-company">Company's name:</label><input type="text" name="name-company" id="name-company" placeholder="Name of the company that posted the offer">
                 <?php endif; ?>
                 <?php if ($filter['type'] == "Pilot" || $filter['type'] == "Delegate" || $filter['type'] == "Student"): ?>
                 <label for="name">Name:</label><input type="text" name="name" id="name" placeholder="Name person">
@@ -28,7 +28,7 @@
             </div>
             <div class="filters3 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="skill">Skills:</label><input type="text" name="skill" id="skill" placeholder="Skills required">
+                <label for="skill">Skills:</label><input type="text" name="skill" id="skill" placeholder="Required skills">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
                 <label for="domain-activity">Domain activity:</label><input type="text" name="domain-activity" id="domain-activity" placeholder="Domain activity of the company">
@@ -39,7 +39,7 @@
             </div>
             <div class="filters4 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="name-company">Name company:</label><input type="text" name="name-company" id="name-company" placeholder="Name of the company that posted the offer">
+                <label for="name-company">Company's name:</label><input type="text" name="name-company" id="name-company" placeholder="Name of the company that posted the offer">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
                 <label for="student-rate-asc">Student rate asc:</label><input type="checkbox" name="student-rate" id="student-rate-asc">
@@ -50,7 +50,7 @@
             </div>
             <div class="filters5 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="duration">Duration:</label><input type="number" name="duration" id="duration" placeholder="Duration only in integer">
+                <label for="duration">Duration:</label><input type="number" name="duration" id="duration" placeholder="Duration (only in integer)">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
                 <label for="student-rate-desc">Student rate desc:</label><input type="checkbox" name="student-rate" id="student-rate-desc">
@@ -58,7 +58,7 @@
             </div>
             <div class="filters6 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="type-duration">Type duration:</label><input type="text" name="type-duration" id="type-duration" placeholder="Examples: days, weeks, months, years">
+                <label for="type-duration">Duration type:</label><input type="text" name="type-duration" id="type-duration" placeholder="Examples: days, weeks, months, years">
             <?php endif; ?>
             </div>
             <div class="filters7 filters-hidden">
@@ -76,7 +76,7 @@
             </div>
             <div class="filters9 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="numberplaces">Number places:</label><input type="number" name="numberplaces" id="numberplaces" placeholder="Number places left">
+                <label for="numberplaces">Places:</label><input type="number" name="numberplaces" id="numberplaces" placeholder="Number of places left">
             <?php endif; ?>
             <?php if ($filter['type'] == "Companies"): ?>
                 <label for="pilot-confidence-desc">Confidence rate desc:</label><input type="checkbox" name="pilot-confidence" id="pilot-confidence-desc">
@@ -84,7 +84,7 @@
             </div>
             <div class="filters10 filters-hidden">
             <?php if ($filter['type'] == "Offers"): ?>
-                <label for="degree">Degree require:</label><input type="text" name="degree" id="degree" placeholder="Degree require">
+                <label for="degree">Required degree:</label><input type="number" name="degree" id="degree" placeholder="Required degree">
             <?php endif; ?>
             </div>
             <?php if($page['pageName'] == "management"): ?>

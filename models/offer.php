@@ -23,35 +23,25 @@ class Offer extends Model
 
     function select(array $data)
     {
-        
         $attribut = array(" offer.Title ", " city.City ", " skill.Skill ", " company.Company_Name ", " offer.Duration ", " offer.Duration_Type ", " offer.Remuneration ", " date.Date ", " offer.Number_Of_Places ", " offer.Degree_Level_Required ");
-        $firstloop = true;
-        $condition = "";
-
-        
+        $condition = " offer.visible = 1 ";
         for ($i = 0; $i < sizeof($data); $i++) {
             if ($data[$i] != "") {
-                if ($firstloop) {
-                    $condition = $condition . $attribut[$i] . " LIKE '" . $data[$i] . "%'";
-                    $firstloop = !$firstloop;
-                } else {
-                    $condition = $condition . " AND " . $attribut[$i] . " LIKE '" . $data[$i] . "%'";
-                }
+                $condition = $condition . " AND " . $attribut[$i] . " LIKE '" . $data[$i] . "%'";
             }
         }
         if ($condition == "") {
             $condition = " 1=1 ";
         }
-
         $this->table = " offer LEFT JOIN company ON offer.Id_Company = company.Id_Company LEFT JOIN address ON address.Id_Address = offer.Id_Address LEFT JOIN city ON city.Id_City = address.Id_City LEFT JOIN postal_code ON city.Id_Postal_Code = postal_code.Id_Postal_Code LEFT JOIN date ON offer.Id_Date = date.Id_Date RIGHT JOIN have_3 ON have_3.Id_Offer = offer.Id_Offer LEFT JOIN skill ON skill.Id_Skill = have_3.Id_Skill ";
         $requete = array(
             'conditions' => $condition,
             'fields' => ' * ',
             'order' => ' offer.Id_Offer ASC '
         );
-
         return $this->find($requete);
     }
+    
     function create($postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true)
     {
 
@@ -89,7 +79,8 @@ class Offer extends Model
         }
     }
 
-    function edit($id_offer, $postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true) {
+    function edit($id_offer, $postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true)
+    {
 
         //create address
         $this->obj_address->create($postal_code, $city, $street_name, $street_number);
@@ -99,7 +90,7 @@ class Offer extends Model
 
         //edit offer
         $this->change("UPDATE offer SET offer.Title = '$title_offer', offer.Description = '$description_offer', offer.Degree_Level_Required = '$degree_level_required', offer.Duration = '$duration', offer.Duration_Type = '$time_unit', offer.Remuneration = '$remuneration', offer.Number_Of_Places = '$number_of_places', offer.Link_Offer = '$offer_link', offer.visible = '$visible_offer', offer.Id_Address = (SELECT address.Id_Address FROM address LEFT JOIN city ON address.Id_City = city.Id_City LEFT JOIN postal_code ON postal_code.Id_Postal_Code = city.Id_Postal_Code WHERE address.Street_Number = $street_number AND address.Street_Name = '$street_name' AND city.City = '$city' AND postal_code.Postal_Code = '$postal_code'), offer.Id_Company = (SELECT company.Id_Company FROM company WHERE company.Company_Name = '$company_name'), offer.Id_Date = (SELECT date.Id_Date FROM date WHERE date.Date = '$date') WHERE offer.Id_Offer = '$id_offer';");
-    
+
         //remove skills
         $this->change("DELETE FROM have_3 WHERE have_3.Id_Offer = '$id_offer'");
 
@@ -123,7 +114,8 @@ class Offer extends Model
         }
     }
 
-    function delete($id_offer) {
+    function delete($id_offer)
+    {
 
         //remove offer
         $this->change("UPDATE offer SET offer.visible = 0 WHERE offer.Id_Offer = '$id_offer'");

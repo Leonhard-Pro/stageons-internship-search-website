@@ -1,5 +1,7 @@
 <?php 
 
+    var_dump(sizeof($SelectOffer));
+
     if ($management['action'] == ""){
     $currentPage = 1;
     $numberArticle = 5;
@@ -17,7 +19,11 @@
         }
     
 
-        if ($sizeArray%5 == 0){ $numberPages = $sizeArray/$numberArticle;}else{$numberPages = round($sizeArray/$numberArticle, 0) + 1;}
+        var_dump($sizeArray);
+
+        if ($sizeArray%5 == 0){ $numberPages = $sizeArray/$numberArticle;}else{if($sizeArray > 5){$numberPages = round($sizeArray/$numberArticle, 0) + 1;}else{$numberPages = 1;};}
+
+        var_dump($numberPages);
 
         if(isset(explode('=',$_SERVER['REQUEST_URI'])[1]))
         {

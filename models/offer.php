@@ -123,7 +123,7 @@ class Offer extends Model
         }
     }
 
-    function remove($id_offer) {
+    function delete($id_offer) {
 
         //remove offer
         $this->change("UPDATE offer SET offer.visible = 0 WHERE offer.Id_Offer = '$id_offer'");

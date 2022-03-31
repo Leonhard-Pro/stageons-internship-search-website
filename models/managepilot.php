@@ -120,10 +120,25 @@ class ManagePilot extends Model {
         }
     }
 
-    function remove($login, $password) {
+    function delete($id_pilot) {
+
+        $this->table = 'class_pilot';
+        $id_person = $this->find(array(
+            'conditions' => "class_pilot.Id_Class_Pilot = '$id_pilot'",
+            'fields' => 'class_pilot.Id_Person',
+            'order' => 'Id_Person ASC '
+            ));
+        $id_person = $id_person[0]->Id_Person;
+        $this->table = 'person';
+        $id_user = $this->find(array(
+            'conditions' => "person.Id_Person = '$id_person'",
+            'fields' => 'person.Id_User',
+            'order' => 'Id_User ASC '
+            ));
+        $id_user = $id_user[0]->Id_User;
         
         //remove pilot
-        $this->change("DELETE FROM user WHERE user.Login = '$login' AND user.Password_Login = '$password'");
+        $this->change("DELETE FROM user WHERE user.Id_User = '$id_user'");
     }
 }
 ?>

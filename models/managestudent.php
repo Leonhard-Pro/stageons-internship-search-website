@@ -95,10 +95,25 @@ class ManageStudent extends Model {
         $this->change("UPDATE student SET student.Id_Person = (SELECT person.Id_Person FROM person LEFT JOIN user ON person.Id_User = user.Id_User WHERE person.Person_Name = '$name' AND person.Person_First_Name = '$first_name' AND person.Person_Email = '$email' AND user.Login = '$login' AND user.Password_Login = '$password'), student.Id_School = (SELECT school.Id_School FROM school WHERE school.Center = '$center'), student.Id_Class = (SELECT class.Id_Class FROM class WHERE class.Class = '$class') WHERE student.Id_Student = '$id_student'");
     }
 
-    function remove($login, $password_login) {
+    function delete($id_student) {
+
+        $this->table = 'student';
+        $id_person = $this->find(array(
+            'conditions' => "student.Id_Student = '$id_student'",
+            'fields' => 'student.Id_Person',
+            'order' => 'Id_Person ASC '
+            ));
+        $id_person = $id_person[0]->Id_Person;
+        $this->table = 'person';
+        $id_user = $this->find(array(
+            'conditions' => "person.Id_Person = '$id_person'",
+            'fields' => 'person.Id_User',
+            'order' => 'Id_User ASC '
+            ));
+        $id_user = $id_user[0]->Id_User;
 
         //remode user
-        $this->change("DELETE FROM user WHERE user.Login = '$login' AND user.Password_Login = '$password_login'");
+        $this->change("DELETE FROM user WHERE user.Id_User = '$id_user'");
     }
 }
 ?>

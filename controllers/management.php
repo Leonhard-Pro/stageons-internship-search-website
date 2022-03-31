@@ -76,7 +76,7 @@ class Management extends Controller {
         $data['user'] = $this->informations->getUserInformation();
 
         //To send the information of the offer to the update form
-        if ($management['action'] == "Update"){
+        if ($management['action'] == "Update" || $management['action'] == "Delete" ){
             $i = $_POST["update-id-informations"];
             $data['offerInformations'] = $this->informations->getInformationById($i);
             if ($management['type'] == "Delegate"){
@@ -240,6 +240,43 @@ class Management extends Controller {
                             $authorizations .= isset($_POST['SFx'.$i]) ? 1 : 0;
                         
                         $this->ManageDelegate->edit($id_type, $login, $password, $name, $first_name, $email, $center, $authorizations);
+                    }
+                    break;
+            }
+        }
+
+        //remove entities
+        if(isset($_POST['Delete'])) {
+            switch ($_POST['Delete']) {
+                case 'Companies':
+
+                    $id_company = $_POST['id'];
+
+                    $this->Company->delete($id_company);
+                    break;
+
+                case 'Offers':
+
+                    $id_offer = $_POST['id'];
+
+                    $this->Offer->delete($id_offer);
+                    break;
+
+                case 'Student':
+                case 'Pilot':
+                case 'Delegate':
+
+                    $id_type = $_POST['id'];
+                    
+                    if($_POST['Update'] == 'Student') {
+                        $this->ManageStudent->delete($id_type);
+
+                    } elseif($_POST['Update'] == 'Pilot') {
+                        $this->ManagePilot->delete($id_type);
+
+                    } else {
+                        
+                        $this->ManageDelegate->delete($id_type);
                     }
                     break;
             }

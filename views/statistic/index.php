@@ -33,35 +33,30 @@
         // Here you have the principale code for the graph
         // https://www.chartjs.org/docs/latest/
 
-        if( "<?php echo $statistic['type']; ?>" == "Offers")
-        {
+        if ("<?php echo $statistic['type']; ?>" == "Offers") {
             labels = ["Offers no one applied to", "Availlable offers", "Finished offers"];
             values = <?php echo json_encode($valuesOffers) ?>;
 
             CreateGraph("Offers",
-                        labels,
-                        colours,
-                        values);
-        }
-        else if ("<?php echo $statistic['type']; ?>" == "Companies")
-        {
+                labels,
+                colours,
+                values);
+        } else if ("<?php echo $statistic['type']; ?>" == "Companies") {
             labels = ["Companies without any CESI intern", "Companies with one CESI intern", "Companies with two or more CESI interns"];
             values = <?php echo json_encode($valuesCompanies) ?>;
 
             CreateGraph("Companies",
-                        labels,
-                        colours,
-                        values);
-        }
-        else
-        {
+                labels,
+                colours,
+                values);
+        } else {
             labels = ["Student with an internship", "Student without an internship", "Work-study student", "Project student"];
             values = <?php echo json_encode($valuesStudents) ?>;
 
             CreateGraph("Students",
-                        labels,
-                        colours,
-                        values);
+                labels,
+                colours,
+                values);
         }
     </script>
 

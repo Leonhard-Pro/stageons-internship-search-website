@@ -93,8 +93,11 @@ class Management extends Controller {
                     $company_email = $_POST['email'];
                     isset($_POST['visible']) ? $is_visible = true : $is_visible = false;
                     $domains_activity = explode(" - ", $_POST['domain_activity']);
+                    $score = $_POST['grade'];
+                    $score == 'None' ? $score = null : 0;
 
                     $this->Company->create($postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept, $company_email, $domains_activity, $is_visible);
+                    $this->Company->addConfidenceRate($score, $company_name, /*$company_email, */$data['user']['userObject']);
                     break;
 
                 case 'Offers':

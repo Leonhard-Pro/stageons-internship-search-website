@@ -62,5 +62,43 @@ class ManageStudent extends Model {
         
         return $this->find($requete);
     }
+
+    function edit($id_student, $login, $password, $name, $first_name, $email, $center, $class) {
+
+        $this->table = 'student';
+        $id_person = $this->find(array(
+            'conditions' => "student.Id_Student = '$id_student'",
+            'fields' => 'student.Id_Person',
+            'order' => 'Id_Person ASC '
+            ));
+        $id_person = $id_person[0]->Id_Person;
+        $this->table = 'person';
+        $id_user = $this->find(array(
+            'conditions' => "person.Id_Person = '$id_person'",
+            'fields' => 'person.Id_User',
+            'order' => 'Id_User ASC '
+            ));
+        $id_user = $id_user[0]->Id_User;
+        //edit user
+        $this->change("UPDATE user SET user.Login = '$login',  user.Password_Login = '$password' WHERE user.Id_User = '$id_user'");
+
+        //edit person
+        $this->change("UPDATE person SET person.Person_Name = '$name', person.Person_First_Name = '$first_name', person.Person_Email = '$email' WHERE person.Id_User = '$id_user'");
+    
+        //create school
+        $this->obj_school->create($center);
+
+        //create class
+        $this->obj_class->create($class);
+
+        //edit student
+        $this->change("UPDATE student SET student.Id_Person = (SELECT person.Id_Person FROM person LEFT JOIN user ON person.Id_User = user.Id_User WHERE person.Person_Name = '$name' AND person.Person_First_Name = '$first_name' AND person.Person_Email = '$email' AND user.Login = '$login' AND user.Password_Login = '$password'), student.Id_School = (SELECT school.Id_School FROM school WHERE school.Center = '$center'), student.Id_Class = (SELECT class.Id_Class FROM class WHERE class.Class = '$class') WHERE student.Id_Student = '$id_student'");
+    }
+
+    function remove($login, $password_login) {
+
+        //remode user
+        $this->change("DELETE FROM user WHERE user.Login = '$login' AND user.Password_Login = '$password_login'");
+    }
 }
 ?>

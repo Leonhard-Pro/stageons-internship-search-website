@@ -88,4 +88,44 @@ class Offer extends Model
             ));
         }
     }
+
+    function edit($id_offer, $postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills, $visible_offer = true) {
+
+        //create address
+        $this->obj_address->create($postal_code, $city, $street_name, $street_number);
+
+        //create date
+        $this->obj_date->create($date);
+
+        //edit offer
+        $this->change("UPDATE offer SET offer.Title = '$title_offer', offer.Description = '$description_offer', offer.Degree_Level_Required '$degree_level_required', offer.Duration = '$duration', offer.Duration_Type = '$time_unit', offer.Remuneration = '$remuneration', offer.Number_Of_Places = '$number_of_places', offer.Link_Offer = '$offer_link', offer.visible = '$visible_offer', offer.Id_Address = (SELECT address.Id_Address FROM address LEFT JOIN city ON address.Id_City = city.Id_City LEFT JOIN postal_code ON postal_code.Id_Postal_Code = city.Id_Postal_Code WHERE address.Street_Number = $street_number AND address.Street_Name = '$street_name' AND city.City = '$city' AND postal_code.Postal_Code = '$postal_code'), offer.Id_Company = (SELECT company.Id_Company FROM company WHERE company.name = '$company_name'), offer.Id_Date = (SELECT date.Id_Date FROM date WHERE date.Date = '$date') WHERE offer.Id_Offer = '$id_offer';");
+    
+        //remove skills
+        $this->change("DELETE FROM have_3 WHERE have_3.Id_Offer = '$id_offer'");
+
+        foreach ($skills as $skill) {
+
+            //create skills
+            $this->table = 'skill';
+            $this->createWhereNotExists(array(
+                'fields' => 'skill.Skill',
+                'fields_dual' => "'$skill' as skill",
+                'conditions' => 'skill.Skill = temp.skill'
+            ));
+
+            //include skills
+            $this->table = 'have_3';
+            $this->createWhereNotExists(array(
+                'fields' => 'have_3.Id_Skill, have_3.Id_Offer',
+                'fields_dual' => "(SELECT skill.Id_Skill FROM skill WHERE skill.Skill = '$skill') as id_skill, (SELECT offer.Id_Offer FROM offer WHERE offer.Title = '$title_offer' AND offer.Description = '$description_offer') as id_offer",
+                'conditions' => 'have_3.Id_Skill = temp.id_skill AND have_3.Id_Offer = temp.id_offer'
+            ));
+        }
+    }
+
+    function remove($id_offer) {
+
+        //remove offer
+        $this->change("UPDATE offer SET offer.visible = 0 WHERE offer.Id_Offer = '$id_offer'");
+    }
 }

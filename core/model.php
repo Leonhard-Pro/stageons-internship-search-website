@@ -100,6 +100,10 @@ class Model {
         $this->pdo->exec($sql);
     }
 
+    public function change($sql) {
+        $this->pdo->exec($sql);
+    }
+
     public function find($data = array()) {
         $conditions = "1=1";
         $fields = "*";

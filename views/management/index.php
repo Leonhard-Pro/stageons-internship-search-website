@@ -330,23 +330,22 @@
     <?php if ($management['action'] == "Create" || $management['action'] == "Update") : ?>
         <form method="POST" id="management-form">
             <div class="management-create-update">
-                <?php var_dump($offerInformations); ?>
                 <?php if ($management['action'] == "Update") : ?>
                 <!-- When you update a offer or a company or a person we stock the id in this variable -->
                     <?php if ($management['type'] == "Offers"): ?>
-                    <input name='id' id="id" type='hidden' value=' <?php echo $offerInformations["Id_Offer"]; ?> '></input>
+                    <input name='id' id="id" type='hidden' value='<?php echo $offerInformations["Id_Offer"]; ?>'></input>
                     <?php endif; ?>
                     <?php if ($management['type'] == "Companies"): ?>
-                    <input name='id' id="id" type='hidden' value=' <?php echo $offerInformations["Id_Company"]; ?> '></input>
+                    <input name='id' id="id" type='hidden' value='<?php echo $offerInformations["Id_Company"]; ?>'></input>
                     <?php endif; ?>
                     <?php if ($management['type'] == "Pilot"): ?>
-                    <input name='id' id="id" type='hidden' value=' <?php echo $offerInformations["Id_Class_Pilot"]; ?> '></input>
+                    <input name='id' id="id" type='hidden' value='<?php echo $offerInformations["Id_Class_Pilot"]; ?>'></input>
                     <?php endif; ?>
                     <?php if ($management['type'] == "Delegate"): ?>
-                    <input name='id' id="id" type='hidden' value=' <?php echo $offerInformations["Id_Delegate"]; ?> '></input>
+                    <input name='id' id="id" type='hidden' value='<?php echo $offerInformations["Id_Delegate"]; ?>'></input>
                     <?php endif; ?>
                     <?php if ($management['type'] == "Student"): ?>
-                    <input name='id' id="id" type='hidden' value=' <?php echo $offerInformations["Id_Student"]; ?> '></input>
+                    <input name='id' id="id" type='hidden' value='<?php echo $offerInformations["Id_Student"]; ?>'></input>
                     <?php endif; ?>
                 <?php endif; ?>
                 <?php if ($management['type'] == "Pilot" || $management['type'] == "Delegate" || $management['type'] == "Student") : ?>

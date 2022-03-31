@@ -93,6 +93,7 @@ class Management extends Controller {
             header("Location:login");
         }
 
+        //create entities
         if(isset($_POST['Create'])) {
             switch ($_POST['Create']) {
                 case 'Companies':
@@ -152,8 +153,8 @@ class Management extends Controller {
                         $this->ManageStudent->create($login, $password, $name, $first_name, $email, $center, $class);
 
                     } elseif($_POST['Create'] == 'Pilot') {
-                        $class = explode(" - ", $class);
-                        $this->ManagePilot->create($login, $password, $name, $first_name, $email, $center, $class);
+                        $classes = explode(" - ", $class);
+                        $this->ManagePilot->create($login, $password, $name, $first_name, $email, $center, $classes);
 
                     } else {
                         $authorizations = '1';
@@ -161,6 +162,84 @@ class Management extends Controller {
                             $authorizations .= isset($_POST['SFx'.$i]) ? 1 : 0;
                         
                         $this->ManageDelegate->create($login, $password, $name, $first_name, $email, $center, $authorizations);
+                    }
+                    break;
+            }
+        }
+
+        //edit entities
+        if(isset($_POST['Update'])) {
+            switch ($_POST['Update']) {
+                case 'Companies':
+
+                    $postal_code = $_POST['adrss_postal_code'];
+                    $city = $_POST['adrss_city'];
+                    $street_name = $_POST['adrss_street_name'];
+                    $street_number = $_POST['adrss_number'];
+                    $company_name = $_POST['name'];
+                    $company_description = $_POST['description'];
+                    $cesi_accept = $_POST['committed_intern'];
+                    $cesi_accept == null ? $cesi_accept = 0 : 0;
+                    $company_email = $_POST['email'];
+                    isset($_POST['visible']) ? $is_visible = true : $is_visible = false;
+                    $domains_activity = explode(" - ", $_POST['domain_activity']);
+                    $score = $_POST['grade'];
+                    $score == 'None' ? $score = null : 0;
+
+                    $id_company = $_POST['id'];
+
+                    $this->Company->edit($id_company, $data['user']['userObject'], $postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept, $company_email, $domains_activity, $score);
+                    break;
+
+                case 'Offers':
+
+                    $title_offer = $_POST['title'];
+                    $time_unit = $_POST['time_unit'];
+                    $skills = explode(" - ", $_POST['skills']);
+                    $remuneration = $_POST['remuneration'];
+                    $date = $_POST['publish_date'];
+                    $number_of_places = $_POST['posts_number'];
+                    $offer_link = $_POST['link'];
+                    $degree_level_required = $_POST['grade'];
+                    $duration = $_POST['duration'];
+                    $description_offer = $_POST['description'];
+                    $street_name = $_POST['adrss_street_name'];
+                    $city = $_POST['adrss_city'];
+                    $postal_code = $_POST['adrss_postal_code'];
+                    $street_number = $_POST['adrss_number'];
+                    $company_name = $_POST['company_name'];
+
+                    $id_offer = $_POST['id'];
+
+                    $this->Offer->create($id_offer, $postal_code, $city, $street_name, $street_number, $date, $title_offer, $description_offer, $degree_level_required, $duration, $time_unit, $remuneration, $number_of_places, $offer_link, $company_name, $skills);
+                    break;
+
+                case 'Student':
+                case 'Pilot':
+                case 'Delegate':
+
+                    $login = $_POST['login'];
+                    $password = $_POST['password'];
+                    $name = $_POST['name'];
+                    $first_name = $_POST['first_name'];
+                    $email = $_POST['email'];
+                    $center = $_POST['center'];
+                    isset($_POST['class']) ? $class = $_POST['class'] : 0;
+                    $id_type = $_POST['id'];
+                    
+                    if($_POST['Create'] == 'Student') {
+                        $this->ManageStudent->create($id_type, $login, $password, $name, $first_name, $email, $center, $class);
+
+                    } elseif($_POST['Create'] == 'Pilot') {
+                        $classes = explode(" - ", $class);
+                        $this->ManagePilot->create($id_type, $login, $password, $name, $first_name, $email, $center, $classes);
+
+                    } else {
+                        $authorizations = '1';
+                        for ($i = 2; $i < 36; $i++)
+                            $authorizations .= isset($_POST['SFx'.$i]) ? 1 : 0;
+                        
+                        $this->ManageDelegate->create($id_type, $login, $password, $name, $first_name, $email, $center, $authorizations);
                     }
                     break;
             }

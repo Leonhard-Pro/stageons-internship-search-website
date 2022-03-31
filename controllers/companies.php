@@ -9,10 +9,10 @@ function index(){
     }
 
 
-    $this->loadModel('userinformations');
-    $data['user'] = $this->userinformations->getUserInformation();
+    $this->loadModel('informations');
+    $data['user'] = $this->informations->getUserInformation();
 
-    if(!$data['user']['userObject'] instanceof User) {
+    if(!isset($data['user']['userObject'])) {
         header("Location:login");
     }
 

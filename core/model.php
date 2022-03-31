@@ -116,7 +116,6 @@ class Model {
         $sql = "SELECT $fields FROM ".$this->table." WHERE $conditions ORDER BY $order $limit";
         $req = $this->pdo->query($sql);
         $d = $req->fetchALL();
-
         return $d;
     }
 

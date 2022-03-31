@@ -833,6 +833,19 @@ $fontFamily: Calibri, Arial;
             border-color: rgb(167, 116, 116);
 
         }
+
+        #exit-button {
+            background-color: rgb(38, 0, 255);
+            color: white;
+            border-color: rgb(0, 2, 92);
+        }
+
+        #exit-button:focus,
+        #exit-button:hover {
+            background-color: rgb(76, 75, 156);
+            color: white;
+            border-color: rgb(1, 0, 77);
+        }
         
 
     }

@@ -188,7 +188,7 @@ class Management extends Controller {
 
                     $id_company = $_POST['id'];
 
-                    $this->Company->edit($id_company, $data['user']['userObject'], $postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept, $company_email, $domains_activity, $score);
+                    $this->Company->edit($id_company, $data['user']['userObject'], $postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept, $company_email, $domains_activity, $score, $is_visible);
                     break;
 
                 case 'Offers':

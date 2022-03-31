@@ -36,7 +36,7 @@ class Company extends Model {
         $this->table = " (SELECT company.Id_Company, company.Company_Name, company.Company_Description, company.CESI_Trainee_Accept, company.Email_Company, company.Is_Visible, address.Street_Number, address.Street_Name, city.City, postal_code.Postal_Code, domain_activity.Domain_Activity FROM company LEFT JOIN locate_1 ON company.Id_Company = locate_1.Id_Company LEFT JOIN address ON locate_1.Id_Address = address.Id_Address LEFT JOIN city ON address.Id_City = city.Id_City LEFT JOIN postal_code ON city.Id_Postal_Code = postal_code.Id_Postal_Code RIGHT JOIN own_1 ON company.Id_Company = own_1.Id_Company LEFT JOIN domain_activity ON own_1.Id_Domain_Activity = domain_activity.Id_Domain_Activity) as infocompany LEFT JOIN (SELECT company.Id_Company, AVG(score.Score) as scorestudent FROM score RIGHT JOIN student_evaluation ON score.Id_Score = student_evaluation.Id_Score LEFT JOIN company ON company.Id_Company = student_evaluation.Id_Company GROUP BY company.Id_Company) as scorestudents ON infocompany.Id_Company = scorestudents.Id_Company LEFT JOIN (SELECT scorepilot.Id_Company, (AVG( IFNULL(scorepilot.pilotconfidence, scorepilot.delegateconfidence) + IFNULL(scorepilot.delegateconfidence, scorepilot.pilotconfidence ))/2) as scorepilot FROM (SELECT scorepilot.Id_Company, scorepilot.pilotconfidence, scoredelegate.delegateconfidence FROM (SELECT company.Id_Company, AVG(score.Score) as pilotconfidence FROM score RIGHT JOIN pilot_confidence ON score.Id_Score = pilot_confidence.Id_Score LEFT JOIN company ON company.Id_Company = pilot_confidence.Id_Company GROUP BY company.Id_Company) as scorepilot LEFT OUTER JOIN (SELECT company.Id_Company, AVG(score.Score) as delegateconfidence FROM score RIGHT JOIN delegate_confidence ON score.Id_Score = delegate_confidence.Id_Score LEFT JOIN company ON company.Id_Company = delegate_confidence.Id_Company GROUP BY company.Id_Company) as scoredelegate ON scoredelegate.Id_Company = scorepilot.Id_Company UNION ALL SELECT scorepilot.Id_Company, scorepilot.pilotconfidence, scoredelegate.delegateconfidence FROM (SELECT company.Id_Company, AVG(score.Score) as pilotconfidence FROM score RIGHT JOIN pilot_confidence ON score.Id_Score = pilot_confidence.Id_Score LEFT JOIN company ON company.Id_Company = pilot_confidence.Id_Company GROUP BY company.Id_Company) as scorepilot LEFT OUTER JOIN (SELECT company.Id_Company, AVG(score.Score) as delegateconfidence FROM score RIGHT JOIN delegate_confidence ON score.Id_Score = delegate_confidence.Id_Score LEFT JOIN company ON company.Id_Company = delegate_confidence.Id_Company GROUP BY company.Id_Company) as scoredelegate ON scoredelegate.Id_Company = scorepilot.Id_Company WHERE scorepilot.Id_Company IS NULL) as scorepilot) as confidencepilote ON infocompany.Id_Company = confidencepilote.Id_Company ";
         $requete = array(
             'conditions' => $condition,
-            'fields' => ' * ',
+            'fields' => ' infocompany.Id_Company, infocompany.Company_Name, infocompany.Company_Description, infocompany.CESI_Trainee_Accept, infocompany.Email_Company, infocompany.Is_Visible, infocompany.Street_Number, infocompany.Street_Name, infocompany.City, infocompany.Postal_Code, infocompany.Domain_Activity, scorestudents.scorestudent, confidencepilote.scorepilot ',
             'order' => 'infocompany.Id_Company ASC '
         );
         
@@ -108,10 +108,10 @@ class Company extends Model {
         }
     }
 
-    function edit($id_company, $user, $postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept = 0, $company_email, array $domains_activity, $score) {
+    function edit($id_company, $user, $postal_code, $city, $street_name, $street_number, $company_name, $company_description, $cesi_accept = 0, $company_email, array $domains_activity, $score, $is_visible) {
         
         //edit company
-        $this->change("UPDATE company SET company.Company_Name = '$company_name', company.Company_Description = '$company_description', company.CESI_Trainee_Accept = '$cesi_accept', company.Email_Company = '$company_email' WHERE company.Id_Company = '$id_company'");
+        $this->change("UPDATE company SET company.Is_Visible = '$is_visible', company.Company_Name = '$company_name', company.Company_Description = '$company_description', company.CESI_Trainee_Accept = '$cesi_accept', company.Email_Company = '$company_email' WHERE company.Id_Company = '$id_company'");
         
         //delete address
         $this->change("DELETE FROM locate_1 WHERE locate_1.Id_Company = '$id_company'");
@@ -180,7 +180,7 @@ class Company extends Model {
     }
 
     function delete($id_company) {
-        $this->change("UPDATE company SET company.Is_Visible = 'false' WHERE company.Id_Company = '$id_company'");
+        $this->change("UPDATE company SET company.Is_Visible = false WHERE company.Id_Company = '$id_company'");
     }
 }
 ?>

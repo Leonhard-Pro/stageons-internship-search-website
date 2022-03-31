@@ -27,6 +27,16 @@ class informations extends Model {
         return $data;
     }
 
+    function verifyUserSet(){
+
+        var_dump($_SESSION['userObject']);
+        var_dump(isset($_SESSION['userObject']));
+        if(isset($_SESSION['userObject'])){
+            return true;
+        }
+        return false;
+    }
+
 }
 
 ?>

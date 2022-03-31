@@ -17,9 +17,10 @@ function index(){
     $this->loadModel('informations');
     $data['user'] = $this->informations->getUserInformation();
 
-    if(!$data['user']['userObject'] instanceof User) {
+    if(!isset($data['user']['userObject'])) {
         header("Location:login");
     }
+
     
     
 

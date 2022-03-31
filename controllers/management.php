@@ -89,7 +89,7 @@ class Management extends Controller {
 
         
 
-        if(!$data['user']['userObject'] instanceof User) {
+        if(!isset($data['user']['userObject'])) {
             header("Location:login");
         }
 

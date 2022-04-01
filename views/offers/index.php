@@ -42,7 +42,7 @@
                                 <p> <b>Description:</b> '. $SelectOffer[$i]['Description'] .'</p>
                                 <p> <b>Duration:</b> '. $SelectOffer[$i]['Duration'] .'</p>
                                 <p> <b>Duration Type:</b> '. $SelectOffer[$i]['Duration_Type'] .'</p>
-                                <p> <b>Remuneration:</b> '. $SelectOffer[$i]['Remuneration'] .'</p>
+                                <p> <b>Remuneration:</b> '. $SelectOffer[$i]['Remuneration'] .' € per hour </p>
                                 <p> <b>Number_Of_Places:</b> '. $SelectOffer[$i]['Number_Of_Places'] .'</p>
                                 <p> <b>Required Degree:</b> '. $SelectOffer[$i]['Degree_Level_Required'] .'</p>
                                 <p> <b>Street Number:</b> '. $SelectOffer[$i]['Street_Number'] .'</p>
@@ -65,7 +65,7 @@
                                 <p> <b>Description:</b> '. $SelectOffer[$i]['Description'] .'</p>
                                 <p> <b>Duration:</b> '. $SelectOffer[$i]['Duration'] .'</p>
                                 <p> <b>Duration Type:</b> '. $SelectOffer[$i]['Duration_Type'] .'</p>
-                                <p> <b>Remuneration:</b> '. $SelectOffer[$i]['Remuneration'] .'</p>
+                                <p> <b>Remuneration:</b> '. $SelectOffer[$i]['Remuneration'] .' € per hour </p>
                                 <p> <b>Number_Of_Places:</b> '. $SelectOffer[$i]['Number_Of_Places'] .'</p>
                                 <p> <b>Required Degree:</b> '. $SelectOffer[$i]['Degree_Level_Required'] .'</p>
                                 <p> <b>Street Number:</b> '. $SelectOffer[$i]['Street_Number'] .'</p>

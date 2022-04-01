@@ -26,7 +26,8 @@ class Model {
             $fields = "*";
         }
         $sql = "SELECT $fields FROM ".$this->table." WHERE id=".$this->id;
-        $req = $this->pdo->query($sql);
+        $req = $this->pdo->prepare($sql);
+        $req->execute();
         $data = $req->fetch();
         foreach($data as $k=>$v) {
             $this->$k = $v;
@@ -80,7 +81,8 @@ class Model {
             $sql = substr($sql, 0, -1);
             $sql .= ")";
         }
-        $this->pdo->exec($sql);
+        $req = $this->pdo->prepare($sql);
+        $req->execute();
         if(!isset($data["id"])) {
             $this->id = $this->pdo->lastInsertId();
         } else {
@@ -97,7 +99,8 @@ class Model {
         //echo "<div>";
         //echo $sql;
         //echo "</div>";
-        $this->pdo->exec($sql);
+        $req = $this->pdo->prepare($sql);
+        $req->execute();
     }
 
     public function change($sql) {
@@ -114,7 +117,8 @@ class Model {
         if(isset($data["limit"])) { $limit = "LIMIT ".$data["limit"]; }
         if(isset($data["order"])) { $order = $data["order"]; }
         $sql = "SELECT $fields FROM ".$this->table." WHERE $conditions ORDER BY $order $limit";
-        $req = $this->pdo->query($sql);
+        $req = $this->pdo->prepare($sql);
+        $req->execute();
         $d = $req->fetchALL();
         return $d;
     }
@@ -129,7 +133,8 @@ class Model {
         if(isset($data["limit"])) { $limit = "LIMIT ".$data["limit"]; }
         if(isset($data["order"])) { $order = $data["order"]; }
         $sql = "SELECT $fields FROM ".$this->table." WHERE $conditions ORDER BY $order $limit";
-        $req = $this->pdo->query($sql);
+        $req = $this->pdo->prepare($sql);
+        $req->execute();
         $d = $req->fetch();
 
         return $d;
@@ -138,7 +143,8 @@ class Model {
     public function del($id = null) {
         if($id == null) { $id = $this->id; }
         $sql = "DELETE FROM ".$this->table."WHERE id=$id";
-        $this->pdo->exec($sql);
+        $req = $this->pdo->prepare($sql);
+        $req->execute();
     }
 
     static function load($name) {
